@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>DD0945BA-D5D1-4A2A-91BC-DC80BFB53815</string>
+	<key>IDESourceControlProjectName</key>
+	<string>JVFloatLabeledField</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>F0180C40-79C9-454C-B272-60D37C31F2A0</key>
+		<string>https://github.com/jverdi/JVFloatLabeledTextField.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>JVFloatLabeledField.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>F0180C40-79C9-454C-B272-60D37C31F2A0</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/jverdi/JVFloatLabeledTextField.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>F0180C40-79C9-454C-B272-60D37C31F2A0</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>F0180C40-79C9-454C-B272-60D37C31F2A0</string>
+			<key>IDESourceControlWCCName</key>
+			<string>JVFloatLabeledTextField</string>
+		</dict>
+	</array>
+</dict>
+</plist>
