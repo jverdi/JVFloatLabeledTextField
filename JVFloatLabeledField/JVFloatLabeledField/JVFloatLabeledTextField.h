@@ -31,6 +31,7 @@
 @interface JVFloatLabeledTextField : UITextField
 
 @property (nonatomic, strong, readonly) UILabel * floatingLabel;
+@property (nonatomic, strong) UIColor * floatingLabelTextColor;
 @property (nonatomic, strong) UIColor * floatingLabelActiveTextColor;
 
 @end

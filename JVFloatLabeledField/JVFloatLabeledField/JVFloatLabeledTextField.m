@@ -28,7 +28,6 @@
 #import "JVFloatLabeledTextField.h"
 
 @interface JVFloatLabeledTextField ()
-@property (nonatomic, strong) UIColor * floatingLabelNormalTextColor;
 @property (nonatomic) BOOL isFloatingLabelHidden;
 @end
 
@@ -43,8 +42,8 @@
         _floatingLabel.alpha = 0.0f;
         [self addSubview:_floatingLabel];
         
-        self.floatingLabelNormalTextColor = [UIColor greenColor];
-        self.floatingLabelActiveTextColor = [UIColor redColor];
+        self.floatingLabelTextColor = [UIColor grayColor];
+        self.floatingLabelActiveTextColor = [UIColor blueColor];
         
         self.isFloatingLabelHidden = YES;
     }
@@ -85,13 +84,12 @@
             [self hideFloatingLabel];
         }
         else {
-            self.floatingLabelNormalTextColor = _floatingLabel.textColor;
             _floatingLabel.textColor = self.floatingLabelActiveTextColor;
             [self showFloatingLabel];
         }
     }
     else {
-        _floatingLabel.textColor = self.floatingLabelNormalTextColor;
+        _floatingLabel.textColor = self.floatingLabelTextColor;
         if (!self.text || 0 == [self.text length]) {
             [self hideFloatingLabel];
         }

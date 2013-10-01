@@ -65,7 +65,7 @@ const static CGFloat kJVFieldFloatingLabelFontSize = 11.0f;
     titleField.placeholder = NSLocalizedString(@"Title", @"");
     titleField.font = [UIFont systemFontOfSize:kJVFieldFontSize];
     titleField.floatingLabel.font = [UIFont systemFontOfSize:kJVFieldFloatingLabelFontSize];
-    titleField.floatingLabel.textColor = floatingLabelColor;
+    titleField.floatingLabelTextColor = floatingLabelColor;
     titleField.floatingLabelActiveTextColor = floatingLabelActiveColor;
     titleField.clearButtonMode = UITextFieldViewModeWhileEditing;
     [self.view addSubview:titleField];
@@ -81,7 +81,7 @@ const static CGFloat kJVFieldFloatingLabelFontSize = 11.0f;
     priceField.placeholder = NSLocalizedString(@"Price", @"");
     priceField.font = [UIFont systemFontOfSize:kJVFieldFontSize];
     priceField.floatingLabel.font = [UIFont systemFontOfSize:kJVFieldFloatingLabelFontSize];
-    priceField.floatingLabel.textColor = floatingLabelColor;
+    priceField.floatingLabelTextColor = floatingLabelColor;
     priceField.floatingLabelActiveTextColor = floatingLabelActiveColor;
     [self.view addSubview:priceField];
     
@@ -100,7 +100,7 @@ const static CGFloat kJVFieldFloatingLabelFontSize = 11.0f;
     locationField.placeholder = NSLocalizedString(@"Specific Location (optional)", @"");
     locationField.font = [UIFont systemFontOfSize:kJVFieldFontSize];
     locationField.floatingLabel.font = [UIFont systemFontOfSize:kJVFieldFloatingLabelFontSize];
-    locationField.floatingLabel.textColor = floatingLabelColor;
+    locationField.floatingLabelTextColor = floatingLabelColor;
     locationField.floatingLabelActiveTextColor = floatingLabelActiveColor;
     [self.view addSubview:locationField];
     
@@ -116,7 +116,7 @@ const static CGFloat kJVFieldFloatingLabelFontSize = 11.0f;
     descriptionField.placeholder = NSLocalizedString(@"Description", @"");
     descriptionField.font = [UIFont systemFontOfSize:kJVFieldFontSize];
     descriptionField.floatingLabel.font = [UIFont systemFontOfSize:kJVFieldFloatingLabelFontSize];
-    descriptionField.floatingLabel.textColor = floatingLabelColor;
+    descriptionField.floatingLabelTextColor = floatingLabelColor;
     descriptionField.floatingLabelActiveTextColor = floatingLabelActiveColor;
     [self.view addSubview:descriptionField];
 }
