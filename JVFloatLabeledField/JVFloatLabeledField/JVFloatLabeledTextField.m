@@ -41,11 +41,12 @@
         _floatingLabel.alpha = 0.0f;
         [self addSubview:_floatingLabel];
         
+        self.isFloatingLabelHidden = YES;
+        
+        // some basic default fonts/colors
         _floatingLabel.font = [UIFont boldSystemFontOfSize:12.0f];
         self.floatingLabelTextColor = [UIColor grayColor];
         self.floatingLabelActiveTextColor = [UIColor blueColor];
-        
-        self.isFloatingLabelHidden = YES;
     }
     return self;
 }
