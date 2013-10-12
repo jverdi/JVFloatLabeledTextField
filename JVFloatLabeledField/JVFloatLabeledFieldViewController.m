@@ -119,6 +119,8 @@ const static CGFloat kJVFieldFloatingLabelFontSize = 11.0f;
     descriptionField.floatingLabelTextColor = floatingLabelColor;
     descriptionField.floatingLabelActiveTextColor = floatingLabelActiveColor;
     [self.view addSubview:descriptionField];
+    
+    [titleField becomeFirstResponder];
 }
 
 - (void)didReceiveMemoryWarning
