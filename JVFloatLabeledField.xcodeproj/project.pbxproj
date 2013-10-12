@@ -13,6 +13,9 @@
 		7F50336A17FA7B0A0026FB7F /* JVAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F50336917FA7B0A0026FB7F /* JVAppDelegate.m */; };
 		7F50338A17FA7B3D0026FB7F /* JVFloatLabeledTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F50338917FA7B3D0026FB7F /* JVFloatLabeledTextField.m */; };
 		7F50338E17FA7B8C0026FB7F /* JVFloatLabeledFieldViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F50338D17FA7B8C0026FB7F /* JVFloatLabeledFieldViewController.m */; };
+		7F9020231809A39B00B43AD5 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7F9020201809A39B00B43AD5 /* Default-568h@2x.png */; };
+		7F9020241809A39B00B43AD5 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 7F9020211809A39B00B43AD5 /* Default.png */; };
+		7F9020251809A39B00B43AD5 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7F9020221809A39B00B43AD5 /* Default@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +31,9 @@
 		7F50338917FA7B3D0026FB7F /* JVFloatLabeledTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JVFloatLabeledTextField.m; path = JVFloatLabeledField/JVFloatLabeledTextField.m; sourceTree = "<group>"; };
 		7F50338C17FA7B8C0026FB7F /* JVFloatLabeledFieldViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JVFloatLabeledFieldViewController.h; sourceTree = "<group>"; };
 		7F50338D17FA7B8C0026FB7F /* JVFloatLabeledFieldViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JVFloatLabeledFieldViewController.m; sourceTree = "<group>"; };
+		7F9020201809A39B00B43AD5 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-568h@2x.png"; path = "images/Default-568h@2x.png"; sourceTree = "<group>"; };
+		7F9020211809A39B00B43AD5 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Default.png; path = images/Default.png; sourceTree = "<group>"; };
+		7F9020221809A39B00B43AD5 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default@2x.png"; path = "images/Default@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +83,7 @@
 				7F50338C17FA7B8C0026FB7F /* JVFloatLabeledFieldViewController.h */,
 				7F50338D17FA7B8C0026FB7F /* JVFloatLabeledFieldViewController.m */,
 				7F50338B17FA7B670026FB7F /* JVFloatLabeledField */,
+				7F90201F1809A2BF00B43AD5 /* images */,
 				7F50336017FA7B0A0026FB7F /* Supporting Files */,
 			);
 			path = JVFloatLabeledField;
@@ -99,6 +106,16 @@
 				7F50338917FA7B3D0026FB7F /* JVFloatLabeledTextField.m */,
 			);
 			name = JVFloatLabeledField;
+			sourceTree = "<group>";
+		};
+		7F90201F1809A2BF00B43AD5 /* images */ = {
+			isa = PBXGroup;
+			children = (
+				7F9020201809A39B00B43AD5 /* Default-568h@2x.png */,
+				7F9020211809A39B00B43AD5 /* Default.png */,
+				7F9020221809A39B00B43AD5 /* Default@2x.png */,
+			);
+			name = images;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -153,6 +170,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7F9020251809A39B00B43AD5 /* Default@2x.png in Resources */,
+				7F9020231809A39B00B43AD5 /* Default-568h@2x.png in Resources */,
+				7F9020241809A39B00B43AD5 /* Default.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
