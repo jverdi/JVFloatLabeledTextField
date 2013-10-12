@@ -28,7 +28,6 @@
 #import "JVFloatLabeledTextField.h"
 
 @interface JVFloatLabeledTextField ()
-@property (nonatomic) BOOL isFloatingLabelHidden;
 @end
 
 @implementation JVFloatLabeledTextField
@@ -40,8 +39,6 @@
         _floatingLabel = [UILabel new];
         _floatingLabel.alpha = 0.0f;
         [self addSubview:_floatingLabel];
-        
-        self.isFloatingLabelHidden = YES;
         
         // some basic default fonts/colors
         _floatingLabel.font = [UIFont boldSystemFontOfSize:12.0f];
@@ -99,28 +96,21 @@
 
 - (void)showFloatingLabel
 {
-    if (self.isFloatingLabelHidden) {
-        [UIView animateWithDuration:0.3f delay:0.0f options:UIViewAnimationOptionBeginFromCurrentState|UIViewAnimationOptionCurveEaseOut animations:^{
-            _floatingLabel.alpha = 1.0f;
-            _floatingLabel.frame = CGRectMake(_floatingLabel.frame.origin.x, 2.0f,
-                                              _floatingLabel.frame.size.width, _floatingLabel.frame.size.height);
-        } completion:^(BOOL finished) {
-            self.isFloatingLabelHidden = NO;
-        }];
-    }
+    [UIView animateWithDuration:0.3f delay:0.0f options:UIViewAnimationOptionBeginFromCurrentState|UIViewAnimationOptionCurveEaseOut animations:^{
+        _floatingLabel.alpha = 1.0f;
+        _floatingLabel.frame = CGRectMake(_floatingLabel.frame.origin.x, 2.0f,
+                                          _floatingLabel.frame.size.width, _floatingLabel.frame.size.height);
+    } completion:nil];
 }
 
 - (void)hideFloatingLabel
 {
-    if (!self.isFloatingLabelHidden) {
-        [UIView animateWithDuration:0.3f delay:0.0f options:UIViewAnimationOptionBeginFromCurrentState|UIViewAnimationOptionCurveEaseIn animations:^{
-            _floatingLabel.alpha = 0.0f;
-        } completion:^(BOOL finished) {
-            _floatingLabel.frame = CGRectMake(_floatingLabel.frame.origin.x, _floatingLabel.font.lineHeight,
-                                              _floatingLabel.frame.size.width, _floatingLabel.frame.size.height);
-            self.isFloatingLabelHidden = YES;
-        }];
-    }
+    [UIView animateWithDuration:0.3f delay:0.0f options:UIViewAnimationOptionBeginFromCurrentState|UIViewAnimationOptionCurveEaseIn animations:^{
+        _floatingLabel.alpha = 0.0f;
+    } completion:^(BOOL finished) {
+        _floatingLabel.frame = CGRectMake(_floatingLabel.frame.origin.x, _floatingLabel.font.lineHeight,
+                                          _floatingLabel.frame.size.width, _floatingLabel.frame.size.height);
+    }];
 }
 
 @end
