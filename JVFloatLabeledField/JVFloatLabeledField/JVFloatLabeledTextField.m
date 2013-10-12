@@ -38,10 +38,10 @@
     self = [super initWithFrame:frame];
     if (self) {
         _floatingLabel = [UILabel new];
-        _floatingLabel.font = [UIFont systemFontOfSize:12.0f];
         _floatingLabel.alpha = 0.0f;
         [self addSubview:_floatingLabel];
         
+        _floatingLabel.font = [UIFont boldSystemFontOfSize:12.0f];
         self.floatingLabelTextColor = [UIColor grayColor];
         self.floatingLabelActiveTextColor = [UIColor blueColor];
         
