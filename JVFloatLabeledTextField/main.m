@@ -1,6 +1,6 @@
 //
-//  JVAppDelegate.h
-//  JVFloatLabeledField
+//  main.m
+//  JVFloatLabeledTextField
 //
 //  The MIT License (MIT)
 //
@@ -27,8 +27,11 @@
 
 #import <UIKit/UIKit.h>
 
-@interface JVAppDelegate : UIResponder <UIApplicationDelegate>
+#import "JVAppDelegate.h"
 
-@property (strong, nonatomic) UIWindow *window;
-
-@end
+int main(int argc, char * argv[])
+{
+    @autoreleasepool {
+        return UIApplicationMain(argc, argv, nil, NSStringFromClass([JVAppDelegate class]));
+    }
+}

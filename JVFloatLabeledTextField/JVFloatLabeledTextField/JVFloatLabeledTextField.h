@@ -1,6 +1,6 @@
 //
-//  main.m
-//  JVFloatLabeledField
+//  JVFloatLabeledTextField.h
+//  JVFloatLabeledTextField
 //
 //  The MIT License (MIT)
 //
@@ -25,13 +25,13 @@
 //  IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
 //  CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
+
 #import <UIKit/UIKit.h>
 
-#import "JVAppDelegate.h"
+@interface JVFloatLabeledTextField : UITextField
 
-int main(int argc, char * argv[])
-{
-    @autoreleasepool {
-        return UIApplicationMain(argc, argv, nil, NSStringFromClass([JVAppDelegate class]));
-    }
-}
+@property (nonatomic, strong, readonly) UILabel * floatingLabel;
+@property (nonatomic, strong) UIColor * floatingLabelTextColor;
+@property (nonatomic, strong) UIColor * floatingLabelActiveTextColor;
+
+@end

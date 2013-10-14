@@ -1,6 +1,6 @@
 //
 //  JVFloatLabeledTextField.m
-//  JVFloatLabeledField
+//  JVFloatLabeledTextField
 //
 //  The MIT License (MIT)
 //

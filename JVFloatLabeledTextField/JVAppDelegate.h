@@ -1,6 +1,6 @@
 //
-//  JVFloatLabeledFieldViewController.h
-//  JVFloatLabeledField
+//  JVAppDelegate.h
+//  JVFloatLabeledTextField
 //
 //  The MIT License (MIT)
 //
@@ -27,6 +27,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface JVFloatLabeledFieldViewController : UIViewController
+@interface JVAppDelegate : UIResponder <UIApplicationDelegate>
+
+@property (strong, nonatomic) UIWindow *window;
 
 @end

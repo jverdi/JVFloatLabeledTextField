@@ -1,6 +1,6 @@
 //
-//  JVFloatLabeledTextField.h
-//  JVFloatLabeledField
+//  JVFloatLabeledTextFieldViewController.h
+//  JVFloatLabeledTextField
 //
 //  The MIT License (MIT)
 //
@@ -25,13 +25,8 @@
 //  IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
 //  CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-
 #import <UIKit/UIKit.h>
 
-@interface JVFloatLabeledTextField : UITextField
-
-@property (nonatomic, strong, readonly) UILabel * floatingLabel;
-@property (nonatomic, strong) UIColor * floatingLabelTextColor;
-@property (nonatomic, strong) UIColor * floatingLabelActiveTextColor;
+@interface JVFloatLabeledTextFieldViewController : UIViewController
 
 @end

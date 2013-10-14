@@ -1,6 +1,6 @@
 //
-//  JVFloatLabeledFieldViewController.m
-//  JVFloatLabeledField
+//  JVFloatLabeledTextFieldViewController.m
+//  JVFloatLabeledTextField
 //
 //  The MIT License (MIT)
 //
@@ -25,7 +25,7 @@
 //  IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
 //  CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-#import "JVFloatLabeledFieldViewController.h"
+#import "JVFloatLabeledTextFieldViewController.h"
 #import "JVFloatLabeledTextField.h"
 
 const static CGFloat kJVFieldHeight = 44.0f;
@@ -35,11 +35,11 @@ const static CGFloat kJVFieldFontSize = 16.0f;
 
 const static CGFloat kJVFieldFloatingLabelFontSize = 11.0f;
 
-@interface JVFloatLabeledFieldViewController ()
+@interface JVFloatLabeledTextFieldViewController ()
 
 @end
 
-@implementation JVFloatLabeledFieldViewController
+@implementation JVFloatLabeledTextFieldViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {

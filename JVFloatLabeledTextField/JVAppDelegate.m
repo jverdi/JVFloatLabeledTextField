@@ -1,6 +1,6 @@
 //
 //  JVAppDelegate.m
-//  JVFloatLabeledField
+//  JVFloatLabeledTextField
 //
 //  The MIT License (MIT)
 //
@@ -26,7 +26,7 @@
 //  CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 #import "JVAppDelegate.h"
-#import "JVFloatLabeledFieldViewController.h"
+#import "JVFloatLabeledTextFieldViewController.h"
 
 @implementation JVAppDelegate
 
@@ -36,7 +36,7 @@
     // Override point for customization after application launch.
     self.window.backgroundColor = [UIColor whiteColor];
     
-    JVFloatLabeledFieldViewController *viewController = [JVFloatLabeledFieldViewController new];
+    JVFloatLabeledTextFieldViewController *viewController = [JVFloatLabeledTextFieldViewController new];
     UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:viewController];
 
     self.window.rootViewController = navigationController;
