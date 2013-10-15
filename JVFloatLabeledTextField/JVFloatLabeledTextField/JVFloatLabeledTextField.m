@@ -43,7 +43,14 @@
         // some basic default fonts/colors
         _floatingLabel.font = [UIFont boldSystemFontOfSize:12.0f];
         self.floatingLabelTextColor = [UIColor grayColor];
-        self.floatingLabelActiveTextColor = [UIColor blueColor];
+        
+        // Set default color to Application's tintColor
+        UIWindow *window = [[UIApplication sharedApplication] keyWindow];
+        if(!window){
+            // Use last object in windows if keyWindow returns nil
+            window = [[[UIApplication sharedApplication] windows] lastObject];
+        }
+        self.floatingLabelActiveTextColor = window.tintColor;
     }
     return self;
 }
