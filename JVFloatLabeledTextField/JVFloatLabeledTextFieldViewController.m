@@ -58,7 +58,6 @@ const static CGFloat kJVFieldFloatingLabelFontSize = 11.0f;
     CGFloat topOffset = [[UIApplication sharedApplication] statusBarFrame].size.height + self.navigationController.navigationBar.frame.size.height;
     
     UIColor *floatingLabelColor = [UIColor grayColor];
-    UIColor *floatingLabelActiveColor = [UIColor blueColor];
     
     JVFloatLabeledTextField *titleField = [[JVFloatLabeledTextField alloc] initWithFrame:
                                            CGRectMake(kJVFieldHMargin, topOffset, self.view.frame.size.width - 2 * kJVFieldHMargin, kJVFieldHeight)];
@@ -66,7 +65,6 @@ const static CGFloat kJVFieldFloatingLabelFontSize = 11.0f;
     titleField.font = [UIFont systemFontOfSize:kJVFieldFontSize];
     titleField.floatingLabel.font = [UIFont boldSystemFontOfSize:kJVFieldFloatingLabelFontSize];
     titleField.floatingLabelTextColor = floatingLabelColor;
-    titleField.floatingLabelActiveTextColor = floatingLabelActiveColor;
     titleField.clearButtonMode = UITextFieldViewModeWhileEditing;
     [self.view addSubview:titleField];
     
@@ -82,7 +80,6 @@ const static CGFloat kJVFieldFloatingLabelFontSize = 11.0f;
     priceField.font = [UIFont systemFontOfSize:kJVFieldFontSize];
     priceField.floatingLabel.font = [UIFont boldSystemFontOfSize:kJVFieldFloatingLabelFontSize];
     priceField.floatingLabelTextColor = floatingLabelColor;
-    priceField.floatingLabelActiveTextColor = floatingLabelActiveColor;
     [self.view addSubview:priceField];
     
     UIView *div2 = [UIView new];
@@ -101,7 +98,6 @@ const static CGFloat kJVFieldFloatingLabelFontSize = 11.0f;
     locationField.font = [UIFont systemFontOfSize:kJVFieldFontSize];
     locationField.floatingLabel.font = [UIFont boldSystemFontOfSize:kJVFieldFloatingLabelFontSize];
     locationField.floatingLabelTextColor = floatingLabelColor;
-    locationField.floatingLabelActiveTextColor = floatingLabelActiveColor;
     [self.view addSubview:locationField];
     
     UIView *div3 = [UIView new];
@@ -117,7 +113,6 @@ const static CGFloat kJVFieldFloatingLabelFontSize = 11.0f;
     descriptionField.font = [UIFont systemFontOfSize:kJVFieldFontSize];
     descriptionField.floatingLabel.font = [UIFont boldSystemFontOfSize:kJVFieldFloatingLabelFontSize];
     descriptionField.floatingLabelTextColor = floatingLabelColor;
-    descriptionField.floatingLabelActiveTextColor = floatingLabelActiveColor;
     [self.view addSubview:descriptionField];
     
     [titleField becomeFirstResponder];
