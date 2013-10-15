@@ -12,7 +12,7 @@ http://dribbble.com/shots/1254439--GIF-Mobile-Form-Interaction?list=users
 
 Ports
 =======================
-[JQuery / Zepto.js](https://github.com/maman/JVFloat.js) - Achmad Mahardi
+[JQuery / Zepto.js](https://github.com/maman/JVFloat.js) - Achmad Mahardi  
 [Xamarin.iOS](https://github.com/gshackles/JVFloatSharp) - Greg Shackles
 
 Added a port? Let me know - [@jverdi](http://www.twitter.com/jverdi)
