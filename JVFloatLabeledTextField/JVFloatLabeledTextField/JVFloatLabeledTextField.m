@@ -35,17 +35,33 @@
 - (id)initWithFrame:(CGRect)frame
 {
     self = [super initWithFrame:frame];
-    if (self) {
-        _floatingLabel = [UILabel new];
-        _floatingLabel.alpha = 0.0f;
-        [self addSubview:_floatingLabel];
-        
-        // some basic default fonts/colors
-        _floatingLabel.font = [UIFont boldSystemFontOfSize:12.0f];
-        self.floatingLabelTextColor = [UIColor grayColor];
-        self.floatingLabelActiveTextColor = [UIColor blueColor];
+    if (self) 
+    {
+	[self commonInit];
     }
     return self;
+}
+
+- (id)initWithCoder:(NSCoder *)aDecoder 
+{
+    self = [super initWithCoder:aDecoder];
+    if(self) 
+    {
+        [self commonInit];
+    }
+    return self;
+}
+
+- (void)commonInit
+{
+    _floatingLabel = [UILabel new];
+    _floatingLabel.alpha = 0.0f;
+    [self addSubview:_floatingLabel];
+	
+    // some basic default fonts/colors
+    _floatingLabel.font = [UIFont boldSystemFontOfSize:12.0f];
+    self.floatingLabelTextColor = [UIColor grayColor];
+    self.floatingLabelActiveTextColor = [UIColor blueColor];	
 }
 
 - (void)setPlaceholder:(NSString *)placeholder
