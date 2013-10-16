@@ -32,6 +32,6 @@
 
 @property (nonatomic, strong, readonly) UILabel * floatingLabel;
 @property (nonatomic, strong) UIColor * floatingLabelTextColor;
-@property (nonatomic, strong) UIColor * floatingLabelActiveTextColor;
+@property (nonatomic, strong) UIColor * floatingLabelActiveTextColor; // tint color is used by default if not provided
 
 @end

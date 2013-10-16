@@ -54,6 +54,8 @@ const static CGFloat kJVFieldFloatingLabelFontSize = 11.0f;
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
+
+    [self.view setTintColor:[UIColor blueColor]];
     
     CGFloat topOffset = [[UIApplication sharedApplication] statusBarFrame].size.height + self.navigationController.navigationBar.frame.size.height;
     
