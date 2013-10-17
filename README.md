@@ -15,5 +15,6 @@ Ports
 [JQuery / Zepto.js](https://github.com/maman/JVFloat.js) - Achmad Mahardi  
 [Xamarin.iOS](https://github.com/gshackles/JVFloatSharp) - Greg Shackles  
 [Bootstrap plugin](https://github.com/fauxparse/bootstrap-floating-labels) - Matt Powell  
+[JavaFX](https://github.com/andytill/floaty-field) - Andy Till  
 
 Added a port? Let me know - [@jverdi](http://www.twitter.com/jverdi)
