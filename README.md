@@ -1,5 +1,5 @@
-JVFloatLabeledTextField
-=======================
+# JVFloatLabeledTextField
+
 
 UITextField subclass with placeholders that change into floating labels when the field is populated with text.
 
