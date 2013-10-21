@@ -106,12 +106,10 @@
             [self hideFloatingLabel];
         }
         else {
-            if (self.floatingLabelActiveTextColor) {
-                _floatingLabel.textColor = self.floatingLabelActiveTextColor;
+            if (self.floatingLabelFont) {
+                _floatingLabel.font = self.floatingLabelFont;
             }
-            else {
-                _floatingLabel.textColor = self.tintColor;
-            }
+            [self setLabelActiveColor];
             [self showFloatingLabel];
         }
     }
@@ -120,6 +118,15 @@
         if (!self.text || 0 == [self.text length]) {
             [self hideFloatingLabel];
         }
+    }
+}
+
+- (void)setLabelActiveColor {
+    if (self.floatingLabelActiveTextColor) {
+        _floatingLabel.textColor = self.floatingLabelActiveTextColor;
+    }
+    else {
+        _floatingLabel.textColor = self.tintColor;
     }
 }
 
