@@ -59,7 +59,7 @@
 	
     // some basic default fonts/colors
     _floatingLabel.font = [UIFont boldSystemFontOfSize:12.0f];
-    self.floatingLabelTextColor = [UIColor grayColor];
+    _floatingLabelTextColor = [UIColor grayColor];
     
     // If we're in a nib / storyboard we want to use the default placeholder as our placeholder
     if (self.placeholder) {
