@@ -119,6 +119,8 @@
         _floatingLabel.textColor = self.floatingLabelTextColor;
         if (!self.text || 0 == [self.text length]) {
             [self hideFloatingLabel];
+        } else {
+            [self showFloatingLabel];
         }
     }
 }
