@@ -83,7 +83,6 @@
 				7F50338C17FA7B8C0026FB7F /* JVFloatLabeledTextFieldViewController.h */,
 				7F50338D17FA7B8C0026FB7F /* JVFloatLabeledTextFieldViewController.m */,
 				7FF4DB91180B865F008527BD /* JVFloatLabeledTextField */,
-				7F90201F1809A2BF00B43AD5 /* images */,
 				7F50336017FA7B0A0026FB7F /* Supporting Files */,
 			);
 			path = JVFloatLabeledTextField;
@@ -92,9 +91,10 @@
 		7F50336017FA7B0A0026FB7F /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				7F90201F1809A2BF00B43AD5 /* images */,
 				7F50336117FA7B0A0026FB7F /* JVFloatLabeledTextField-Info.plist */,
-				7F50336517FA7B0A0026FB7F /* main.m */,
 				7F50336717FA7B0A0026FB7F /* JVFloatLabeledTextField-Prefix.pch */,
+				7F50336517FA7B0A0026FB7F /* main.m */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";

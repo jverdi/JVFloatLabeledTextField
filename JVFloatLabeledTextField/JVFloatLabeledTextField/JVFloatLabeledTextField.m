@@ -35,8 +35,7 @@
 - (id)initWithFrame:(CGRect)frame
 {
     self = [super initWithFrame:frame];
-    if (self) 
-    {
+    if (self) {
 	    [self commonInit];
     }
     return self;
@@ -45,13 +44,11 @@
 - (id)initWithCoder:(NSCoder *)aDecoder 
 {
     self = [super initWithCoder:aDecoder];
-    if(self) 
-    {
+    if (self) {
         [self commonInit];
         
         // force setter to be called on a placeholder defined in a NIB/Storyboard
-    	if (self.placeholder) 
-    	{
+    	if (self.placeholder) {
         	self.placeholder = self.placeholder;
     	}
     }
@@ -72,14 +69,21 @@
 - (void)setPlaceholder:(NSString *)placeholder
 {
     [super setPlaceholder:placeholder];
+    
     _floatingLabel.text = placeholder;
     [_floatingLabel sizeToFit];
+    
     CGFloat originX = 0.f;
-    if (self.textAlignment == NSTextAlignmentCenter)
+    
+    if (self.textAlignment == NSTextAlignmentCenter) {
         originX = (self.frame.size.width/2) - (_floatingLabel.frame.size.width/2);
-    else if (self.textAlignment == NSTextAlignmentRight)
+    }
+    else if (self.textAlignment == NSTextAlignmentRight) {
         originX = self.frame.size.width - _floatingLabel.frame.size.width;
-    _floatingLabel.frame = CGRectMake(originX, _floatingLabel.font.lineHeight, _floatingLabel.frame.size.width, _floatingLabel.frame.size.height);
+    }
+    
+    _floatingLabel.frame = CGRectMake(originX, _floatingLabel.font.lineHeight,
+                                      _floatingLabel.frame.size.width, _floatingLabel.frame.size.height);
 }
 
 - (CGRect)textRectForBounds:(CGRect)bounds
@@ -119,13 +123,15 @@
         _floatingLabel.textColor = self.floatingLabelTextColor;
         if (!self.text || 0 == [self.text length]) {
             [self hideFloatingLabel];
-        } else {
+        }
+        else {
             [self showFloatingLabel];
         }
     }
 }
 
-- (void)setLabelActiveColor {
+- (void)setLabelActiveColor
+{
     if (self.floatingLabelActiveTextColor) {
         _floatingLabel.textColor = self.floatingLabelActiveTextColor;
     }
@@ -161,12 +167,14 @@
 - (void)setLabelOriginForTextAlignment
 {
     CGFloat originX = _floatingLabel.frame.origin.x;
+    
     if (self.textAlignment == NSTextAlignmentCenter) {
         originX = (self.frame.size.width/2) - (_floatingLabel.frame.size.width/2);
     }
     else if (self.textAlignment == NSTextAlignmentRight) {
         originX = self.frame.size.width - _floatingLabel.frame.size.width;
     }
+    
     _floatingLabel.frame = CGRectMake(originX, _floatingLabel.frame.origin.y,
                                       _floatingLabel.frame.size.width, _floatingLabel.frame.size.height);
 }
