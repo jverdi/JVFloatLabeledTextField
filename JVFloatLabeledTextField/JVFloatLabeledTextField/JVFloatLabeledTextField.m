@@ -88,7 +88,7 @@
 
 - (CGRect)textRectForBounds:(CGRect)bounds
 {
-	return UIEdgeInsetsInsetRect([super textRectForBounds:bounds], UIEdgeInsetsMake(_floatingLabel.font.lineHeight+_floatingLabelYPadding.floatValue, 0.0f, 0.0f, 0.0f));
+    return UIEdgeInsetsInsetRect([super textRectForBounds:bounds], UIEdgeInsetsMake(_floatingLabel.font.lineHeight+_floatingLabelYPadding.floatValue, 0.0f, 0.0f, 0.0f));
 }
 
 - (CGRect)editingRectForBounds:(CGRect)bounds
@@ -98,9 +98,9 @@
 
 - (CGRect)clearButtonRectForBounds:(CGRect)bounds
 {
-	CGRect rect = [super clearButtonRectForBounds:bounds];
-	rect = CGRectMake(rect.origin.x, rect.origin.y + (_floatingLabel.font.lineHeight / 2.0) + (_floatingLabelYPadding.floatValue / 2.0f), rect.size.width, rect.size.height);
-	return rect;
+    CGRect rect = [super clearButtonRectForBounds:bounds];
+    rect = CGRectMake(rect.origin.x, rect.origin.y + (_floatingLabel.font.lineHeight / 2.0) + (_floatingLabelYPadding.floatValue / 2.0f), rect.size.width, rect.size.height);
+    return rect;
 }
 
 - (void)layoutSubviews
