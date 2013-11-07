@@ -16,5 +16,8 @@ Ports
 [Xamarin.iOS](https://github.com/gshackles/JVFloatSharp) - Greg Shackles  
 [Bootstrap plugin](https://github.com/fauxparse/bootstrap-floating-labels) - Matt Powell  
 [JavaFX](https://github.com/andytill/floaty-field) - Andy Till  
+[JQuery](https://github.com/m10l/FloatLabel.js) - Mike Mitchell  
+[Android](https://github.com/wrapp/floatlabelededittext) - Henrik Sandström  
+
 
 Added a port? Let me know - [@jverdi](http://www.twitter.com/jverdi)
