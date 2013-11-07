@@ -159,9 +159,10 @@
     
     [UIView animateWithDuration:0.3f delay:0.0f options:UIViewAnimationOptionBeginFromCurrentState|UIViewAnimationOptionCurveEaseIn animations:^{
         _floatingLabel.alpha = 0.0f;
-    } completion:^(BOOL finished) {
         _floatingLabel.frame = CGRectMake(_floatingLabel.frame.origin.x, _floatingLabel.font.lineHeight+_floatingLabelYPadding.floatValue,
                                           _floatingLabel.frame.size.width, _floatingLabel.frame.size.height);
+    } completion:^(BOOL finished) {
+        
     }];
 }
 
