@@ -27,6 +27,7 @@
 
 #import "JVFloatLabeledTextFieldViewController.h"
 #import "JVFloatLabeledTextField.h"
+#import "JVFloatLabeledTextView.h"
 
 const static CGFloat kJVFieldHeight = 44.0f;
 const static CGFloat kJVFieldHMargin = 10.0f;
@@ -108,9 +109,11 @@ const static CGFloat kJVFieldFloatingLabelFontSize = 11.0f;
     div3.backgroundColor = [[UIColor lightGrayColor] colorWithAlphaComponent:0.3f];
     [self.view addSubview:div3];
     
-    JVFloatLabeledTextField *descriptionField = [[JVFloatLabeledTextField alloc] initWithFrame:
-                                                 CGRectMake(kJVFieldHMargin, div3.frame.origin.y + div3.frame.size.height,
-                                                            self.view.frame.size.width - 2*kJVFieldHMargin, kJVFieldHeight)];
+    JVFloatLabeledTextView *descriptionField = [[JVFloatLabeledTextView alloc] initWithFrame:CGRectZero];
+    descriptionField.frame = CGRectMake(kJVFieldHMargin - descriptionField.textContainer.lineFragmentPadding,
+                                        div3.frame.origin.y + div3.frame.size.height,
+                                        self.view.frame.size.width - 2*kJVFieldHMargin + descriptionField.textContainer.lineFragmentPadding,
+                                        kJVFieldHeight*3);
     descriptionField.placeholder = NSLocalizedString(@"Description", @"");
     descriptionField.font = [UIFont systemFontOfSize:kJVFieldFontSize];
     descriptionField.floatingLabel.font = [UIFont boldSystemFontOfSize:kJVFieldFloatingLabelFontSize];

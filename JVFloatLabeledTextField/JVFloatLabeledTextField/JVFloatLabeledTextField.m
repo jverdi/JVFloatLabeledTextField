@@ -66,70 +66,7 @@
     _floatingLabelTextColor = [UIColor grayColor];
 }
 
-- (void)setPlaceholder:(NSString *)placeholder
-{
-    [super setPlaceholder:placeholder];
-    
-    _floatingLabel.text = placeholder;
-    [_floatingLabel sizeToFit];
-    
-    CGFloat originX = 0.f;
-    
-    if (self.textAlignment == NSTextAlignmentCenter) {
-        originX = (self.frame.size.width/2) - (_floatingLabel.frame.size.width/2);
-    }
-    else if (self.textAlignment == NSTextAlignmentRight) {
-        originX = self.frame.size.width - _floatingLabel.frame.size.width;
-    }
-    
-    _floatingLabel.frame = CGRectMake(originX, _floatingLabel.font.lineHeight+_floatingLabelYPadding.floatValue,
-                                      _floatingLabel.frame.size.width, _floatingLabel.frame.size.height);
-}
-
-- (CGRect)textRectForBounds:(CGRect)bounds
-{
-    return UIEdgeInsetsInsetRect([super textRectForBounds:bounds], UIEdgeInsetsMake(_floatingLabel.font.lineHeight+_floatingLabelYPadding.floatValue, 0.0f, 0.0f, 0.0f));
-}
-
-- (CGRect)editingRectForBounds:(CGRect)bounds
-{
-    return UIEdgeInsetsInsetRect([super editingRectForBounds:bounds], UIEdgeInsetsMake(_floatingLabel.font.lineHeight+_floatingLabelYPadding.floatValue, 0.0f, 0.0f, 0.0f));
-}
-
-- (CGRect)clearButtonRectForBounds:(CGRect)bounds
-{
-    CGRect rect = [super clearButtonRectForBounds:bounds];
-    rect = CGRectMake(rect.origin.x, rect.origin.y + (_floatingLabel.font.lineHeight / 2.0) + (_floatingLabelYPadding.floatValue / 2.0f), rect.size.width, rect.size.height);
-    return rect;
-}
-
-- (void)layoutSubviews
-{
-    [super layoutSubviews];
-    
-    if (self.floatingLabelFont) {
-        _floatingLabel.font = self.floatingLabelFont;
-    }
-    
-    if (self.isFirstResponder) {
-        if (!self.text || 0 == [self.text length]) {
-            [self hideFloatingLabel:YES];
-        }
-        else {
-            [self setLabelActiveColor];
-            [self showFloatingLabel:YES];
-        }
-    }
-    else {
-        _floatingLabel.textColor = self.floatingLabelTextColor;
-        if (!self.text || 0 == [self.text length]) {
-            [self hideFloatingLabel:NO];
-        }
-        else {
-            [self showFloatingLabel:NO];
-        }
-    }
-}
+#pragma mark -
 
 - (void)setLabelActiveColor
 {
@@ -143,8 +80,6 @@
 
 - (void)showFloatingLabel:(BOOL)animated
 {
-    [self setLabelOriginForTextAlignment];
-    
     void (^showBlock)() = ^{
         _floatingLabel.alpha = 1.0f;
         _floatingLabel.frame = CGRectMake(_floatingLabel.frame.origin.x,
@@ -167,8 +102,6 @@
 
 - (void)hideFloatingLabel:(BOOL)animated
 {
-    [self setLabelOriginForTextAlignment];
-    
     void (^hideBlock)() = ^{
         _floatingLabel.alpha = 0.0f;
         _floatingLabel.frame = CGRectMake(_floatingLabel.frame.origin.x,
@@ -203,6 +136,70 @@
     
     _floatingLabel.frame = CGRectMake(originX, _floatingLabel.frame.origin.y,
                                       _floatingLabel.frame.size.width, _floatingLabel.frame.size.height);
+}
+
+#pragma mark - UITextField
+
+- (void)setPlaceholder:(NSString *)placeholder
+{
+    [super setPlaceholder:placeholder];
+    
+    _floatingLabel.text = placeholder;
+    [_floatingLabel sizeToFit];
+}
+
+- (CGRect)textRectForBounds:(CGRect)bounds
+{
+    return UIEdgeInsetsInsetRect([super textRectForBounds:bounds], UIEdgeInsetsMake(_floatingLabel.font.lineHeight+_floatingLabelYPadding.floatValue, 0.0f, 0.0f, 0.0f));
+}
+
+- (CGRect)editingRectForBounds:(CGRect)bounds
+{
+    return UIEdgeInsetsInsetRect([super editingRectForBounds:bounds], UIEdgeInsetsMake(_floatingLabel.font.lineHeight+_floatingLabelYPadding.floatValue, 0.0f, 0.0f, 0.0f));
+}
+
+- (CGRect)clearButtonRectForBounds:(CGRect)bounds
+{
+    CGRect rect = [super clearButtonRectForBounds:bounds];
+    rect = CGRectMake(rect.origin.x, rect.origin.y + (_floatingLabel.font.lineHeight / 2.0) + (_floatingLabelYPadding.floatValue / 2.0f), rect.size.width, rect.size.height);
+    return rect;
+}
+
+- (void)setTextAlignment:(NSTextAlignment)textAlignment
+{
+    [super setTextAlignment:textAlignment];
+    
+    [self setNeedsLayout];
+}
+
+- (void)layoutSubviews
+{
+    [super layoutSubviews];
+    
+    [self setLabelOriginForTextAlignment];
+    
+    if (self.floatingLabelFont) {
+        _floatingLabel.font = self.floatingLabelFont;
+    }
+    
+    if (self.isFirstResponder) {
+        if (!self.text || 0 == [self.text length]) {
+            [self hideFloatingLabel:YES];
+        }
+        else {
+            [self setLabelActiveColor];
+            [self showFloatingLabel:YES];
+        }
+    }
+    else {
+        _floatingLabel.textColor = self.floatingLabelTextColor;
+        if (!self.text || 0 == [self.text length]) {
+            [self hideFloatingLabel:NO];
+        }
+        else {
+            [self showFloatingLabel:NO];
+        }
+    }
 }
 
 @end
