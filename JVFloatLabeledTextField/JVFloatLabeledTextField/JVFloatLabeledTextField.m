@@ -73,8 +73,11 @@
     if (self.floatingLabelActiveTextColor) {
         _floatingLabel.textColor = self.floatingLabelActiveTextColor;
     }
+    else if ([self respondsToSelector:@selector(tintColor)]) {
+        _floatingLabel.textColor = [self performSelector:@selector(tintColor)];
+    }
     else {
-        _floatingLabel.textColor = self.tintColor;
+        _floatingLabel.textColor = [UIColor blueColor];
     }
 }
 
