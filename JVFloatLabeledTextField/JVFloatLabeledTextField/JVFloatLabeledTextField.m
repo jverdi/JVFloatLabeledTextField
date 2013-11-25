@@ -68,17 +68,22 @@
 
 #pragma mark -
 
-- (void)setLabelActiveColor
+- (UIColor *)getLabelActiveColor
 {
-    if (self.floatingLabelActiveTextColor) {
-        _floatingLabel.textColor = self.floatingLabelActiveTextColor;
+    if (_floatingLabelActiveTextColor) {
+        return _floatingLabelActiveTextColor;
     }
     else if ([self respondsToSelector:@selector(tintColor)]) {
-        _floatingLabel.textColor = [self performSelector:@selector(tintColor)];
+        return [self performSelector:@selector(tintColor)];
     }
-    else {
-        _floatingLabel.textColor = [UIColor blueColor];
-    }
+    return [UIColor blueColor];
+}
+
+
+- (void) setFloatingLabelFont:(UIFont *)floatingLabelFont {
+    _floatingLabelFont = floatingLabelFont;
+    _floatingLabel.font = (_floatingLabelFont ? _floatingLabelFont : [UIFont boldSystemFontOfSize:12.0f]);
+    self.placeholder = self.placeholder; // Force the label to lay itself out with the new font.
 }
 
 - (void)showFloatingLabel:(BOOL)animated
@@ -185,23 +190,13 @@
         _floatingLabel.font = self.floatingLabelFont;
     }
     
-    if (self.isFirstResponder) {
-        if (!self.text || 0 == [self.text length]) {
-            [self hideFloatingLabel:YES];
-        }
-        else {
-            [self setLabelActiveColor];
-            [self showFloatingLabel:YES];
-        }
+    BOOL firstResponder = self.isFirstResponder;
+    _floatingLabel.textColor = (firstResponder && self.text && self.text.length > 0 ? self.getLabelActiveColor : self.floatingLabelTextColor);
+    if (!self.text || 0 == [self.text length]) {
+        [self hideFloatingLabel:firstResponder];
     }
     else {
-        _floatingLabel.textColor = self.floatingLabelTextColor;
-        if (!self.text || 0 == [self.text length]) {
-            [self hideFloatingLabel:NO];
-        }
-        else {
-            [self showFloatingLabel:NO];
-        }
+        [self showFloatingLabel:firstResponder];
     }
 }
 
