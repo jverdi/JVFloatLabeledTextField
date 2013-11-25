@@ -221,6 +221,12 @@ const static CGFloat JVFloatLabeledTextViewDefaultRetinaInsetNudge = 0.5f; // iO
     return rect;
 }
 
+- (void) setFloatingLabelFont:(UIFont *)floatingLabelFont {
+    _floatingLabelFont = floatingLabelFont;
+    _floatingLabel.font = (_floatingLabelFont ? _floatingLabelFont : [UIFont boldSystemFontOfSize:12.0f]);
+    self.placeholder = self.placeholder; // Force the label to lay itself out with the new font.
+}
+
 #pragma mark - Apple UITextView defaults
 
 + (UIColor *)defaultiOSPlaceholderColor
