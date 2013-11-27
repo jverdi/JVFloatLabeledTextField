@@ -64,6 +64,7 @@
     // some basic default fonts/colors
     _floatingLabel.font = [UIFont boldSystemFontOfSize:12.0f];
     _floatingLabelTextColor = [UIColor grayColor];
+    _animateEvenIfNotFirstResponder = NO;
 }
 
 #pragma mark -
@@ -95,7 +96,7 @@
                                           _floatingLabel.frame.size.height);
     };
     
-    if (animated) {
+    if (animated || _animateEvenIfNotFirstResponder) {
         [UIView animateWithDuration:0.3f
                               delay:0.0f
                             options:UIViewAnimationOptionBeginFromCurrentState|UIViewAnimationOptionCurveEaseOut
@@ -118,7 +119,7 @@
 
     };
     
-    if (animated) {
+    if (animated || _animateEvenIfNotFirstResponder) {
         [UIView animateWithDuration:0.3f
                               delay:0.0f
                             options:UIViewAnimationOptionBeginFromCurrentState|UIViewAnimationOptionCurveEaseIn
