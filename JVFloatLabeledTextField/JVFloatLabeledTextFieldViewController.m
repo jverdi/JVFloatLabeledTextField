@@ -121,6 +121,7 @@ const static CGFloat kJVFieldFloatingLabelFontSize = 11.0f;
     [self.view addSubview:descriptionField];
     
     [titleField becomeFirstResponder];
+    
 }
 
 - (void)didReceiveMemoryWarning

@@ -97,9 +97,8 @@ const static CGFloat JVFloatLabeledTextViewDefaultRetinaInsetNudge = 0.5f; // iO
 
 - (void)layoutSubviews
 {
-    [self adjustTextContainerInsetTop];
-    
     [super layoutSubviews];
+    [self adjustTextContainerInsetTop];
     
     CGRect textRect = [self textRect];
     
@@ -228,8 +227,8 @@ const static CGFloat JVFloatLabeledTextViewDefaultRetinaInsetNudge = 0.5f; // iO
 - (void)setText:(NSString *)text
 {
     [super setText:text];
-    
-    self.placeholderLabel.alpha = [self.placeholderLabel.text length] > 0 ? 1.0f : 0.0f;
+    self.placeholderLabel.alpha = [self.text length] > 0 ? 0.0f : 1.0f;
+    [self layoutSubviews];
 }
 
 - (void)setTextAlignment:(NSTextAlignment)textAlignment
@@ -242,8 +241,8 @@ const static CGFloat JVFloatLabeledTextViewDefaultRetinaInsetNudge = 0.5f; // iO
 - (void)setFont:(UIFont *)font
 {
     [super setFont:font];
-    
     self.placeholderLabel.font = self.font;
+    [self layoutSubviews];
 }
 
 #pragma mark - Notifications
