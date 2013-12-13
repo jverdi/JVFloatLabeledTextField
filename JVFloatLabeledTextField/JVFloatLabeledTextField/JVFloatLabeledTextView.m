@@ -242,7 +242,7 @@ const static CGFloat JVFloatLabeledTextViewDefaultRetinaInsetNudge = 0.5f; // iO
 {
     [super setFont:font];
     self.placeholderLabel.font = self.font;
-    [self layoutSubviews];
+//    [self layoutSubviews];
 }
 
 #pragma mark - Notifications
