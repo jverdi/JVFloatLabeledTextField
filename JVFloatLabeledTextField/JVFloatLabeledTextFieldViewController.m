@@ -69,6 +69,7 @@ const static CGFloat kJVFieldFloatingLabelFontSize = 11.0f;
     titleField.floatingLabel.font = [UIFont boldSystemFontOfSize:kJVFieldFloatingLabelFontSize];
     titleField.floatingLabelTextColor = floatingLabelColor;
     titleField.clearButtonMode = UITextFieldViewModeWhileEditing;
+    titleField.text = @"agbc";
     [self.view addSubview:titleField];
     
     UIView *div1 = [UIView new];
@@ -118,6 +119,8 @@ const static CGFloat kJVFieldFloatingLabelFontSize = 11.0f;
     descriptionField.font = [UIFont systemFontOfSize:kJVFieldFontSize];
     descriptionField.floatingLabel.font = [UIFont boldSystemFontOfSize:kJVFieldFloatingLabelFontSize];
     descriptionField.floatingLabelTextColor = floatingLabelColor;
+//    descriptionField.backgroundColor = [UIColor yellowColor];
+    descriptionField.text = @"Descriptio中文n";
     [self.view addSubview:descriptionField];
     
     [titleField becomeFirstResponder];
