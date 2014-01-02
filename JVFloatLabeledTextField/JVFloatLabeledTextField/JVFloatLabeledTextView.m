@@ -74,12 +74,26 @@ const static CGFloat JVFloatLabeledTextViewDefaultRetinaInsetNudge = 0.5f; // iO
                                              selector:@selector(textDidChange:)
                                                  name:UITextViewTextDidChangeNotification
                                                object:self];
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(layoutSubviews)
+                                                 name:UITextViewTextDidBeginEditingNotification
+                                               object:self];
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(layoutSubviews)
+                                                 name:UITextViewTextDidEndEditingNotification
+                                               object:self];
 }
 
 - (void)dealloc
 {
     [[NSNotificationCenter defaultCenter] removeObserver:self
                                                     name:UITextViewTextDidChangeNotification
+                                                  object:self];
+    [[NSNotificationCenter defaultCenter] removeObserver:self
+                                                    name:UITextViewTextDidBeginEditingNotification
+                                                  object:self];
+    [[NSNotificationCenter defaultCenter] removeObserver:self
+                                                    name:UITextViewTextDidEndEditingNotification
                                                   object:self];
 }
 
