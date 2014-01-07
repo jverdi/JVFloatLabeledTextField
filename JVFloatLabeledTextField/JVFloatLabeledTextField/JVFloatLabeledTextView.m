@@ -207,7 +207,7 @@ const static CGFloat JVFloatLabeledTextViewDefaultRetinaInsetNudge = 0.5f; // iO
     }
     else if (self.textAlignment == NSTextAlignmentRight) {
         floatingLabelOriginX = self.frame.size.width - _floatingLabel.frame.size.width;
-        placeholderLabelOriginX = self.frame.size.width - _placeholderLabel.frame.size.width;
+        placeholderLabelOriginX = self.frame.size.width - _placeholderLabel.frame.size.width - self.textContainerInset.right;
     }
     
     _floatingLabel.frame = CGRectMake(floatingLabelOriginX, _floatingLabel.frame.origin.y,
