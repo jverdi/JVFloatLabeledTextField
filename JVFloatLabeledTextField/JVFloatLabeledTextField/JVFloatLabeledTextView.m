@@ -198,17 +198,23 @@ const static CGFloat JVFloatLabeledTextViewDefaultRetinaInsetNudge = 0.5f; // iO
 
 - (void)setLabelOriginForTextAlignment
 {
-    CGFloat originX = [self textRect].origin.x;
+    CGFloat floatingLabelOriginX = [self textRect].origin.x;
+    CGFloat placeholderLabelOriginX = floatingLabelOriginX;
     
     if (self.textAlignment == NSTextAlignmentCenter) {
-        originX = (self.frame.size.width/2) - (_floatingLabel.frame.size.width/2);
+        floatingLabelOriginX = (self.frame.size.width/2) - (_floatingLabel.frame.size.width/2);
+        placeholderLabelOriginX = (self.frame.size.width/2) - (_placeholderLabel.frame.size.width/2);
     }
     else if (self.textAlignment == NSTextAlignmentRight) {
-        originX = self.frame.size.width - _floatingLabel.frame.size.width;
+        floatingLabelOriginX = self.frame.size.width - _floatingLabel.frame.size.width;
+        placeholderLabelOriginX = self.frame.size.width - _placeholderLabel.frame.size.width;
     }
     
-    _floatingLabel.frame = CGRectMake(originX, _floatingLabel.frame.origin.y,
+    _floatingLabel.frame = CGRectMake(floatingLabelOriginX, _floatingLabel.frame.origin.y,
                                       _floatingLabel.frame.size.width, _floatingLabel.frame.size.height);
+    
+    _placeholderLabel.frame = CGRectMake(placeholderLabelOriginX, _placeholderLabel.frame.origin.y,
+                                         _placeholderLabel.frame.size.width, _placeholderLabel.frame.size.height);
 }
 
 - (CGRect)textRect
