@@ -200,4 +200,17 @@
     }
 }
 
+#pragma mark - Accessibility
+
+- (NSString *)accessibilityLabel
+{
+    NSString *accessibilityLabel;
+    if ([self.text isEqualToString:@""] == NO) {
+        accessibilityLabel = [self.floatingLabel accessibilityLabel];
+    } else {
+        accessibilityLabel = self.text;
+    }
+    return accessibilityLabel;
+}
+
 @end
