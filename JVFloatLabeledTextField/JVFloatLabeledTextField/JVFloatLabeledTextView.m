@@ -8,14 +8,6 @@
 
 #import "JVFloatLabeledTextView.h"
 
-const static CGFloat JVFloatLabeledTextViewDefaultLeftInset = 5.0f; // iOS default
-const static CGFloat JVFloatLabeledTextViewDefaultTopInset = 8.0f; // iOS default
-
-const static CGFloat JVFloatLabeledTextViewDefaultLeft6Inset = 8.0f; // iOS default
-const static CGFloat JVFloatLabeledTextViewDefaultTop6Inset = 12.0f; // iOS default
-
-const static CGFloat JVFloatLabeledTextViewDefaultRetinaInsetNudge = 0.5f; // iOS default
-
 @interface JVFloatLabeledTextView ()
 
 @property (nonatomic, strong, readonly) UILabel * placeholderLabel;
