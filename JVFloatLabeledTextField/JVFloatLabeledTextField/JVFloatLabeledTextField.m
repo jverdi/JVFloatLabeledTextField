@@ -200,6 +200,15 @@
     }
 }
 
+- (BOOL)canPerformAction:(SEL)action withSender:(id)sender
+{
+    if (action == @selector(paste:)) {
+        return (_disablePasting) ? NO : YES;
+    }
+    
+    return [super canPerformAction:action withSender:sender];
+}
+
 #pragma mark - Accessibility
 
 - (NSString *)accessibilityLabel
