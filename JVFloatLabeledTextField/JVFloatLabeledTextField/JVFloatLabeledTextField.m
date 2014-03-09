@@ -80,7 +80,8 @@
     return [UIColor blueColor];
 }
 
-- (void) setFloatingLabelFont:(UIFont *)floatingLabelFont {
+- (void) setFloatingLabelFont:(UIFont *)floatingLabelFont
+{
     _floatingLabelFont = floatingLabelFont;
     _floatingLabel.font = (_floatingLabelFont ? _floatingLabelFont : [UIFont boldSystemFontOfSize:12.0f]);
     self.placeholder = self.placeholder; // Force the label to lay itself out with the new font.
@@ -133,13 +134,15 @@
 
 - (void)setLabelOriginForTextAlignment
 {
-    CGFloat originX = _floatingLabel.frame.origin.x;
+    CGRect textRect = [self textRectForBounds:self.bounds];
+    
+    CGFloat originX = textRect.origin.x;
     
     if (self.textAlignment == NSTextAlignmentCenter) {
-        originX = (self.frame.size.width/2) - (_floatingLabel.frame.size.width/2);
+        originX = textRect.origin.x + (textRect.size.width/2) - (_floatingLabel.frame.size.width/2);
     }
     else if (self.textAlignment == NSTextAlignmentRight) {
-        originX = self.frame.size.width - _floatingLabel.frame.size.width;
+        originX = textRect.origin.x + textRect.size.width - _floatingLabel.frame.size.width;
     }
     
     _floatingLabel.frame = CGRectMake(originX, _floatingLabel.frame.origin.y,

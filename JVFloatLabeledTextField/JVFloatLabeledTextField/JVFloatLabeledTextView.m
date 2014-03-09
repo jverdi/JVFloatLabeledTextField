@@ -221,7 +221,8 @@
     return rect;
 }
 
-- (void) setFloatingLabelFont:(UIFont *)floatingLabelFont {
+- (void) setFloatingLabelFont:(UIFont *)floatingLabelFont
+{
     _floatingLabelFont = floatingLabelFont;
     _floatingLabel.font = (_floatingLabelFont ? _floatingLabelFont : [UIFont boldSystemFontOfSize:12.0f]);
     self.placeholder = self.placeholder; // Force the label to lay itself out with the new font.
