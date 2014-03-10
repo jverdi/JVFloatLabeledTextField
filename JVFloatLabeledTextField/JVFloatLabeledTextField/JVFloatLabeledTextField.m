@@ -64,6 +64,7 @@
     // some basic default fonts/colors
     _floatingLabel.font = [UIFont boldSystemFontOfSize:12.0f];
     _floatingLabelTextColor = [UIColor grayColor];
+    _placeholderColor = [UIColor grayColor];
     _animateEvenIfNotFirstResponder = NO;
 }
 
@@ -150,6 +151,24 @@
 }
 
 #pragma mark - UITextField
+
+- (void)drawPlaceholderInRect:(CGRect)rect
+{
+    if ([self.placeholder respondsToSelector:@selector(drawInRect:withAttributes:)]) { // iOS7 and later
+        NSDictionary *attributes = @{NSForegroundColorAttributeName: _placeholderColor,
+                                     NSFontAttributeName: self.font};
+        
+        CGRect boundingRect = [self.placeholder boundingRectWithSize:rect.size options:0 attributes:attributes context:nil];
+        [self.placeholder drawAtPoint:CGPointMake(0.0f, (rect.size.height / 2.0f) - boundingRect.size.height / 2.0f) withAttributes:attributes];
+    } else {
+        // iOS 6
+        [_placeholderColor setFill];
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wdeprecated-declarations"
+        [self.placeholder drawInRect:rect withFont:self.font lineBreakMode:NSLineBreakByTruncatingTail alignment:self.textAlignment];
+#pragma clang diagnostic pop
+    }
+}
 
 - (void)setPlaceholder:(NSString *)placeholder
 {
