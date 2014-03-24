@@ -101,6 +101,16 @@
     [_floatingLabel sizeToFit];
 }
 
+- (void)setPlaceholder:(NSString *)placeholder floatingTitle:(NSString *)floatingTitle
+{
+    _placeholder = placeholder;
+    _placeholderLabel.text = placeholder;
+    [_placeholderLabel sizeToFit];
+
+    _floatingLabel.text = floatingTitle;
+    [_floatingLabel sizeToFit];
+}
+
 - (void)layoutSubviews
 {
     [super layoutSubviews];
@@ -221,7 +231,7 @@
     return rect;
 }
 
-- (void) setFloatingLabelFont:(UIFont *)floatingLabelFont
+- (void)setFloatingLabelFont:(UIFont *)floatingLabelFont
 {
     _floatingLabelFont = floatingLabelFont;
     _floatingLabel.font = (_floatingLabelFont ? _floatingLabelFont : [UIFont boldSystemFontOfSize:12.0f]);

@@ -80,7 +80,7 @@
     return [UIColor blueColor];
 }
 
-- (void) setFloatingLabelFont:(UIFont *)floatingLabelFont
+- (void)setFloatingLabelFont:(UIFont *)floatingLabelFont
 {
     _floatingLabelFont = floatingLabelFont;
     _floatingLabel.font = (_floatingLabelFont ? _floatingLabelFont : [UIFont boldSystemFontOfSize:12.0f]);
@@ -156,6 +156,14 @@
     [super setPlaceholder:placeholder];
     
     _floatingLabel.text = placeholder;
+    [_floatingLabel sizeToFit];
+}
+
+- (void)setPlaceholder:(NSString *)placeholder floatingTitle:(NSString *)floatingTitle
+{
+    [super setPlaceholder:placeholder];
+
+    _floatingLabel.text = floatingTitle;
     [_floatingLabel sizeToFit];
 }
 

@@ -37,4 +37,12 @@
 @property (nonatomic, strong) UIColor * floatingLabelActiveTextColor UI_APPEARANCE_SELECTOR; // tint color is used by default if not provided
 @property (nonatomic, assign) NSInteger animateEvenIfNotFirstResponder UI_APPEARANCE_SELECTOR; // Can't use BOOL for UI_APPEARANCE. Non-zero == YES
 
+/**
+ *  Sets the placeholder and the floating title
+ *
+ *  @param placeholder   The string that is displayed when there is no other text in the text field.
+ *  @param floatingTitle The string that is displayed above the text field when it's not empty.
+ */
+- (void)setPlaceholder:(NSString *)placeholder floatingTitle:(NSString *)floatingTitle;
+
 @end
