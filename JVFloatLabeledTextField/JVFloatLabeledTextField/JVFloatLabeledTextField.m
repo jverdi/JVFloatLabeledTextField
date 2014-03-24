@@ -27,8 +27,8 @@
 
 #import "JVFloatLabeledTextField.h"
 
-@interface JVFloatLabeledTextField ()
-@end
+#define kFloatingLabelShowAnimationDuration 0.3f
+#define kFloatingLabelHideAnimationDuration 0.3f
 
 @implementation JVFloatLabeledTextField
 
@@ -65,6 +65,8 @@
     _floatingLabel.font = [UIFont boldSystemFontOfSize:12.0f];
     _floatingLabelTextColor = [UIColor grayColor];
     _animateEvenIfNotFirstResponder = NO;
+    _floatingLabelShowAnimationDuration = kFloatingLabelShowAnimationDuration;
+    _floatingLabelHideAnimationDuration = kFloatingLabelHideAnimationDuration;
 }
 
 #pragma mark -
@@ -98,7 +100,7 @@
     };
     
     if (animated || _animateEvenIfNotFirstResponder) {
-        [UIView animateWithDuration:0.3f
+        [UIView animateWithDuration:_floatingLabelShowAnimationDuration
                               delay:0.0f
                             options:UIViewAnimationOptionBeginFromCurrentState|UIViewAnimationOptionCurveEaseOut
                          animations:showBlock
@@ -121,7 +123,7 @@
     };
     
     if (animated || _animateEvenIfNotFirstResponder) {
-        [UIView animateWithDuration:0.3f
+        [UIView animateWithDuration:_floatingLabelHideAnimationDuration
                               delay:0.0f
                             options:UIViewAnimationOptionBeginFromCurrentState|UIViewAnimationOptionCurveEaseIn
                          animations:hideBlock
@@ -154,7 +156,7 @@
 - (void)setPlaceholder:(NSString *)placeholder
 {
     [super setPlaceholder:placeholder];
-    
+
     _floatingLabel.text = placeholder;
     [_floatingLabel sizeToFit];
 }
