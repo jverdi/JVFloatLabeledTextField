@@ -161,6 +161,14 @@
     [_floatingLabel sizeToFit];
 }
 
+- (void)setAttributedPlaceholder:(NSAttributedString *)attributedPlaceholder
+{
+    [super setAttributedPlaceholder:attributedPlaceholder];
+	
+    _floatingLabel.text = attributedPlaceholder.string;
+    [_floatingLabel sizeToFit];
+}
+
 - (void)setPlaceholder:(NSString *)placeholder floatingTitle:(NSString *)floatingTitle
 {
     [super setPlaceholder:placeholder];
