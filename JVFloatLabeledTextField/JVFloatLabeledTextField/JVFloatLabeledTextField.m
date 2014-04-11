@@ -180,6 +180,7 @@
 
 - (CGRect)textRectForBounds:(CGRect)bounds
 {
+    self.autocompleteTextOffset = CGPointMake(self.autocompleteTextOffset.x, -1.0f); // TODO: Adjust it better
     return UIEdgeInsetsInsetRect([super textRectForBounds:bounds], UIEdgeInsetsMake(ceilf(_floatingLabel.font.lineHeight+_floatingLabelYPadding.floatValue), 0.0f, 0.0f, 0.0f));
 }
 

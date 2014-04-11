@@ -26,9 +26,9 @@
 //  CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 
-#import <UIKit/UIKit.h>
+#import <HTAutocompleteTextField/HTAutocompleteTextField.h>
 
-@interface JVFloatLabeledTextField : UITextField
+@interface JVFloatLabeledTextField : HTAutocompleteTextField
 
 @property (nonatomic, strong, readonly) UILabel * floatingLabel;
 @property (nonatomic, strong) NSNumber * floatingLabelYPadding UI_APPEARANCE_SELECTOR;
