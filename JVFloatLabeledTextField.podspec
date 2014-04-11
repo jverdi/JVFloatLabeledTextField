@@ -11,5 +11,5 @@ Pod::Spec.new do |s|
   s.source_files = 'JVFloatLabeledTextField/JVFloatLabeledTextField/*.{h,m}'
   s.frameworks   = 'Foundation', 'UIKit'
   s.requires_arc = true
-  s.dependency = 'HTAutocompleteTextField'
+  s.dependency     'HTAutocompleteTextField'
 end
