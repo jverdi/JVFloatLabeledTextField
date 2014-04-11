@@ -191,7 +191,7 @@
 - (CGRect)clearButtonRectForBounds:(CGRect)bounds
 {
     CGRect rect = [super clearButtonRectForBounds:bounds];
-    rect = CGRectMake(rect.origin.x, rect.origin.y + (_floatingLabel.font.lineHeight / 2.0) + (_floatingLabelYPadding.floatValue / 2.0f), rect.size.width, rect.size.height);
+    rect = CGRectMake(CGRectGetWidth(self.frame) - CGRectGetWidth(bounds) - self.xOffsetForClearButton, rect.origin.y + (_floatingLabel.font.lineHeight / 2.0) + (_floatingLabelYPadding.floatValue / 2.0f), rect.size.width, rect.size.height);
     return rect;
 }
 

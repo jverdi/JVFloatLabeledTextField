@@ -37,5 +37,6 @@
 @property (nonatomic, strong) UIColor * floatingLabelActiveTextColor UI_APPEARANCE_SELECTOR; // tint color is used by default if not provided
 @property (nonatomic, assign) NSInteger animateEvenIfNotFirstResponder UI_APPEARANCE_SELECTOR; // Can't use BOOL for UI_APPEARANCE. Non-zero == YES
 @property (nonatomic, strong) UIColor * placeholderColor UI_APPEARANCE_SELECTOR;
+@property (nonatomic, assign) CGFloat xOffsetForClearButton; UI_APPEARANCE_SELECTOR
 
 @end
