@@ -56,9 +56,13 @@ const static CGFloat kJVFieldFloatingLabelFontSize = 11.0f;
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
 
+    CGFloat topOffset = 0;
+    
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= 70000
     [self.view setTintColor:[UIColor blueColor]];
     
-    CGFloat topOffset = [[UIApplication sharedApplication] statusBarFrame].size.height + self.navigationController.navigationBar.frame.size.height;
+    topOffset = [[UIApplication sharedApplication] statusBarFrame].size.height + self.navigationController.navigationBar.frame.size.height;
+#endif
     
     UIColor *floatingLabelColor = [UIColor grayColor];
     
