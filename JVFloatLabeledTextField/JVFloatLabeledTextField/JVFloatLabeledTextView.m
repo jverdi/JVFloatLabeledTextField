@@ -68,7 +68,7 @@
     _floatingLabelHideAnimationDuration = kFloatingLabelHideAnimationDuration;
 
     [[NSNotificationCenter defaultCenter] addObserver:self
-                                             selector:@selector(textDidChange:)
+                                             selector:@selector(layoutSubviews)
                                                  name:UITextViewTextDidChangeNotification
                                                object:self];
     [[NSNotificationCenter defaultCenter] addObserver:self
@@ -123,6 +123,7 @@
     
     CGRect textRect = [self textRect];
     
+    _placeholderLabel.alpha = [self.text length] > 0 ? 0.0f : 1.0f;
     _placeholderLabel.frame = CGRectMake(textRect.origin.x, textRect.origin.y,
                                          _placeholderLabel.frame.size.width, _placeholderLabel.frame.size.height);
     [self setLabelOriginForTextAlignment];
@@ -252,13 +253,6 @@
 
 #pragma mark - UITextView
 
-- (void)setText:(NSString *)text
-{
-    [super setText:text];
-    self.placeholderLabel.alpha = [self.text length] > 0 ? 0.0f : 1.0f;
-    [self layoutSubviews];
-}
-
 - (void)setTextAlignment:(NSTextAlignment)textAlignment
 {
     [super setTextAlignment:textAlignment];
@@ -270,14 +264,6 @@
 {
     [super setFont:font];
     self.placeholderLabel.font = self.font;
-    [self layoutSubviews];
-}
-
-#pragma mark - Notifications
-
-- (void)textDidChange:(NSNotification *)notification
-{
-    self.placeholderLabel.alpha = [self.text length] > 0 ? 0.0f : 1.0f;
     [self layoutSubviews];
 }
 
