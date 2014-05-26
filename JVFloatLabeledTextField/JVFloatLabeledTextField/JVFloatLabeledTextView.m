@@ -48,7 +48,7 @@
     self.startingTextContainerInsetTop = self.textContainerInset.top - 3;
     self.textContainer.lineFragmentPadding = 0;
     
-    _placeholderLabel = [UILabel new];
+    _placeholderLabel = [[UILabel alloc] initWithFrame:self.frame];
     _placeholderLabel.font = self.font;
     _placeholderLabel.text = self.placeholder;
     _placeholderLabel.numberOfLines = 0;
