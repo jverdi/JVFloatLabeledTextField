@@ -45,7 +45,8 @@
 
 - (void)commonInit
 {
-    self.startingTextContainerInsetTop = self.textContainerInset.top;
+    self.startingTextContainerInsetTop = self.textContainerInset.top - 3;
+    self.textContainer.lineFragmentPadding = 0;
     
     _placeholderLabel = [UILabel new];
     _placeholderLabel.font = self.font;
@@ -248,7 +249,7 @@
 
 + (UIColor *)defaultiOSPlaceholderColor
 {
-    return [UIColor colorWithWhite:0.702f alpha:1.0f];
+    return [[UIColor lightGrayColor] colorWithAlphaComponent:0.65f];
 }
 
 #pragma mark - UITextView
