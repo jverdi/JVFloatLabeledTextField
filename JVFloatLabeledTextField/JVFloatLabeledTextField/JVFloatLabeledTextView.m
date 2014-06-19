@@ -7,6 +7,7 @@
 //
 
 #import "JVFloatLabeledTextView.h"
+#import "NSString+TextDirectionality.h"
 
 #define kFloatingLabelShowAnimationDuration 0.3f
 #define kFloatingLabelHideAnimationDuration 0.3f
@@ -216,6 +217,12 @@
     else if (self.textAlignment == NSTextAlignmentRight) {
         floatingLabelOriginX = self.frame.size.width - _floatingLabel.frame.size.width;
         placeholderLabelOriginX = self.frame.size.width - _placeholderLabel.frame.size.width - self.textContainerInset.right;
+    } else if (self.textAlignment == NSTextAlignmentNatural) {
+        JVTextDirection baseDirection = [_floatingLabel.text getBaseDirection];
+        if (baseDirection == JVTextDirectionRightToLeft) {
+            floatingLabelOriginX = self.frame.size.width - _floatingLabel.frame.size.width;
+            placeholderLabelOriginX = self.frame.size.width - _placeholderLabel.frame.size.width - self.textContainerInset.right;
+        }
     }
     
     _floatingLabel.frame = CGRectMake(floatingLabelOriginX, _floatingLabel.frame.origin.y,

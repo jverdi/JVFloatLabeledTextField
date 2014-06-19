@@ -26,6 +26,7 @@
 //  CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 #import "JVFloatLabeledTextField.h"
+#import "NSString+TextDirectionality.h"
 
 #define kFloatingLabelShowAnimationDuration 0.3f
 #define kFloatingLabelHideAnimationDuration 0.3f
@@ -145,6 +146,11 @@
     }
     else if (self.textAlignment == NSTextAlignmentRight) {
         originX = textRect.origin.x + textRect.size.width - _floatingLabel.frame.size.width;
+    } else if (self.textAlignment == NSTextAlignmentNatural) {
+        JVTextDirection baseDirection = [_floatingLabel.text getBaseDirection];
+        if (baseDirection == JVTextDirectionRightToLeft) {
+            originX = textRect.origin.x + textRect.size.width - _floatingLabel.frame.size.width;
+        }
     }
     
     _floatingLabel.frame = CGRectMake(originX, _floatingLabel.frame.origin.y,
