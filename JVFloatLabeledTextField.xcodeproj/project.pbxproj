@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4306C37419531E7000CC0A4C /* NSString+TextDirectionality.m in Sources */ = {isa = PBXBuildFile; fileRef = 4306C37319531E7000CC0A4C /* NSString+TextDirectionality.m */; };
 		7F50335A17FA7B0A0026FB7F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F50335917FA7B0A0026FB7F /* Foundation.framework */; };
 		7F50335E17FA7B0A0026FB7F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F50335D17FA7B0A0026FB7F /* UIKit.framework */; };
 		7F50336617FA7B0A0026FB7F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F50336517FA7B0A0026FB7F /* main.m */; };
@@ -20,6 +21,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4306C37219531E7000CC0A4C /* NSString+TextDirectionality.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+TextDirectionality.h"; sourceTree = "<group>"; };
+		4306C37319531E7000CC0A4C /* NSString+TextDirectionality.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+TextDirectionality.m"; sourceTree = "<group>"; };
 		7F50335617FA7B0A0026FB7F /* JVFloatLabeledTextField.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JVFloatLabeledTextField.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7F50335917FA7B0A0026FB7F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		7F50335D17FA7B0A0026FB7F /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -119,6 +122,8 @@
 				7FF4DB93180B865F008527BD /* JVFloatLabeledTextField.m */,
 				7F9AB495183B2EBF00694AB0 /* JVFloatLabeledTextView.h */,
 				7F9AB496183B2EBF00694AB0 /* JVFloatLabeledTextView.m */,
+				4306C37219531E7000CC0A4C /* NSString+TextDirectionality.h */,
+				4306C37319531E7000CC0A4C /* NSString+TextDirectionality.m */,
 			);
 			path = JVFloatLabeledTextField;
 			sourceTree = "<group>";
@@ -159,6 +164,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				ar,
 			);
 			mainGroup = 7F50334D17FA7B0A0026FB7F;
 			productRefGroup = 7F50335717FA7B0A0026FB7F /* Products */;
@@ -190,6 +196,7 @@
 			files = (
 				7FF4DB94180B865F008527BD /* JVFloatLabeledTextField.m in Sources */,
 				7F50338E17FA7B8C0026FB7F /* JVFloatLabeledTextFieldViewController.m in Sources */,
+				4306C37419531E7000CC0A4C /* NSString+TextDirectionality.m in Sources */,
 				7F50336A17FA7B0A0026FB7F /* JVAppDelegate.m in Sources */,
 				7F50336617FA7B0A0026FB7F /* main.m in Sources */,
 				7F9AB497183B2EBF00694AB0 /* JVFloatLabeledTextView.m in Sources */,
