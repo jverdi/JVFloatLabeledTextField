@@ -255,7 +255,7 @@
 
 + (UIColor *)defaultiOSPlaceholderColor
 {
-    return [UIColor colorWithWhite:0.702f alpha:1.0f];
+    return [[UIColor lightGrayColor] colorWithAlphaComponent:0.65f];
 }
 
 #pragma mark - UITextView
