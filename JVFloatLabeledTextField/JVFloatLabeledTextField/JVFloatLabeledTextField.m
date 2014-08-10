@@ -117,7 +117,7 @@
     void (^hideBlock)() = ^{
         _floatingLabel.alpha = 0.0f;
         _floatingLabel.frame = CGRectMake(_floatingLabel.frame.origin.x,
-                                          _floatingLabel.font.lineHeight + _placeholderYPadding.floatValue,
+                                          _floatingLabel.font.lineHeight + _placeholderYPadding,
                                           _floatingLabel.frame.size.width,
                                           _floatingLabel.frame.size.height);
 
@@ -185,18 +185,18 @@
 
 - (CGRect)textRectForBounds:(CGRect)bounds
 {
-    return UIEdgeInsetsInsetRect([super textRectForBounds:bounds], UIEdgeInsetsMake(ceilf(_floatingLabel.font.lineHeight+_placeholderYPadding.floatValue), 0.0f, 0.0f, 0.0f));
+    return UIEdgeInsetsInsetRect([super textRectForBounds:bounds], UIEdgeInsetsMake(ceilf(_floatingLabel.font.lineHeight+_placeholderYPadding), 0.0f, 0.0f, 0.0f));
 }
 
 - (CGRect)editingRectForBounds:(CGRect)bounds
 {
-    return UIEdgeInsetsInsetRect([super editingRectForBounds:bounds], UIEdgeInsetsMake(ceilf(_floatingLabel.font.lineHeight+_placeholderYPadding.floatValue), 0.0f, 0.0f, 0.0f));
+    return UIEdgeInsetsInsetRect([super editingRectForBounds:bounds], UIEdgeInsetsMake(ceilf(_floatingLabel.font.lineHeight+_placeholderYPadding), 0.0f, 0.0f, 0.0f));
 }
 
 - (CGRect)clearButtonRectForBounds:(CGRect)bounds
 {
     CGRect rect = [super clearButtonRectForBounds:bounds];
-    rect = CGRectMake(rect.origin.x, rect.origin.y + (_floatingLabel.font.lineHeight / 2.0) + (_placeholderYPadding.floatValue / 2.0f), rect.size.width, rect.size.height);
+    rect = CGRectMake(rect.origin.x, rect.origin.y + (_floatingLabel.font.lineHeight / 2.0) + (_placeholderYPadding / 2.0f), rect.size.width, rect.size.height);
     return rect;
 }
 
