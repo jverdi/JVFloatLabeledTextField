@@ -274,6 +274,13 @@
     [self layoutSubviews];
 }
 
+- (void)setText:(NSString *)text
+{
+    [super setText:text];
+    
+    [self layoutSubviews];
+}
+
 #pragma mark - Accessibility
 
 - (NSString *)accessibilityLabel
