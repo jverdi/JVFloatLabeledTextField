@@ -168,7 +168,7 @@
     if (animated || _animateEvenIfNotFirstResponder) {
         [UIView animateWithDuration:_floatingLabelShowAnimationDuration
                               delay:0.0f
-                            options:UIViewAnimationOptionBeginFromCurrentState|UIViewAnimationOptionCurveEaseOut
+                            options:UIViewAnimationOptionBeginFromCurrentState | UIViewAnimationOptionCurveEaseOut
                          animations:showBlock
                          completion:nil];
     }
@@ -191,7 +191,7 @@
     if (animated || _animateEvenIfNotFirstResponder) {
         [UIView animateWithDuration:_floatingLabelHideAnimationDuration
                               delay:0.0f
-                            options:UIViewAnimationOptionBeginFromCurrentState|UIViewAnimationOptionCurveEaseIn
+                            options:UIViewAnimationOptionBeginFromCurrentState | UIViewAnimationOptionCurveEaseIn
                          animations:hideBlock
                          completion:nil];
     }
@@ -293,8 +293,8 @@
 - (NSString *)accessibilityLabel
 {
     NSString *accessibilityLabel;
-    if ([self.text isEqualToString:@""] == NO) {
-        accessibilityLabel = [NSString stringWithFormat:@"%@ %@",[self.floatingLabel accessibilityLabel],self.text];
+    if (![self.text isEqualToString:@""]) {
+        accessibilityLabel = [NSString stringWithFormat:@"%@ %@", [self.floatingLabel accessibilityLabel], self.text];
     } else {
         accessibilityLabel = [self.floatingLabel accessibilityLabel];
     }
