@@ -47,6 +47,7 @@
 - (void)commonInit
 {
     self.startingTextContainerInsetTop = self.textContainerInset.top;
+    self.floatingLabelShouldLockToTop = YES;
     
     _placeholderLabel = [UILabel new];
     _placeholderLabel.font = self.font;
@@ -59,6 +60,7 @@
     
     _floatingLabel = [UILabel new];
     _floatingLabel.alpha = 0.0f;
+    _floatingLabel.backgroundColor = self.backgroundColor;
     [self addSubview:_floatingLabel];
 	
     // some basic default fonts/colors
@@ -105,6 +107,12 @@
     
     _floatingLabel.text = placeholder;
     [_floatingLabel sizeToFit];
+    if (self.floatingLabelShouldLockToTop) {
+        _floatingLabel.frame = CGRectMake(_floatingLabel.frame.origin.x,
+                                          _floatingLabel.frame.origin.y,
+                                          self.frame.size.width,
+                                          _floatingLabel.frame.size.height);
+    }
 }
 
 - (void)setPlaceholder:(NSString *)placeholder floatingTitle:(NSString *)floatingTitle
@@ -159,13 +167,18 @@
 {
     void (^showBlock)() = ^{
         _floatingLabel.alpha = 1.0f;
+        CGFloat top = _floatingLabelYPadding;
+        if (self.floatingLabelShouldLockToTop) {
+            top += self.contentOffset.y;
+        }
         _floatingLabel.frame = CGRectMake(_floatingLabel.frame.origin.x,
-                                          _floatingLabelYPadding,
+                                          top,
                                           _floatingLabel.frame.size.width,
                                           _floatingLabel.frame.size.height);
     };
     
-    if (animated || _animateEvenIfNotFirstResponder) {
+    if ((animated || _animateEvenIfNotFirstResponder)
+        && (!self.floatingLabelShouldLockToTop || _floatingLabel.alpha != 1.0f)) {
         [UIView animateWithDuration:_floatingLabelShowAnimationDuration
                               delay:0.0f
                             options:UIViewAnimationOptionBeginFromCurrentState | UIViewAnimationOptionCurveEaseOut
@@ -286,6 +299,15 @@
 {
     _placeholderTextColor = placeholderTextColor;
     _placeholderLabel.textColor = _placeholderTextColor;
+}
+
+- (void)setBackgroundColor:(UIColor *)backgroundColor
+{
+    [super setBackgroundColor:backgroundColor];
+    
+    if (self.floatingLabelShouldLockToTop) {
+        _floatingLabel.backgroundColor = self.backgroundColor;
+    }
 }
 
 #pragma mark - Accessibility
