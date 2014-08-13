@@ -185,19 +185,23 @@
 
 - (CGRect)textRectForBounds:(CGRect)bounds
 {
-    return UIEdgeInsetsInsetRect([super textRectForBounds:bounds], UIEdgeInsetsMake(ceilf(_floatingLabel.font.lineHeight+_placeholderYPadding), 0.0f, 0.0f, 0.0f));
+    CGRect rect = [super textRectForBounds:bounds];
+    rect = UIEdgeInsetsInsetRect(rect, UIEdgeInsetsMake(ceilf(_floatingLabel.font.lineHeight+_placeholderYPadding), 0.0f, 0.0f, 0.0f));
+    return CGRectIntegral(rect);
 }
 
 - (CGRect)editingRectForBounds:(CGRect)bounds
 {
-    return UIEdgeInsetsInsetRect([super editingRectForBounds:bounds], UIEdgeInsetsMake(ceilf(_floatingLabel.font.lineHeight+_placeholderYPadding), 0.0f, 0.0f, 0.0f));
+    CGRect rect = [super editingRectForBounds:bounds];
+    rect = UIEdgeInsetsInsetRect(rect, UIEdgeInsetsMake(ceilf(_floatingLabel.font.lineHeight+_placeholderYPadding), 0.0f, 0.0f, 0.0f));
+    return CGRectIntegral(rect);
 }
 
 - (CGRect)clearButtonRectForBounds:(CGRect)bounds
 {
     CGRect rect = [super clearButtonRectForBounds:bounds];
     rect = CGRectMake(rect.origin.x, rect.origin.y + (_floatingLabel.font.lineHeight / 2.0) + (_placeholderYPadding / 2.0f), rect.size.width, rect.size.height);
-    return rect;
+    return CGRectIntegral(rect);
 }
 
 - (void)setTextAlignment:(NSTextAlignment)textAlignment

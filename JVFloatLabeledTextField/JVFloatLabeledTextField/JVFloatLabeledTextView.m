@@ -241,7 +241,7 @@
         rect.origin.y += self.textContainerInset.top;
     }
     
-    return rect;
+    return CGRectIntegral(rect);
 }
 
 - (void)setFloatingLabelFont:(UIFont *)floatingLabelFont
