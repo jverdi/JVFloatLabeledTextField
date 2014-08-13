@@ -127,6 +127,7 @@
     _placeholderLabel.alpha = [self.text length] > 0 ? 0.0f : 1.0f;
     _placeholderLabel.frame = CGRectMake(textRect.origin.x, textRect.origin.y,
                                          _placeholderLabel.frame.size.width, _placeholderLabel.frame.size.height);
+    
     [self setLabelOriginForTextAlignment];
     
     if (self.floatingLabelFont) {
@@ -134,7 +135,7 @@
     }
     
     BOOL firstResponder = self.isFirstResponder;
-    _floatingLabel.textColor = (firstResponder && self.text && self.text.length > 0 ? self.getLabelActiveColor : self.floatingLabelTextColor);
+    _floatingLabel.textColor = (firstResponder && self.text && self.text.length > 0 ? self.labelActiveColor : self.floatingLabelTextColor);
     if (!self.text || 0 == [self.text length]) {
         [self hideFloatingLabel:firstResponder];
     }
@@ -143,7 +144,7 @@
     }
 }
 
-- (UIColor *)getLabelActiveColor
+- (UIColor *)labelActiveColor
 {
     if (_floatingLabelActiveTextColor) {
         return _floatingLabelActiveTextColor;

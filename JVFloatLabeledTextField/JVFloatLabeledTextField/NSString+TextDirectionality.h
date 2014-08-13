@@ -14,7 +14,6 @@ typedef NS_ENUM(NSUInteger, JVTextDirection) {
     JVTextDirectionRightToLeft,
 };
 
-
 @interface NSString (TextDirectionality)
 
 /**
@@ -23,6 +22,6 @@ typedef NS_ENUM(NSUInteger, JVTextDirection) {
  *
  *  @return the direction that the string in most likely to be.
  */
--(JVTextDirection)getBaseDirection;
+- (JVTextDirection)getBaseDirection;
 
 @end

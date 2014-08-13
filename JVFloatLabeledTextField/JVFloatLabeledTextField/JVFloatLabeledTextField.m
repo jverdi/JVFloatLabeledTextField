@@ -72,7 +72,7 @@
 
 #pragma mark -
 
-- (UIColor *)getLabelActiveColor
+- (UIColor *)labelActiveColor
 {
     if (_floatingLabelActiveTextColor) {
         return _floatingLabelActiveTextColor;
@@ -222,7 +222,7 @@
     }
     
     BOOL firstResponder = self.isFirstResponder;
-    _floatingLabel.textColor = (firstResponder && self.text && self.text.length > 0 ? self.getLabelActiveColor : self.floatingLabelTextColor);
+    _floatingLabel.textColor = (firstResponder && self.text && self.text.length > 0 ? self.labelActiveColor : self.floatingLabelTextColor);
     if (!self.text || 0 == [self.text length]) {
         [self hideFloatingLabel:firstResponder];
     }
