@@ -281,6 +281,12 @@
     [self layoutSubviews];
 }
 
+- (void)setPlaceholderTextColor:(UIColor *)placeholderTextColor
+{
+    _placeholderTextColor = placeholderTextColor;
+    _placeholderLabel.textColor = _placeholderTextColor;
+}
+
 #pragma mark - Accessibility
 
 - (NSString *)accessibilityLabel
