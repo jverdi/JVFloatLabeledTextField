@@ -64,11 +64,12 @@ const static CGFloat kJVFieldFloatingLabelFontSize = 11.0f;
     topOffset = [[UIApplication sharedApplication] statusBarFrame].size.height + self.navigationController.navigationBar.frame.size.height;
 #endif
     
-    UIColor *floatingLabelColor = [UIColor grayColor];
+    UIColor *floatingLabelColor = [UIColor brownColor];
     
     JVFloatLabeledTextField *titleField = [[JVFloatLabeledTextField alloc] initWithFrame:
                                            CGRectMake(kJVFieldHMargin, topOffset, self.view.frame.size.width - 2 * kJVFieldHMargin, kJVFieldHeight)];
-    titleField.placeholder = NSLocalizedString(@"Title", @"");
+    titleField.attributedPlaceholder = [[NSAttributedString alloc] initWithString:NSLocalizedString(@"Title", @"")
+                                                                       attributes:@{NSForegroundColorAttributeName: [UIColor darkGrayColor]}];
     titleField.font = [UIFont systemFontOfSize:kJVFieldFontSize];
     titleField.floatingLabel.font = [UIFont boldSystemFontOfSize:kJVFieldFloatingLabelFontSize];
     titleField.floatingLabelTextColor = floatingLabelColor;
@@ -86,7 +87,8 @@ const static CGFloat kJVFieldFloatingLabelFontSize = 11.0f;
     
     JVFloatLabeledTextField *priceField = [[JVFloatLabeledTextField alloc] initWithFrame:
                                            CGRectMake(kJVFieldHMargin, div1.frame.origin.y + div1.frame.size.height, 80.0f, kJVFieldHeight)];
-    priceField.placeholder = NSLocalizedString(@"Price", @"");
+    priceField.attributedPlaceholder = [[NSAttributedString alloc] initWithString:NSLocalizedString(@"Price", @"")
+                                                                       attributes:@{NSForegroundColorAttributeName: [UIColor darkGrayColor]}];
     priceField.font = [UIFont systemFontOfSize:kJVFieldFontSize];
     priceField.floatingLabel.font = [UIFont boldSystemFontOfSize:kJVFieldFloatingLabelFontSize];
     priceField.floatingLabelTextColor = floatingLabelColor;
@@ -104,7 +106,8 @@ const static CGFloat kJVFieldFloatingLabelFontSize = 11.0f;
                                                          div1.frame.origin.y + div1.frame.size.height,
                                                          self.view.frame.size.width - 3*kJVFieldHMargin - priceField.frame.size.width - 1.0f,
                                                          kJVFieldHeight)];
-    locationField.placeholder = NSLocalizedString(@"Specific Location (optional)", @"");
+    locationField.attributedPlaceholder = [[NSAttributedString alloc] initWithString:NSLocalizedString(@"Specific Location (optional)", @"")
+                                                                          attributes:@{NSForegroundColorAttributeName: [UIColor darkGrayColor]}];
     locationField.font = [UIFont systemFontOfSize:kJVFieldFontSize];
     locationField.floatingLabel.font = [UIFont boldSystemFontOfSize:kJVFieldFloatingLabelFontSize];
     locationField.floatingLabelTextColor = floatingLabelColor;
@@ -122,6 +125,7 @@ const static CGFloat kJVFieldFloatingLabelFontSize = 11.0f;
                                         self.view.frame.size.width - 2*kJVFieldHMargin + descriptionField.textContainer.lineFragmentPadding,
                                         kJVFieldHeight*3);
     descriptionField.placeholder = NSLocalizedString(@"Description", @"");
+    descriptionField.placeholderTextColor = [UIColor darkGrayColor];
     descriptionField.font = [UIFont systemFontOfSize:kJVFieldFontSize];
     descriptionField.floatingLabel.font = [UIFont boldSystemFontOfSize:kJVFieldFloatingLabelFontSize];
     descriptionField.floatingLabelTextColor = floatingLabelColor;
