@@ -66,7 +66,7 @@
 - (void)commonInit
 {
     self.startingTextContainerInsetTop = self.textContainerInset.top;
-    self.floatingLabelShouldLockToTop = YES;
+    self.floatingLabelShouldLockToTop = 1;
     self.textContainer.lineFragmentPadding = 0;
     
     _placeholderLabel = [[UILabel alloc] initWithFrame:self.frame];

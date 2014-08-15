@@ -25,27 +25,77 @@
 //  IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
 //  CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-
 #import <UIKit/UIKit.h>
 
+/**
+ * `JVFloatLabeledTextField` is a `UITextField` subclass that implements the "Float Label Pattern".
+ *
+ * Due to space constraints on mobile devices, it is common to rely solely on placeholders as a means to label fields.
+ * This presents a UX problem, in that, once the user begins to fill out a form, no labels are present.
+ *
+ * `JVFloatLabeledTextField` aims to improve the user experience by having placeholders transition into "floating labels" that hover above the text field after it is populated with text.
+ *
+ * JVFloatLabeledTextField supports iOS 6+.
+ *
+ * Credits for the concept to Matt D. Smith (@mds), and his original design:  http://mattdsmith.com/float-label-pattern/
+ */
 @interface JVFloatLabeledTextField : UITextField
 
+/**
+ * Read-only access to the floating label.
+ */
 @property (nonatomic, strong, readonly) UILabel * floatingLabel;
 
+/**
+ * Padding to be applied to the y coordinate of the floating label upon presentation.
+ */
 @property (nonatomic) CGFloat floatingLabelYPadding UI_APPEARANCE_SELECTOR;
+
+/**
+ * Padding to be applied to the y coordinate of the placeholder.
+ */
 @property (nonatomic) CGFloat placeholderYPadding UI_APPEARANCE_SELECTOR;
+
+/**
+ * Font to be applied to the floating label. Defaults to `[UIFont boldSystemFontOfSize:12.0f]`. 
+ * Provided for the convenience of using as an appearance proxy.
+ */
 @property (nonatomic, strong) UIFont * floatingLabelFont UI_APPEARANCE_SELECTOR;
+
+/**
+ * Text color to be applied to the floating label. Defaults to `[UIColor grayColor]`. 
+ * Provided for the convenience of using as an appearance proxy.
+ */
 @property (nonatomic, strong) UIColor * floatingLabelTextColor UI_APPEARANCE_SELECTOR;
-@property (nonatomic, strong) UIColor * floatingLabelActiveTextColor UI_APPEARANCE_SELECTOR; // tint color is used by default if not provided
-@property (nonatomic, assign) NSInteger animateEvenIfNotFirstResponder UI_APPEARANCE_SELECTOR; // Can't use BOOL for UI_APPEARANCE. Non-zero == YES
-@property (nonatomic, assign) NSTimeInterval floatingLabelShowAnimationDuration;
-@property (nonatomic, assign) NSTimeInterval floatingLabelHideAnimationDuration;
+
+/**
+ * Text color to be applied to the floating label while the field is a first responder.
+ * Tint color is used by default if an `floatingLabelActiveTextColor` is not provided.
+ */
+@property (nonatomic, strong) UIColor * floatingLabelActiveTextColor UI_APPEARANCE_SELECTOR;
+
+/**
+ * Indicates whether the floating label's appearance should be animated regardless of first responder status.
+ * By default, animation only occurs if the text field is a first responder.
+ * Non-zero values indicate truthiness. (BOOL cannot be used with UI_APPEARANCE_SELECTOR).
+ */
+@property (nonatomic, assign) NSInteger animateEvenIfNotFirstResponder UI_APPEARANCE_SELECTOR;
+
+/**
+ * Duration of the animation when showing the floating label. Defaults to 0.3 seconds.
+ */
+@property (nonatomic, assign) NSTimeInterval floatingLabelShowAnimationDuration UI_APPEARANCE_SELECTOR;
+
+/**
+ * Duration of the animation when hiding the floating label. Defaults to 0.3 seconds.
+ */
+@property (nonatomic, assign) NSTimeInterval floatingLabelHideAnimationDuration UI_APPEARANCE_SELECTOR;
 
 /**
  *  Sets the placeholder and the floating title
  *
- *  @param placeholder   The string that is displayed when there is no other text in the text field.
- *  @param floatingTitle The string that is displayed above the text field when it's not empty.
+ *  @param placeholder The string that to be shown in the text field when no other text is present.
+ *  @param floatingTitle The string to be shown above the text field once it has been populated with text by the user.
  */
 - (void)setPlaceholder:(NSString *)placeholder floatingTitle:(NSString *)floatingTitle;
 
