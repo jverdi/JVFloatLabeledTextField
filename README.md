@@ -1,5 +1,9 @@
 JVFloatLabeledTextField
 =======================
+[![Build Status](https://travis-ci.org/jverdi/JVFloatLabeledTextField.svg?branch=master)](https://travis-ci.org/jverdi/JVFloatLabeledTextField)
+[![Pod Version](http://img.shields.io/cocoapods/v/JVFloatLabeledTextField.svg)](http://cocoadocs.org/docsets/JVFloatLabeledTextField/)
+[![Pod Platform](http://img.shields.io/cocoapods/p/JVFloatLabeledTextField.svg)](http://cocoadocs.org/docsets/JVFloatLabeledTextField/)
+[![Pod License](http://img.shields.io/cocoapods/l/JVFloatLabeledTextField.svg)](http://jaredverdi.mit-license.org)
 
 `UITextField` subclass with placeholders that change into floating labels when the field is populated with text.
 
