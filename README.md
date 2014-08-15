@@ -12,11 +12,10 @@ This presents a UX problem, in that, once the user begins to fill out a form, no
 
 This UI component library, which includes both a `UITextField` and `UITextView` subclass, aims to improve the user experience by having placeholders transition into floating labels that hover above the fields after they are populated with text.
 
-Credits for the concept to Matt D. Smith ([@mds](http://www.twitter.com/mds)), and his original design:
+Credits for the concept to Matt D. Smith ([@mds](http://www.twitter.com/mds)), and his [original design](http://dribbble.com/shots/1254439--GIF-Mobile-Form-Interaction?list=users):
 
 ![Matt D. Smith's Design](http://dribbble.s3.amazonaws.com/users/6410/screenshots/1254439/form-animation-_gif_.gif)
 
-http://dribbble.com/shots/1254439--GIF-Mobile-Form-Interaction?list=users
 
 Currently, JVFloatLabeledTextField used alone is iOS 6+, but JVFloatLabeledTextView requires iOS 7 due to the use of UITextView's `textContainer`.
 
