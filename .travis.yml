@@ -1,2 +1,2 @@
 language: objective-c
-script: xctool -project JVFloatLabeledTextField.xcodeproj -scheme JVFloatLabeledTextField -sdk iphonesimulator
+script: xctool -project JVFloatLabeledTextField.xcodeproj -scheme JVFloatLabeledTextFieldTests -sdk iphonesimulator test

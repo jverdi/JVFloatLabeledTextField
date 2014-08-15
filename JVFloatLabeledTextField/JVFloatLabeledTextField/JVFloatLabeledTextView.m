@@ -33,7 +33,6 @@
 
 @interface JVFloatLabeledTextView ()
 
-@property (nonatomic, strong, readonly) UILabel * placeholderLabel;
 @property (nonatomic) CGFloat startingTextContainerInsetTop;
 
 @end
@@ -75,7 +74,8 @@
     _placeholderLabel.numberOfLines = 0;
     _placeholderLabel.lineBreakMode = NSLineBreakByWordWrapping;
     _placeholderLabel.backgroundColor = [UIColor clearColor];
-    _placeholderLabel.textColor = [JVFloatLabeledTextView defaultiOSPlaceholderColor];
+    _placeholderTextColor = [JVFloatLabeledTextView defaultiOSPlaceholderColor];
+    _placeholderLabel.textColor = _placeholderTextColor;
     [self insertSubview:_placeholderLabel atIndex:0];
     
     _floatingLabel = [UILabel new];
@@ -84,8 +84,11 @@
     [self addSubview:_floatingLabel];
 	
     // some basic default fonts/colors
-    _floatingLabel.font = [UIFont boldSystemFontOfSize:12.0f];
+    _floatingLabelFont = [UIFont boldSystemFontOfSize:12.0f];
+    _floatingLabel.font = _floatingLabelFont;
     _floatingLabelTextColor = [UIColor grayColor];
+    _floatingLabel.textColor = _floatingLabelTextColor;
+    _floatingLabelActiveTextColor = self.tintColor;
     _animateEvenIfNotFirstResponder = NO;
     _floatingLabelShowAnimationDuration = kFloatingLabelShowAnimationDuration;
     _floatingLabelHideAnimationDuration = kFloatingLabelHideAnimationDuration;

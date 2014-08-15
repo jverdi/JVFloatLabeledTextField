@@ -38,6 +38,16 @@
                ReferencedContainer = "container:JVFloatLabeledTextField.xcodeproj">
             </BuildableReference>
          </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "7F394932199DE5E10069C867"
+               BuildableName = "JVFloatLabeledTextFieldTests.xctest"
+               BlueprintName = "JVFloatLabeledTextFieldTests"
+               ReferencedContainer = "container:JVFloatLabeledTextField.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference

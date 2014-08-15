@@ -48,22 +48,26 @@
 
 /**
  * Padding to be applied to the y coordinate of the floating label upon presentation.
+ * Defaults to zero.
  */
 @property (nonatomic) CGFloat floatingLabelYPadding UI_APPEARANCE_SELECTOR;
 
 /**
  * Padding to be applied to the y coordinate of the placeholder.
+ * Defaults to zero.
  */
 @property (nonatomic) CGFloat placeholderYPadding UI_APPEARANCE_SELECTOR;
 
 /**
- * Font to be applied to the floating label. Defaults to `[UIFont boldSystemFontOfSize:12.0f]`. 
+ * Font to be applied to the floating label. 
+ * Defaults to `[UIFont boldSystemFontOfSize:12.0f]`.
  * Provided for the convenience of using as an appearance proxy.
  */
 @property (nonatomic, strong) UIFont * floatingLabelFont UI_APPEARANCE_SELECTOR;
 
 /**
- * Text color to be applied to the floating label. Defaults to `[UIColor grayColor]`. 
+ * Text color to be applied to the floating label. 
+ * Defaults to `[UIColor grayColor]`.
  * Provided for the convenience of using as an appearance proxy.
  */
 @property (nonatomic, strong) UIColor * floatingLabelTextColor UI_APPEARANCE_SELECTOR;
@@ -82,12 +86,14 @@
 @property (nonatomic, assign) NSInteger animateEvenIfNotFirstResponder UI_APPEARANCE_SELECTOR;
 
 /**
- * Duration of the animation when showing the floating label. Defaults to 0.3 seconds.
+ * Duration of the animation when showing the floating label. 
+ * Defaults to 0.3 seconds.
  */
 @property (nonatomic, assign) NSTimeInterval floatingLabelShowAnimationDuration UI_APPEARANCE_SELECTOR;
 
 /**
- * Duration of the animation when hiding the floating label. Defaults to 0.3 seconds.
+ * Duration of the animation when hiding the floating label. 
+ * Defaults to 0.3 seconds.
  */
 @property (nonatomic, assign) NSTimeInterval floatingLabelHideAnimationDuration UI_APPEARANCE_SELECTOR;
 

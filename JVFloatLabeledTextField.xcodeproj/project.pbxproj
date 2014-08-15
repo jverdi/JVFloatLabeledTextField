@@ -8,6 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		4306C37419531E7000CC0A4C /* NSString+TextDirectionality.m in Sources */ = {isa = PBXBuildFile; fileRef = 4306C37319531E7000CC0A4C /* NSString+TextDirectionality.m */; };
+		7F394935199DE5E10069C867 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F394934199DE5E10069C867 /* XCTest.framework */; };
+		7F394936199DE5E10069C867 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F50335917FA7B0A0026FB7F /* Foundation.framework */; };
+		7F394937199DE5E10069C867 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F50335D17FA7B0A0026FB7F /* UIKit.framework */; };
+		7F39493D199DE5E10069C867 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7F39493B199DE5E10069C867 /* InfoPlist.strings */; };
+		7F39493F199DE5E10069C867 /* JVFloatLabeledTextFieldTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F39493E199DE5E10069C867 /* JVFloatLabeledTextFieldTests.m */; };
+		7F394949199DE8B20069C867 /* JVFloatLabeledTextViewTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F394948199DE8B20069C867 /* JVFloatLabeledTextViewTests.m */; };
 		7F50335A17FA7B0A0026FB7F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F50335917FA7B0A0026FB7F /* Foundation.framework */; };
 		7F50335E17FA7B0A0026FB7F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F50335D17FA7B0A0026FB7F /* UIKit.framework */; };
 		7F50336617FA7B0A0026FB7F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F50336517FA7B0A0026FB7F /* main.m */; };
@@ -20,9 +26,26 @@
 		7FF4DB94180B865F008527BD /* JVFloatLabeledTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FF4DB93180B865F008527BD /* JVFloatLabeledTextField.m */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		7F394941199DE5E10069C867 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7F50334E17FA7B0A0026FB7F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7F50335517FA7B0A0026FB7F;
+			remoteInfo = JVFloatLabeledTextField;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		4306C37219531E7000CC0A4C /* NSString+TextDirectionality.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+TextDirectionality.h"; sourceTree = "<group>"; };
 		4306C37319531E7000CC0A4C /* NSString+TextDirectionality.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+TextDirectionality.m"; sourceTree = "<group>"; };
+		7F394933199DE5E10069C867 /* JVFloatLabeledTextFieldTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JVFloatLabeledTextFieldTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		7F394934199DE5E10069C867 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		7F39493A199DE5E10069C867 /* JVFloatLabeledTextFieldTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "JVFloatLabeledTextFieldTests-Info.plist"; sourceTree = "<group>"; };
+		7F39493C199DE5E10069C867 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		7F39493E199DE5E10069C867 /* JVFloatLabeledTextFieldTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JVFloatLabeledTextFieldTests.m; sourceTree = "<group>"; };
+		7F394940199DE5E10069C867 /* JVFloatLabeledTextFieldTests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "JVFloatLabeledTextFieldTests-Prefix.pch"; sourceTree = "<group>"; };
+		7F394948199DE8B20069C867 /* JVFloatLabeledTextViewTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JVFloatLabeledTextViewTests.m; sourceTree = "<group>"; };
 		7F50335617FA7B0A0026FB7F /* JVFloatLabeledTextField.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JVFloatLabeledTextField.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7F50335917FA7B0A0026FB7F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		7F50335D17FA7B0A0026FB7F /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -43,6 +66,16 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		7F394930199DE5E10069C867 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7F394935199DE5E10069C867 /* XCTest.framework in Frameworks */,
+				7F394937199DE5E10069C867 /* UIKit.framework in Frameworks */,
+				7F394936199DE5E10069C867 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		7F50335317FA7B0A0026FB7F /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -55,10 +88,31 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7F394938199DE5E10069C867 /* JVFloatLabeledTextFieldTests */ = {
+			isa = PBXGroup;
+			children = (
+				7F39493E199DE5E10069C867 /* JVFloatLabeledTextFieldTests.m */,
+				7F394948199DE8B20069C867 /* JVFloatLabeledTextViewTests.m */,
+				7F394939199DE5E10069C867 /* Supporting Files */,
+			);
+			path = JVFloatLabeledTextFieldTests;
+			sourceTree = "<group>";
+		};
+		7F394939199DE5E10069C867 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				7F39493A199DE5E10069C867 /* JVFloatLabeledTextFieldTests-Info.plist */,
+				7F39493B199DE5E10069C867 /* InfoPlist.strings */,
+				7F394940199DE5E10069C867 /* JVFloatLabeledTextFieldTests-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 		7F50334D17FA7B0A0026FB7F = {
 			isa = PBXGroup;
 			children = (
 				7F50335F17FA7B0A0026FB7F /* JVFloatLabeledTextField */,
+				7F394938199DE5E10069C867 /* JVFloatLabeledTextFieldTests */,
 				7F50335817FA7B0A0026FB7F /* Frameworks */,
 				7F50335717FA7B0A0026FB7F /* Products */,
 			);
@@ -68,6 +122,7 @@
 			isa = PBXGroup;
 			children = (
 				7F50335617FA7B0A0026FB7F /* JVFloatLabeledTextField.app */,
+				7F394933199DE5E10069C867 /* JVFloatLabeledTextFieldTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -77,6 +132,7 @@
 			children = (
 				7F50335917FA7B0A0026FB7F /* Foundation.framework */,
 				7F50335D17FA7B0A0026FB7F /* UIKit.framework */,
+				7F394934199DE5E10069C867 /* XCTest.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -131,6 +187,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		7F394932199DE5E10069C867 /* JVFloatLabeledTextFieldTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7F394943199DE5E10069C867 /* Build configuration list for PBXNativeTarget "JVFloatLabeledTextFieldTests" */;
+			buildPhases = (
+				7F39492F199DE5E10069C867 /* Sources */,
+				7F394930199DE5E10069C867 /* Frameworks */,
+				7F394931199DE5E10069C867 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				7F394942199DE5E10069C867 /* PBXTargetDependency */,
+			);
+			name = JVFloatLabeledTextFieldTests;
+			productName = JVFloatLabeledTextFieldTests;
+			productReference = 7F394933199DE5E10069C867 /* JVFloatLabeledTextFieldTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		7F50335517FA7B0A0026FB7F /* JVFloatLabeledTextField */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 7F50338217FA7B0A0026FB7F /* Build configuration list for PBXNativeTarget "JVFloatLabeledTextField" */;
@@ -157,6 +231,11 @@
 				CLASSPREFIX = JV;
 				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = "Jared Verdi";
+				TargetAttributes = {
+					7F394932199DE5E10069C867 = {
+						TestTargetID = 7F50335517FA7B0A0026FB7F;
+					};
+				};
 			};
 			buildConfigurationList = 7F50335117FA7B0A0026FB7F /* Build configuration list for PBXProject "JVFloatLabeledTextField" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -172,11 +251,20 @@
 			projectRoot = "";
 			targets = (
 				7F50335517FA7B0A0026FB7F /* JVFloatLabeledTextField */,
+				7F394932199DE5E10069C867 /* JVFloatLabeledTextFieldTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		7F394931199DE5E10069C867 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7F39493D199DE5E10069C867 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		7F50335417FA7B0A0026FB7F /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -190,6 +278,15 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		7F39492F199DE5E10069C867 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7F394949199DE8B20069C867 /* JVFloatLabeledTextViewTests.m in Sources */,
+				7F39493F199DE5E10069C867 /* JVFloatLabeledTextFieldTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		7F50335217FA7B0A0026FB7F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -205,7 +302,70 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		7F394942199DE5E10069C867 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 7F50335517FA7B0A0026FB7F /* JVFloatLabeledTextField */;
+			targetProxy = 7F394941199DE5E10069C867 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		7F39493B199DE5E10069C867 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7F39493C199DE5E10069C867 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
 /* Begin XCBuildConfiguration section */
+		7F394944199DE5E10069C867 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/JVFloatLabeledTextField.app/JVFloatLabeledTextField";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "JVFloatLabeledTextFieldTests/JVFloatLabeledTextFieldTests-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				INFOPLIST_FILE = "JVFloatLabeledTextFieldTests/JVFloatLabeledTextFieldTests-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		7F394945199DE5E10069C867 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/JVFloatLabeledTextField.app/JVFloatLabeledTextField";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "JVFloatLabeledTextFieldTests/JVFloatLabeledTextFieldTests-Prefix.pch";
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				INFOPLIST_FILE = "JVFloatLabeledTextFieldTests/JVFloatLabeledTextFieldTests-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
 		7F50338017FA7B0A0026FB7F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -305,6 +465,14 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		7F394943199DE5E10069C867 /* Build configuration list for PBXNativeTarget "JVFloatLabeledTextFieldTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7F394944199DE5E10069C867 /* Debug */,
+				7F394945199DE5E10069C867 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
 		7F50335117FA7B0A0026FB7F /* Build configuration list for PBXProject "JVFloatLabeledTextField" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

@@ -47,6 +47,11 @@
 @property (nonatomic, copy) NSString * placeholder;
 
 /**
+ * Read-only access to the placeholder label.
+ */
+@property (nonatomic, strong, readonly) UILabel * placeholderLabel;
+
+/**
  * Read-only access to the floating label.
  */
 @property (nonatomic, strong, readonly) UILabel * floatingLabel;
