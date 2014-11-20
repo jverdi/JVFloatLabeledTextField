@@ -190,7 +190,9 @@
 {
     CGRect rect = [super textRectForBounds:bounds];
     if ([self.text length]) {
-        rect = UIEdgeInsetsInsetRect(rect, UIEdgeInsetsMake(ceilf(_floatingLabel.font.lineHeight+_placeholderYPadding), 0.0f, 0.0f, 0.0f));
+        CGFloat topInset = ceilf(_floatingLabel.font.lineHeight + _placeholderYPadding);
+	topInset = MIN(topInset, [self maxTopInset]);
+	rect = UIEdgeInsetsInsetRect(rect, UIEdgeInsetsMake(topInset, 0.0f, 0.0f, 0.0f));
     }
     return CGRectIntegral(rect);
 }
@@ -199,7 +201,9 @@
 {
     CGRect rect = [super editingRectForBounds:bounds];
     if ([self.text length]) {
-        rect = UIEdgeInsetsInsetRect(rect, UIEdgeInsetsMake(ceilf(_floatingLabel.font.lineHeight+_placeholderYPadding), 0.0f, 0.0f, 0.0f));
+        CGFloat topInset = ceilf(_floatingLabel.font.lineHeight + _placeholderYPadding);
+	topInset = MIN(topInset, [self maxTopInset]);
+	rect = UIEdgeInsetsInsetRect(rect, UIEdgeInsetsMake(topInset, 0.0f, 0.0f, 0.0f));
     }
     return CGRectIntegral(rect);
 }
@@ -207,8 +211,17 @@
 - (CGRect)clearButtonRectForBounds:(CGRect)bounds
 {
     CGRect rect = [super clearButtonRectForBounds:bounds];
-    rect = CGRectMake(rect.origin.x, rect.origin.y + (_floatingLabel.font.lineHeight / 2.0) + (_placeholderYPadding / 2.0f), rect.size.width, rect.size.height);
+    if ([self.text length]) {
+	CGFloat topInset = ceilf(_floatingLabel.font.lineHeight + _placeholderYPadding);
+	topInset = MIN(topInset, [self maxTopInset]);
+	rect = CGRectMake(rect.origin.x, rect.origin.y + topInset / 2.0f, rect.size.width, rect.size.height);
+    }
     return CGRectIntegral(rect);
+}
+
+- (CGFloat)maxTopInset
+{
+    return MAX(0, floorf(self.bounds.size.height - self.font.lineHeight - 4.0f));
 }
 
 - (void)setTextAlignment:(NSTextAlignment)textAlignment
