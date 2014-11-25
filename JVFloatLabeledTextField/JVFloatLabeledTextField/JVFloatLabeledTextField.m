@@ -47,11 +47,6 @@
     self = [super initWithCoder:aDecoder];
     if (self) {
         [self commonInit];
-        
-        // force setter to be called on a placeholder defined in a NIB/Storyboard
-    	if (self.placeholder) {
-        	self.placeholder = self.placeholder;
-    	}
     }
     return self;
 }
@@ -71,6 +66,7 @@
     _animateEvenIfNotFirstResponder = NO;
     _floatingLabelShowAnimationDuration = kFloatingLabelShowAnimationDuration;
     _floatingLabelHideAnimationDuration = kFloatingLabelHideAnimationDuration;
+    [self setFloatingLabelText:self.placeholder];
 }
 
 #pragma mark -
@@ -90,7 +86,7 @@
 {
     _floatingLabelFont = floatingLabelFont;
     _floatingLabel.font = (_floatingLabelFont ? _floatingLabelFont : [UIFont boldSystemFontOfSize:12.0f]);
-    self.placeholder = self.placeholder; // Force the label to lay itself out with the new font.
+    [self setFloatingLabelText:self.placeholder];
 }
 
 - (void)showFloatingLabel:(BOOL)animated
@@ -160,30 +156,30 @@
                                       _floatingLabel.frame.size.width, _floatingLabel.frame.size.height);
 }
 
+- (void)setFloatingLabelText:(NSString *)text
+{
+    _floatingLabel.text = text;
+    [_floatingLabel sizeToFit];
+}
+
 #pragma mark - UITextField
 
 - (void)setPlaceholder:(NSString *)placeholder
 {
     [super setPlaceholder:placeholder];
-
-    _floatingLabel.text = placeholder;
-    [_floatingLabel sizeToFit];
+    [self setFloatingLabelText:placeholder];
 }
 
 - (void)setAttributedPlaceholder:(NSAttributedString *)attributedPlaceholder
 {
     [super setAttributedPlaceholder:attributedPlaceholder];
-	
-    _floatingLabel.text = attributedPlaceholder.string;
-    [_floatingLabel sizeToFit];
+    [self setFloatingLabelText:attributedPlaceholder.string];
 }
 
 - (void)setPlaceholder:(NSString *)placeholder floatingTitle:(NSString *)floatingTitle
 {
     [super setPlaceholder:placeholder];
-
-    _floatingLabel.text = floatingTitle;
-    [_floatingLabel sizeToFit];
+    [self setFloatingLabelText:floatingTitle];
 }
 
 - (CGRect)textRectForBounds:(CGRect)bounds
