@@ -333,17 +333,4 @@
     }
 }
 
-#pragma mark - Accessibility
-
-- (NSString *)accessibilityLabel
-{
-    NSString *accessibilityLabel;
-    if (![self.text isEqualToString:@""]) {
-        accessibilityLabel = [NSString stringWithFormat:@"%@ %@", [self.floatingLabel accessibilityLabel], self.text];
-    } else {
-        accessibilityLabel = [self.floatingLabel accessibilityLabel];
-    }
-    return accessibilityLabel;
-}
-
 @end
