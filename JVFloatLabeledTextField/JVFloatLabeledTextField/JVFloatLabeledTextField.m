@@ -37,21 +37,21 @@
 {
     self = [super initWithFrame:frame];
     if (self) {
-	    [self commonInit];
+        [self commonInit];
     }
     return self;
 }
 
-- (id)initWithCoder:(NSCoder *)aDecoder 
+- (id)initWithCoder:(NSCoder *)aDecoder
 {
     self = [super initWithCoder:aDecoder];
     if (self) {
         [self commonInit];
         
         // force setter to be called on a placeholder defined in a NIB/Storyboard
-    	if (self.placeholder) {
-        	self.placeholder = self.placeholder;
-    	}
+        if (self.placeholder) {
+            self.placeholder = self.placeholder;
+        }
     }
     return self;
 }
@@ -61,7 +61,7 @@
     _floatingLabel = [UILabel new];
     _floatingLabel.alpha = 0.0f;
     [self addSubview:_floatingLabel];
-	
+    
     // some basic default fonts/colors
     _floatingLabelFont = [UIFont boldSystemFontOfSize:12.0f];
     _floatingLabel.font = _floatingLabelFont;
@@ -71,6 +71,9 @@
     _animateEvenIfNotFirstResponder = NO;
     _floatingLabelShowAnimationDuration = kFloatingLabelShowAnimationDuration;
     _floatingLabelHideAnimationDuration = kFloatingLabelHideAnimationDuration;
+    _hasUnderline = NO;
+    _underlineHight = 0.5f;
+    _underlineColor = [UIColor lightGrayColor];
 }
 
 #pragma mark -
@@ -123,7 +126,7 @@
                                           _floatingLabel.font.lineHeight + _placeholderYPadding,
                                           _floatingLabel.frame.size.width,
                                           _floatingLabel.frame.size.height);
-
+        
     };
     
     if (animated || _animateEvenIfNotFirstResponder) {
@@ -165,7 +168,7 @@
 - (void)setPlaceholder:(NSString *)placeholder
 {
     [super setPlaceholder:placeholder];
-
+    
     _floatingLabel.text = placeholder;
     [_floatingLabel sizeToFit];
 }
@@ -173,7 +176,7 @@
 - (void)setAttributedPlaceholder:(NSAttributedString *)attributedPlaceholder
 {
     [super setAttributedPlaceholder:attributedPlaceholder];
-	
+    
     _floatingLabel.text = attributedPlaceholder.string;
     [_floatingLabel sizeToFit];
 }
@@ -181,7 +184,7 @@
 - (void)setPlaceholder:(NSString *)placeholder floatingTitle:(NSString *)floatingTitle
 {
     [super setPlaceholder:placeholder];
-
+    
     _floatingLabel.text = floatingTitle;
     [_floatingLabel sizeToFit];
 }
@@ -191,8 +194,8 @@
     CGRect rect = [super textRectForBounds:bounds];
     if ([self.text length]) {
         CGFloat topInset = ceilf(_floatingLabel.font.lineHeight + _placeholderYPadding);
-	topInset = MIN(topInset, [self maxTopInset]);
-	rect = UIEdgeInsetsInsetRect(rect, UIEdgeInsetsMake(topInset, 0.0f, 0.0f, 0.0f));
+        topInset = MIN(topInset, [self maxTopInset]);
+        rect = UIEdgeInsetsInsetRect(rect, UIEdgeInsetsMake(topInset, 0.0f, 0.0f, 0.0f));
     }
     return CGRectIntegral(rect);
 }
@@ -202,8 +205,8 @@
     CGRect rect = [super editingRectForBounds:bounds];
     if ([self.text length]) {
         CGFloat topInset = ceilf(_floatingLabel.font.lineHeight + _placeholderYPadding);
-	topInset = MIN(topInset, [self maxTopInset]);
-	rect = UIEdgeInsetsInsetRect(rect, UIEdgeInsetsMake(topInset, 0.0f, 0.0f, 0.0f));
+        topInset = MIN(topInset, [self maxTopInset]);
+        rect = UIEdgeInsetsInsetRect(rect, UIEdgeInsetsMake(topInset, 0.0f, 0.0f, 0.0f));
     }
     return CGRectIntegral(rect);
 }
@@ -212,9 +215,9 @@
 {
     CGRect rect = [super clearButtonRectForBounds:bounds];
     if ([self.text length]) {
-	CGFloat topInset = ceilf(_floatingLabel.font.lineHeight + _placeholderYPadding);
-	topInset = MIN(topInset, [self maxTopInset]);
-	rect = CGRectMake(rect.origin.x, rect.origin.y + topInset / 2.0f, rect.size.width, rect.size.height);
+        CGFloat topInset = ceilf(_floatingLabel.font.lineHeight + _placeholderYPadding);
+        topInset = MIN(topInset, [self maxTopInset]);
+        rect = CGRectMake(rect.origin.x, rect.origin.y + topInset / 2.0f, rect.size.width, rect.size.height);
     }
     return CGRectIntegral(rect);
 }
@@ -249,6 +252,33 @@
     else {
         [self showFloatingLabel:firstResponder];
     }
+    
+    if (_hasUnderline) {
+        [self addUnderlineView];
+    }
+}
+
+- (void)setHasUnderline:(BOOL)hasUnderline {
+    _hasUnderline = hasUnderline;
+}
+
+- (void)addUnderlineView {
+    CAShapeLayer *shapeLayer = [CAShapeLayer layer];
+    [shapeLayer setFrame:self.bounds];
+    [shapeLayer setStrokeColor:self.underlineColor.CGColor];
+    [shapeLayer setLineWidth:self.underlineHight];
+    [shapeLayer setLineJoin:kCALineJoinRound];
+    
+    CGFloat yOrigin = CGRectGetHeight(self.bounds) - self.underlineHight;
+    
+    CGMutablePathRef path = CGPathCreateMutable();
+    CGPathMoveToPoint(path, NULL, 0, yOrigin);
+    CGPathAddLineToPoint(path, NULL, CGRectGetWidth(self.bounds), yOrigin);
+    
+    [shapeLayer setPath:path];
+    CGPathRelease(path);
+    
+    [self.layer addSublayer:shapeLayer];
 }
 
 #pragma mark - Accessibility
