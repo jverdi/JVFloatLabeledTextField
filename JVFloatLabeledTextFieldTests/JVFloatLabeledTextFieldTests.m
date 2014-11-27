@@ -59,6 +59,9 @@
     XCTAssertEqual(self.testField.animateEvenIfNotFirstResponder, 0);
     XCTAssertEqual(self.testField.floatingLabelShowAnimationDuration, 0.3f);
     XCTAssertEqual(self.testField.floatingLabelHideAnimationDuration, 0.3f);
+    XCTAssertEqual(self.testField.hasUnderline, NO);
+    XCTAssertEqual(self.testField.underlineHight, 0.5f);
+    XCTAssert(CGColorEqualToColor(self.testField.underlineColor.CGColor, [UIColor lightGrayColor].CGColor));
 }
 
 @end

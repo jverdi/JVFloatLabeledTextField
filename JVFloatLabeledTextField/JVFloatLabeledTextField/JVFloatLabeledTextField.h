@@ -59,14 +59,14 @@
 @property (nonatomic) CGFloat placeholderYPadding UI_APPEARANCE_SELECTOR;
 
 /**
- * Font to be applied to the floating label. 
+ * Font to be applied to the floating label.
  * Defaults to `[UIFont boldSystemFontOfSize:12.0f]`.
  * Provided for the convenience of using as an appearance proxy.
  */
 @property (nonatomic, strong) UIFont * floatingLabelFont UI_APPEARANCE_SELECTOR;
 
 /**
- * Text color to be applied to the floating label. 
+ * Text color to be applied to the floating label.
  * Defaults to `[UIColor grayColor]`.
  * Provided for the convenience of using as an appearance proxy.
  */
@@ -86,16 +86,32 @@
 @property (nonatomic, assign) NSInteger animateEvenIfNotFirstResponder UI_APPEARANCE_SELECTOR;
 
 /**
- * Duration of the animation when showing the floating label. 
+ * Duration of the animation when showing the floating label.
  * Defaults to 0.3 seconds.
  */
 @property (nonatomic, assign) NSTimeInterval floatingLabelShowAnimationDuration UI_APPEARANCE_SELECTOR;
 
 /**
- * Duration of the animation when hiding the floating label. 
+ * Duration of the animation when hiding the floating label.
  * Defaults to 0.3 seconds.
  */
 @property (nonatomic, assign) NSTimeInterval floatingLabelHideAnimationDuration UI_APPEARANCE_SELECTOR;
+
+/**
+ * Determines if Textfield has an underline. Defaults to NO.
+ */
+@property (nonatomic) BOOL hasUnderline UI_APPEARANCE_SELECTOR;
+
+/**
+ * Hight to be applied to the underline. Defaults to 0.5f.
+ * 0.5f makes a perfect 1 pixel line on retina displays.
+ */
+@property (nonatomic) CGFloat underlineHight UI_APPEARANCE_SELECTOR;
+
+/**
+ * Color to be applied to the underline. Defaults to `[UIColor lightGrayColor]`.
+ */
+@property (nonatomic, strong) UIColor * underlineColor UI_APPEARANCE_SELECTOR;
 
 /**
  *  Sets the placeholder and the floating title
