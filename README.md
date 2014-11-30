@@ -17,7 +17,7 @@ Credits for the concept to Matt D. Smith ([@mds](http://www.twitter.com/mds)), a
 ![Matt D. Smith's Design](http://dribbble.s3.amazonaws.com/users/6410/screenshots/1254439/form-animation-_gif_.gif)
 
 
-Currently, JVFloatLabeledTextField used alone is iOS 6+, but JVFloatLabeledTextView requires iOS 7 due to the use of UITextView's `textContainer`.
+The component is officially supported for iOS 7 and greater.
 
 Additional References
 =======================
