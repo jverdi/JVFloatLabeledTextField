@@ -53,9 +53,12 @@
     XCTAssertEqual(self.testField.placeholderYPadding, 0.0f);
     XCTAssertEqual(self.testField.floatingLabelFont, [UIFont boldSystemFontOfSize:12.0f]);
     XCTAssertEqual(self.testField.floatingLabelFont, self.testField.floatingLabel.font);
-    XCTAssert(CGColorEqualToColor(self.testField.floatingLabelTextColor.CGColor, [UIColor grayColor].CGColor));
-    XCTAssert(CGColorEqualToColor(self.testField.floatingLabelTextColor.CGColor, self.testField.floatingLabel.textColor.CGColor));
-    XCTAssert(CGColorEqualToColor(self.testField.floatingLabelActiveTextColor.CGColor, self.testField.tintColor.CGColor));
+    XCTAssert(CGColorEqualToColor(self.testField.floatingLabelTextColor.CGColor,
+                                  [UIColor grayColor].CGColor));
+    XCTAssert(CGColorEqualToColor(self.testField.floatingLabelTextColor.CGColor,
+                                  self.testField.floatingLabel.textColor.CGColor));
+    XCTAssert(CGColorEqualToColor(self.testField.floatingLabelActiveTextColor.CGColor,
+                                  self.testField.tintColor.CGColor));
     XCTAssertEqual(self.testField.animateEvenIfNotFirstResponder, 0);
     XCTAssertEqual(self.testField.floatingLabelShowAnimationDuration, 0.3f);
     XCTAssertEqual(self.testField.floatingLabelHideAnimationDuration, 0.3f);

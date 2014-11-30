@@ -33,7 +33,8 @@
  * Due to space constraints on mobile devices, it is common to rely solely on placeholders as a means to label fields.
  * This presents a UX problem, in that, once the user begins to fill out a form, no labels are present.
  *
- * `JVFloatLabeledTextField` aims to improve the user experience by having placeholders transition into "floating labels" that hover above the text field after it is populated with text.
+ * `JVFloatLabeledTextField` aims to improve the user experience by having placeholders transition into 
+ * "floating labels" that hover above the text field after it is populated with text.
  *
  * JVFloatLabeledTextField supports iOS 6+.
  *

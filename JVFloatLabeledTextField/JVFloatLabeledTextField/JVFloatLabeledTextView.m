@@ -43,7 +43,7 @@
 {
     self = [super initWithFrame:frame];
     if (self) {
-	    [self commonInit];
+        [self commonInit];
     }
     return self;
 }
@@ -53,11 +53,11 @@
     self = [super initWithCoder:aDecoder];
     if (self) {
         [self commonInit];
-        
+
         // force setter to be called on a placeholder defined in a NIB/Storyboard
-    	if (self.placeholder) {
-        	self.placeholder = self.placeholder;
-    	}
+        if (self.placeholder) {
+            self.placeholder = self.placeholder;
+        }
     }
     return self;
 }
@@ -166,7 +166,8 @@
     }
     
     BOOL firstResponder = self.isFirstResponder;
-    _floatingLabel.textColor = (firstResponder && self.text && self.text.length > 0 ? self.labelActiveColor : self.floatingLabelTextColor);
+    _floatingLabel.textColor = (firstResponder && self.text && self.text.length > 0 ?
+                                self.labelActiveColor : self.floatingLabelTextColor);
     if (!self.text || 0 == [self.text length]) {
         [self hideFloatingLabel:firstResponder];
     }
@@ -238,8 +239,11 @@
 
 - (void)adjustTextContainerInsetTop
 {
-    self.textContainerInset = UIEdgeInsetsMake(self.startingTextContainerInsetTop + _floatingLabel.font.lineHeight + _placeholderYPadding,
-                                               self.textContainerInset.left, self.textContainerInset.bottom, self.textContainerInset.right) ;
+    self.textContainerInset = UIEdgeInsetsMake(self.startingTextContainerInsetTop
+                                               + _floatingLabel.font.lineHeight + _placeholderYPadding,
+                                               self.textContainerInset.left,
+                                               self.textContainerInset.bottom,
+                                               self.textContainerInset.right);
 }
 
 - (void)setLabelOriginForTextAlignment
@@ -253,12 +257,15 @@
     }
     else if (self.textAlignment == NSTextAlignmentRight) {
         floatingLabelOriginX = self.frame.size.width - _floatingLabel.frame.size.width;
-        placeholderLabelOriginX = self.frame.size.width - _placeholderLabel.frame.size.width - self.textContainerInset.right;
-    } else if (self.textAlignment == NSTextAlignmentNatural) {
+        placeholderLabelOriginX = (self.frame.size.width
+                                   - _placeholderLabel.frame.size.width - self.textContainerInset.right);
+    }
+    else if (self.textAlignment == NSTextAlignmentNatural) {
         JVTextDirection baseDirection = [_floatingLabel.text getBaseDirection];
         if (baseDirection == JVTextDirectionRightToLeft) {
             floatingLabelOriginX = self.frame.size.width - _floatingLabel.frame.size.width;
-            placeholderLabelOriginX = self.frame.size.width - _placeholderLabel.frame.size.width - self.textContainerInset.right;
+            placeholderLabelOriginX = (self.frame.size.width
+                                       - _placeholderLabel.frame.size.width - self.textContainerInset.right);
         }
     }
     
@@ -300,7 +307,6 @@
 - (void)setTextAlignment:(NSTextAlignment)textAlignment
 {
     [super setTextAlignment:textAlignment];
-    
     [self setNeedsLayout];
 }
 
@@ -314,7 +320,6 @@
 - (void)setText:(NSString *)text
 {
     [super setText:text];
-    
     [self layoutSubviews];
 }
 

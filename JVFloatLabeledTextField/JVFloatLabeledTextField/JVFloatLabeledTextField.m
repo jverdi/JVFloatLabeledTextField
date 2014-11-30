@@ -37,7 +37,7 @@
 {
     self = [super initWithFrame:frame];
     if (self) {
-	    [self commonInit];
+        [self commonInit];
     }
     return self;
 }
@@ -145,7 +145,8 @@
     }
     else if (self.textAlignment == NSTextAlignmentRight) {
         originX = textRect.origin.x + textRect.size.width - _floatingLabel.frame.size.width;
-    } else if (self.textAlignment == NSTextAlignmentNatural) {
+    }
+    else if (self.textAlignment == NSTextAlignmentNatural) {
         JVTextDirection baseDirection = [_floatingLabel.text getBaseDirection];
         if (baseDirection == JVTextDirectionRightToLeft) {
             originX = textRect.origin.x + textRect.size.width - _floatingLabel.frame.size.width;
@@ -187,8 +188,8 @@
     CGRect rect = [super textRectForBounds:bounds];
     if ([self.text length]) {
         CGFloat topInset = ceilf(_floatingLabel.font.lineHeight + _placeholderYPadding);
-	topInset = MIN(topInset, [self maxTopInset]);
-	rect = UIEdgeInsetsInsetRect(rect, UIEdgeInsetsMake(topInset, 0.0f, 0.0f, 0.0f));
+        topInset = MIN(topInset, [self maxTopInset]);
+        rect = UIEdgeInsetsInsetRect(rect, UIEdgeInsetsMake(topInset, 0.0f, 0.0f, 0.0f));
     }
     return CGRectIntegral(rect);
 }
@@ -198,8 +199,8 @@
     CGRect rect = [super editingRectForBounds:bounds];
     if ([self.text length]) {
         CGFloat topInset = ceilf(_floatingLabel.font.lineHeight + _placeholderYPadding);
-	topInset = MIN(topInset, [self maxTopInset]);
-	rect = UIEdgeInsetsInsetRect(rect, UIEdgeInsetsMake(topInset, 0.0f, 0.0f, 0.0f));
+        topInset = MIN(topInset, [self maxTopInset]);
+        rect = UIEdgeInsetsInsetRect(rect, UIEdgeInsetsMake(topInset, 0.0f, 0.0f, 0.0f));
     }
     return CGRectIntegral(rect);
 }
@@ -208,9 +209,9 @@
 {
     CGRect rect = [super clearButtonRectForBounds:bounds];
     if ([self.text length]) {
-	CGFloat topInset = ceilf(_floatingLabel.font.lineHeight + _placeholderYPadding);
-	topInset = MIN(topInset, [self maxTopInset]);
-	rect = CGRectMake(rect.origin.x, rect.origin.y + topInset / 2.0f, rect.size.width, rect.size.height);
+        CGFloat topInset = ceilf(_floatingLabel.font.lineHeight + _placeholderYPadding);
+        topInset = MIN(topInset, [self maxTopInset]);
+        rect = CGRectMake(rect.origin.x, rect.origin.y + topInset / 2.0f, rect.size.width, rect.size.height);
     }
     return CGRectIntegral(rect);
 }
@@ -223,7 +224,6 @@
 - (void)setTextAlignment:(NSTextAlignment)textAlignment
 {
     [super setTextAlignment:textAlignment];
-    
     [self setNeedsLayout];
 }
 
@@ -238,7 +238,8 @@
     }
     
     BOOL firstResponder = self.isFirstResponder;
-    _floatingLabel.textColor = (firstResponder && self.text && self.text.length > 0 ? self.labelActiveColor : self.floatingLabelTextColor);
+    _floatingLabel.textColor = (firstResponder && self.text && self.text.length > 0 ?
+                                self.labelActiveColor : self.floatingLabelTextColor);
     if (!self.text || 0 == [self.text length]) {
         [self hideFloatingLabel:firstResponder];
     }
