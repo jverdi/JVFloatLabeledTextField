@@ -39,7 +39,7 @@
 
 @implementation JVFloatLabeledTextView
 
-- (id)initWithFrame:(CGRect)frame
+- (instancetype)initWithFrame:(CGRect)frame
 {
     self = [super initWithFrame:frame];
     if (self) {
@@ -48,7 +48,7 @@
     return self;
 }
 
-- (id)initWithCoder:(NSCoder *)aDecoder
+- (instancetype)initWithCoder:(NSCoder *)aDecoder
 {
     self = [super initWithCoder:aDecoder];
     if (self) {
@@ -331,19 +331,6 @@
     if (self.floatingLabelShouldLockToTop) {
         _floatingLabel.backgroundColor = self.backgroundColor;
     }
-}
-
-#pragma mark - Accessibility
-
-- (NSString *)accessibilityLabel
-{
-    NSString *accessibilityLabel;
-    if (![self.text isEqualToString:@""]) {
-        accessibilityLabel = [NSString stringWithFormat:@"%@ %@", [self.floatingLabel accessibilityLabel], self.text];
-    } else {
-        accessibilityLabel = [self.floatingLabel accessibilityLabel];
-    }
-    return accessibilityLabel;
 }
 
 @end
