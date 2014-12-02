@@ -126,32 +126,34 @@
 {
     _placeholder = placeholder;
     _placeholderLabel.text = placeholder;
-    [_placeholderLabel sizeToFit];
-    
     _floatingLabel.text = placeholder;
-    [_floatingLabel sizeToFit];
+    
     if (self.floatingLabelShouldLockToTop) {
         _floatingLabel.frame = CGRectMake(_floatingLabel.frame.origin.x,
                                           _floatingLabel.frame.origin.y,
                                           self.frame.size.width,
                                           _floatingLabel.frame.size.height);
     }
+    
+    [self setNeedsLayout];
 }
 
 - (void)setPlaceholder:(NSString *)placeholder floatingTitle:(NSString *)floatingTitle
 {
     _placeholder = placeholder;
     _placeholderLabel.text = placeholder;
-    [_placeholderLabel sizeToFit];
-
     _floatingLabel.text = floatingTitle;
-    [_floatingLabel sizeToFit];
+    
+    [self setNeedsLayout];
 }
 
 - (void)layoutSubviews
 {
     [super layoutSubviews];
     [self adjustTextContainerInsetTop];
+    
+    [_placeholderLabel sizeToFit];
+    [_floatingLabel sizeToFit];
     
     CGRect textRect = [self textRect];
     

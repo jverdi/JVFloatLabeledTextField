@@ -160,7 +160,7 @@
 - (void)setFloatingLabelText:(NSString *)text
 {
     _floatingLabel.text = text;
-    [_floatingLabel sizeToFit];
+    [self setNeedsLayout];
 }
 
 #pragma mark - UITextField
@@ -236,6 +236,8 @@
     if (self.floatingLabelFont) {
         _floatingLabel.font = self.floatingLabelFont;
     }
+    
+    [_floatingLabel sizeToFit];
     
     BOOL firstResponder = self.isFirstResponder;
     _floatingLabel.textColor = (firstResponder && self.text && self.text.length > 0 ?
