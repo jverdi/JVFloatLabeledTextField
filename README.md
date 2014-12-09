@@ -27,12 +27,14 @@ Additional References
 
 Ports
 =======================
-[JQuery / Zepto.js](https://github.com/maman/JVFloat.js) - Achmad Mahardi  
+[Android](https://github.com/wrapp/floatlabelededittext) - Henrik Sandström 
 [Xamarin.iOS](https://github.com/gshackles/JVFloatSharp) - Greg Shackles  
+[Xamarin.Android](https://github.com/Johan-dutoit/JVFloatSharp) - Johan du Toit
+[JQuery / Zepto.js](https://github.com/maman/JVFloat.js) - Achmad Mahardi  
+[JQuery](https://github.com/m10l/FloatLabel.js) - Mike Mitchell  
 [Bootstrap plugin](https://github.com/fauxparse/bootstrap-floating-labels) - Matt Powell  
 [JavaFX](https://github.com/andytill/floaty-field) - Andy Till  
-[JQuery](https://github.com/m10l/FloatLabel.js) - Mike Mitchell  
-[Android](https://github.com/wrapp/floatlabelededittext) - Henrik Sandström  
+[Swift](https://github.com/wrapp/floatlabelededittext) - Dirk Fabisch
 
 
 Added a port? Let me know - [@jverdi](http://www.twitter.com/jverdi)
