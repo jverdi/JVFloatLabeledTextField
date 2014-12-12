@@ -34,7 +34,7 @@ Ports
 [JQuery](https://github.com/m10l/FloatLabel.js) - Mike Mitchell  
 [Bootstrap plugin](https://github.com/fauxparse/bootstrap-floating-labels) - Matt Powell  
 [JavaFX](https://github.com/andytill/floaty-field) - Andy Till  
-[Swift](https://github.com/wrapp/floatlabelededittext) - Dirk Fabisch  
+[Swift](https://github.com/dirkfabisch/B68FloatingLabelTextField) - Dirk Fabisch  
 
 
 Added a port? Let me know - [@jverdi](http://www.twitter.com/jverdi)
