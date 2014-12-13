@@ -41,6 +41,7 @@ Ports and Alternate Implementations
 [Swift](https://github.com/dirkfabisch/B68FloatingLabelTextField) - Dirk Fabisch  
 [Swift](https://github.com/FahimF/FloatLabelFields) - Fahim Farook  
 [Swift](https://github.com/kNeerajPro/CGFLoatingUIKit) - Neeraj Kumar  
+[Swift](https://github.com/varshylmobile/VMFloatLabel) - Jimmy Jose  
 [ObjC](https://github.com/ArtSabintsev/UIFloatLabelTextField) - Arthur Ariel Sabintsev  
 [ObjC](https://github.com/iwasrobbed/RPFloatingPlaceholders) - Rob Phillips  
   
