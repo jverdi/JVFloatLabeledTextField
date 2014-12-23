@@ -155,6 +155,11 @@
     [_placeholderLabel sizeToFit];
     [_floatingLabel sizeToFit];
     
+    _floatingLabel.frame = CGRectMake(_floatingLabel.frame.origin.x,
+                                      _floatingLabel.frame.origin.y,
+                                      self.frame.size.width,
+                                      _floatingLabel.bounds.size.height);
+    
     CGRect textRect = [self textRect];
     
     _placeholderLabel.alpha = [self.text length] > 0 ? 0.0f : 1.0f;
