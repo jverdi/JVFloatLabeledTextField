@@ -56,6 +56,9 @@
 		7F50336917FA7B0A0026FB7F /* JVAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JVAppDelegate.m; sourceTree = "<group>"; };
 		7F50338C17FA7B8C0026FB7F /* JVFloatLabeledTextFieldViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JVFloatLabeledTextFieldViewController.h; sourceTree = "<group>"; };
 		7F50338D17FA7B8C0026FB7F /* JVFloatLabeledTextFieldViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JVFloatLabeledTextFieldViewController.m; sourceTree = "<group>"; };
+		7F83A3911A6E088B00C6CAA2 /* JVFloatLabeledTextField.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = JVFloatLabeledTextField.podspec; sourceTree = "<group>"; };
+		7F83A3921A6E088B00C6CAA2 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		7F83A3931A6E088B00C6CAA2 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		7F9020201809A39B00B43AD5 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-568h@2x.png"; path = "images/Default-568h@2x.png"; sourceTree = "<group>"; };
 		7F9020211809A39B00B43AD5 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Default.png; path = images/Default.png; sourceTree = "<group>"; };
 		7F9020221809A39B00B43AD5 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default@2x.png"; path = "images/Default@2x.png"; sourceTree = "<group>"; };
@@ -111,6 +114,9 @@
 		7F50334D17FA7B0A0026FB7F = {
 			isa = PBXGroup;
 			children = (
+				7F83A3911A6E088B00C6CAA2 /* JVFloatLabeledTextField.podspec */,
+				7F83A3921A6E088B00C6CAA2 /* LICENSE */,
+				7F83A3931A6E088B00C6CAA2 /* README.md */,
 				7F50335F17FA7B0A0026FB7F /* JVFloatLabeledTextField */,
 				7F394938199DE5E10069C867 /* JVFloatLabeledTextFieldTests */,
 				7F50335817FA7B0A0026FB7F /* Frameworks */,
@@ -472,6 +478,7 @@
 				7F394945199DE5E10069C867 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		7F50335117FA7B0A0026FB7F /* Build configuration list for PBXProject "JVFloatLabeledTextField" */ = {
 			isa = XCConfigurationList;
