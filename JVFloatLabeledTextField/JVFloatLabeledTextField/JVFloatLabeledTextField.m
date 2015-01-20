@@ -87,6 +87,7 @@
     _floatingLabelFont = floatingLabelFont;
     _floatingLabel.font = (_floatingLabelFont ? _floatingLabelFont : [UIFont boldSystemFontOfSize:12.0f]);
     [self setFloatingLabelText:self.placeholder];
+    [self invalidateIntrinsicContentSize];
 }
 
 - (void)showFloatingLabel:(BOOL)animated
@@ -164,6 +165,13 @@
 }
 
 #pragma mark - UITextField
+
+- (CGSize)intrinsicContentSize
+{
+    CGSize textFieldIntrinsicContentSize = [super intrinsicContentSize];
+    return CGSizeMake(textFieldIntrinsicContentSize.width,
+                      textFieldIntrinsicContentSize.height + _floatingLabelYPadding + _floatingLabel.font.lineHeight);
+}
 
 - (void)setPlaceholder:(NSString *)placeholder
 {
