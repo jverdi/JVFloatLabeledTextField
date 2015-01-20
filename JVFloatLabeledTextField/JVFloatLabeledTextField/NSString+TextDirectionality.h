@@ -4,7 +4,7 @@
 //
 //  The MIT License (MIT)
 //
-//  Copyright (c) 2013 Jared Verdi
+//  Copyright (c) 2013-2015 Jared Verdi
 //  Original Concept by Matt D. Smith
 //  http://dribbble.com/shots/1254439--GIF-Mobile-Form-Interaction?list=users
 //
