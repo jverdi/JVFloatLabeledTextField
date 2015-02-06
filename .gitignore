@@ -1,1 +1,7 @@
 .DS_Store
+
+Build/
+DerivedData/
+JVFloatLabeledTextField.xcodeproj/project.xcworkspace/xcshareddata/
+JVFloatLabeledTextField.xcodeproj/project.xcworkspace/xcuserdata/
+JVFloatLabeledTextField.xcodeproj/xcuserdata/
