@@ -100,9 +100,10 @@
 
 /**
  * Indicates whether the clearButton position is adjusted to align with the text
- * Defaults to YES
+ * Defaults to 1.
+ * Non-zero values indicate truthiness. (BOOL cannot be used with UI_APPEARANCE_SELECTOR on iOS 7).
  */
-@property (nonatomic, assign) BOOL adjustsClearButtonRect UI_APPEARANCE_SELECTOR;
+@property (nonatomic, assign) NSInteger adjustsClearButtonRect UI_APPEARANCE_SELECTOR;
 
 /**
  *  Sets the placeholder and the floating title

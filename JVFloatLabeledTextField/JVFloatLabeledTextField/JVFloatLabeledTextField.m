@@ -68,7 +68,7 @@
     _floatingLabelHideAnimationDuration = kFloatingLabelHideAnimationDuration;
     [self setFloatingLabelText:self.placeholder];
     
-    _adjustsClearButtonRect = YES;
+    _adjustsClearButtonRect = 1;
 }
 
 #pragma mark -
@@ -218,7 +218,7 @@
 - (CGRect)clearButtonRectForBounds:(CGRect)bounds
 {
     CGRect rect = [super clearButtonRectForBounds:bounds];
-    if(self.adjustsClearButtonRect) {
+    if (0 != self.adjustsClearButtonRect) {
         if ([self.text length]) {
             CGFloat topInset = ceilf(_floatingLabel.font.lineHeight + _placeholderYPadding);
             topInset = MIN(topInset, [self maxTopInset]);
