@@ -82,7 +82,7 @@
 /**
  * Indicates whether the floating label's appearance should be animated regardless of first responder status.
  * By default, animation only occurs if the text field is a first responder.
- * Non-zero values indicate truthiness. (BOOL cannot be used with UI_APPEARANCE_SELECTOR).
+ * Non-zero values indicate truthiness. (BOOL cannot be used with UI_APPEARANCE_SELECTOR on iOS 7).
  */
 @property (nonatomic, assign) NSInteger animateEvenIfNotFirstResponder UI_APPEARANCE_SELECTOR;
 
