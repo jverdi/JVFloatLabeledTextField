@@ -57,8 +57,7 @@
                                   [UIColor grayColor].CGColor));
     XCTAssert(CGColorEqualToColor(self.testField.floatingLabelTextColor.CGColor,
                                   self.testField.floatingLabel.textColor.CGColor));
-    XCTAssert(CGColorEqualToColor(self.testField.floatingLabelActiveTextColor.CGColor,
-                                  self.testField.tintColor.CGColor));
+    XCTAssertNil(self.testField.floatingLabelActiveTextColor);
     XCTAssertEqual(self.testField.animateEvenIfNotFirstResponder, 0);
     XCTAssertEqual(self.testField.floatingLabelShowAnimationDuration, 0.3f);
     XCTAssertEqual(self.testField.floatingLabelHideAnimationDuration, 0.3f);

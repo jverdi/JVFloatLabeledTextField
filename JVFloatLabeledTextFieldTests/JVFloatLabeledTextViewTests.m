@@ -58,8 +58,7 @@
                                   [UIColor grayColor].CGColor));
     XCTAssert(CGColorEqualToColor(self.testView.floatingLabelTextColor.CGColor,
                                   self.testView.floatingLabel.textColor.CGColor));
-    XCTAssert(CGColorEqualToColor(self.testView.floatingLabelActiveTextColor.CGColor,
-                                  self.testView.tintColor.CGColor));
+    XCTAssertNil(self.testView.floatingLabelActiveTextColor);
     XCTAssertEqual(self.testView.floatingLabelShouldLockToTop, 1);
     XCTAssert(CGColorEqualToColor(self.testView.placeholderTextColor.CGColor,
                                   [[UIColor lightGrayColor] colorWithAlphaComponent:0.65f].CGColor));

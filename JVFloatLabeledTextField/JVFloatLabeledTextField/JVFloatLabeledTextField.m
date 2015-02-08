@@ -62,7 +62,6 @@
     _floatingLabel.font = _floatingLabelFont;
     _floatingLabelTextColor = [UIColor grayColor];
     _floatingLabel.textColor = _floatingLabelTextColor;
-    _floatingLabelActiveTextColor = self.tintColor;
     _animateEvenIfNotFirstResponder = 0;
     _floatingLabelShowAnimationDuration = kFloatingLabelShowAnimationDuration;
     _floatingLabelHideAnimationDuration = kFloatingLabelHideAnimationDuration;
