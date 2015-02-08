@@ -67,6 +67,8 @@
     _floatingLabelShowAnimationDuration = kFloatingLabelShowAnimationDuration;
     _floatingLabelHideAnimationDuration = kFloatingLabelHideAnimationDuration;
     [self setFloatingLabelText:self.placeholder];
+    
+    _adjustsClearButtonRect = 1;
 }
 
 #pragma mark -
@@ -216,10 +218,12 @@
 - (CGRect)clearButtonRectForBounds:(CGRect)bounds
 {
     CGRect rect = [super clearButtonRectForBounds:bounds];
-    if ([self.text length]) {
-        CGFloat topInset = ceilf(_floatingLabel.font.lineHeight + _placeholderYPadding);
-        topInset = MIN(topInset, [self maxTopInset]);
-        rect = CGRectMake(rect.origin.x, rect.origin.y + topInset / 2.0f, rect.size.width, rect.size.height);
+    if (0 != self.adjustsClearButtonRect) {
+        if ([self.text length]) {
+            CGFloat topInset = ceilf(_floatingLabel.font.lineHeight + _placeholderYPadding);
+            topInset = MIN(topInset, [self maxTopInset]);
+            rect = CGRectMake(rect.origin.x, rect.origin.y + topInset / 2.0f, rect.size.width, rect.size.height);
+        }
     }
     return CGRectIntegral(rect);
 }

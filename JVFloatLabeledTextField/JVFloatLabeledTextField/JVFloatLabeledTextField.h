@@ -99,6 +99,13 @@
 @property (nonatomic, assign) NSTimeInterval floatingLabelHideAnimationDuration UI_APPEARANCE_SELECTOR;
 
 /**
+ * Indicates whether the clearButton position is adjusted to align with the text
+ * Defaults to 1.
+ * Non-zero values indicate truthiness. (BOOL cannot be used with UI_APPEARANCE_SELECTOR on iOS 7).
+ */
+@property (nonatomic, assign) NSInteger adjustsClearButtonRect UI_APPEARANCE_SELECTOR;
+
+/**
  *  Sets the placeholder and the floating title
  *
  *  @param placeholder The string that to be shown in the text field when no other text is present.
