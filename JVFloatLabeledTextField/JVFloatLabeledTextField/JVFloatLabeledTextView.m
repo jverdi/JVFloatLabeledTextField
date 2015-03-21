@@ -151,22 +151,20 @@
     [super layoutSubviews];
     [self adjustTextContainerInsetTop];
     
-    _placeholderLabel.frame = CGRectZero;
-    [_placeholderLabel sizeToFit];
-    
-    _floatingLabel.frame = CGRectZero;
-    [_floatingLabel sizeToFit];
+    CGSize floatingLabelSize = [_floatingLabel sizeThatFits:_floatingLabel.superview.bounds.size];
     
     _floatingLabel.frame = CGRectMake(_floatingLabel.frame.origin.x,
                                       _floatingLabel.frame.origin.y,
-                                      self.frame.size.width,
-                                      _floatingLabel.bounds.size.height);
+                                      floatingLabelSize.width,
+                                      floatingLabelSize.height);
+    
+    CGSize placeholderLabelSize = [_placeholderLabel sizeThatFits:_placeholderLabel.superview.bounds.size];
     
     CGRect textRect = [self textRect];
     
     _placeholderLabel.alpha = [self.text length] > 0 ? 0.0f : 1.0f;
     _placeholderLabel.frame = CGRectMake(textRect.origin.x, textRect.origin.y,
-                                         _placeholderLabel.frame.size.width, _placeholderLabel.frame.size.height);
+                                         placeholderLabelSize.width, placeholderLabelSize.height);
     
     [self setLabelOriginForTextAlignment];
     

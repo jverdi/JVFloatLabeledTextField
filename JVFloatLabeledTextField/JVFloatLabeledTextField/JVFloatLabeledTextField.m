@@ -248,7 +248,12 @@
         _floatingLabel.font = self.floatingLabelFont;
     }
     
-    [_floatingLabel sizeToFit];
+    CGSize floatingLabelSize = [_floatingLabel sizeThatFits:_floatingLabel.superview.bounds.size];
+    
+    _floatingLabel.frame = CGRectMake(_floatingLabel.frame.origin.x,
+                                      _floatingLabel.frame.origin.y,
+                                      floatingLabelSize.width,
+                                      floatingLabelSize.height);
     
     BOOL firstResponder = self.isFirstResponder;
     _floatingLabel.textColor = (firstResponder && self.text && self.text.length > 0 ?
