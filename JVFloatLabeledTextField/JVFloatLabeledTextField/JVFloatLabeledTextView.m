@@ -151,7 +151,10 @@
     [super layoutSubviews];
     [self adjustTextContainerInsetTop];
     
+    _placeholderLabel.frame = CGRectZero;
     [_placeholderLabel sizeToFit];
+    
+    _floatingLabel.frame = CGRectZero;
     [_floatingLabel sizeToFit];
     
     _floatingLabel.frame = CGRectMake(_floatingLabel.frame.origin.x,
