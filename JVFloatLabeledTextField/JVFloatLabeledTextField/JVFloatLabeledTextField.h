@@ -113,6 +113,13 @@ IB_DESIGNABLE
 @property (nonatomic, assign) NSInteger adjustsClearButtonRect UI_APPEARANCE_SELECTOR;
 
 /**
+ * Indicates whether or not to drop the baseline when entering text. Setting to YES (not the default) means the standard greyed-out placeholder will be aligned with the entered text
+ * Defaults to 0 (standard placeholder will be above whatever text is entered)
+ * Non-zero values indicates truthiness. (BOOL cannot be used with UI_APPEARANCE_SELECTOR on iOS 7).
+ */
+@property (nonatomic, assign) IBInspectable NSInteger keepBaseline UI_APPEARANCE_SELECTOR;
+
+/**
  *  Sets the placeholder and the floating title
  *
  *  @param placeholder The string that to be shown in the text field when no other text is present.

@@ -70,4 +70,23 @@
     XCTAssertEqual(self.testField.floatingLabel.frame.origin.x, -100);
 }
 
+- (void)testKeepBaseline
+{
+    self.testField.keepBaseline = 1;
+
+    CGRect textRectInitial = [self.testField textRectForBounds:self.testField.bounds];
+    CGRect editRectInitial = [self.testField editingRectForBounds:self.testField.bounds];
+    CGRect clearRectInitial = [self.testField clearButtonRectForBounds:self.testField.bounds];
+
+    self.testField.text = @"hello world!";
+
+    CGRect textRectFinal = [self.testField textRectForBounds:self.testField.bounds];
+    CGRect editRectFinal = [self.testField editingRectForBounds:self.testField.bounds];
+    CGRect clearRectFinal = [self.testField clearButtonRectForBounds:self.testField.bounds];
+
+    XCTAssert(CGRectEqualToRect(textRectInitial, textRectFinal));
+    XCTAssert(CGRectEqualToRect(editRectInitial, editRectFinal));
+    XCTAssert(CGRectEqualToRect(clearRectInitial, clearRectFinal));
+}
+
 @end

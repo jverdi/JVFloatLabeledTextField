@@ -66,7 +66,7 @@
     _floatingLabelShowAnimationDuration = kFloatingLabelShowAnimationDuration;
     _floatingLabelHideAnimationDuration = kFloatingLabelHideAnimationDuration;
     [self setFloatingLabelText:self.placeholder];
-    
+
     _adjustsClearButtonRect = 1;
 }
 
@@ -195,7 +195,7 @@
 - (CGRect)textRectForBounds:(CGRect)bounds
 {
     CGRect rect = [super textRectForBounds:bounds];
-    if ([self.text length]) {
+    if ([self.text length] || self.keepBaseline) {
         CGFloat topInset = ceilf(_floatingLabel.font.lineHeight + _placeholderYPadding);
         topInset = MIN(topInset, [self maxTopInset]);
         rect = UIEdgeInsetsInsetRect(rect, UIEdgeInsetsMake(topInset, 0.0f, 0.0f, 0.0f));
@@ -206,7 +206,7 @@
 - (CGRect)editingRectForBounds:(CGRect)bounds
 {
     CGRect rect = [super editingRectForBounds:bounds];
-    if ([self.text length]) {
+    if ([self.text length] || self.keepBaseline) {
         CGFloat topInset = ceilf(_floatingLabel.font.lineHeight + _placeholderYPadding);
         topInset = MIN(topInset, [self maxTopInset]);
         rect = UIEdgeInsetsInsetRect(rect, UIEdgeInsetsMake(topInset, 0.0f, 0.0f, 0.0f));
@@ -218,7 +218,7 @@
 {
     CGRect rect = [super clearButtonRectForBounds:bounds];
     if (0 != self.adjustsClearButtonRect) {
-        if ([self.text length]) {
+        if ([self.text length] || self.keepBaseline) {
             CGFloat topInset = ceilf(_floatingLabel.font.lineHeight + _placeholderYPadding);
             topInset = MIN(topInset, [self maxTopInset]);
             rect = CGRectMake(rect.origin.x, rect.origin.y + topInset / 2.0f, rect.size.width, rect.size.height);
