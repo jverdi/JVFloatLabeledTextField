@@ -40,6 +40,7 @@
  *
  * Credits for the concept to Matt D. Smith (@mds), and his original design:  http://mattdsmith.com/float-label-pattern/
  */
+IB_DESIGNABLE
 @interface JVFloatLabeledTextField : UITextField
 
 /**
@@ -64,27 +65,27 @@
  * Defaults to `[UIFont boldSystemFontOfSize:12.0f]`.
  * Provided for the convenience of using as an appearance proxy.
  */
-@property (nonatomic, strong) UIFont * floatingLabelFont UI_APPEARANCE_SELECTOR;
+@property (nonatomic, strong) IBInspectable UIFont * floatingLabelFont UI_APPEARANCE_SELECTOR;
 
 /**
  * Text color to be applied to the floating label. 
  * Defaults to `[UIColor grayColor]`.
  * Provided for the convenience of using as an appearance proxy.
  */
-@property (nonatomic, strong) UIColor * floatingLabelTextColor UI_APPEARANCE_SELECTOR;
+@property (nonatomic, strong) IBInspectable UIColor * floatingLabelTextColor UI_APPEARANCE_SELECTOR;
 
 /**
  * Text color to be applied to the floating label while the field is a first responder.
  * Tint color is used by default if an `floatingLabelActiveTextColor` is not provided.
  */
-@property (nonatomic, strong) UIColor * floatingLabelActiveTextColor UI_APPEARANCE_SELECTOR;
+@property (nonatomic, strong) IBInspectable UIColor * floatingLabelActiveTextColor UI_APPEARANCE_SELECTOR;
 
 /**
  * Indicates whether the floating label's appearance should be animated regardless of first responder status.
  * By default, animation only occurs if the text field is a first responder.
  * Non-zero values indicate truthiness. (BOOL cannot be used with UI_APPEARANCE_SELECTOR on iOS 7).
  */
-@property (nonatomic, assign) NSInteger animateEvenIfNotFirstResponder UI_APPEARANCE_SELECTOR;
+@property (nonatomic, assign) IBInspectable NSInteger animateEvenIfNotFirstResponder UI_APPEARANCE_SELECTOR;
 
 /**
  * Duration of the animation when showing the floating label. 
