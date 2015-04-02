@@ -155,7 +155,7 @@
         }
     }
     
-    _floatingLabel.frame = CGRectMake(originX, _floatingLabel.frame.origin.y,
+    _floatingLabel.frame = CGRectMake(originX + _floatingLabelXPadding, _floatingLabel.frame.origin.y,
                                       _floatingLabel.frame.size.width, _floatingLabel.frame.size.height);
 }
 
