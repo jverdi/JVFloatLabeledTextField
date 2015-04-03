@@ -40,12 +40,13 @@
  *
  * Credits for the concept to Matt D. Smith (@mds), and his original design:  http://mattdsmith.com/float-label-pattern/
  */
+IB_DESIGNABLE
 @interface JVFloatLabeledTextView : UITextView
 
 /**
  * The placeholder string to be shown in the text view when no other text is present.
  */
-@property (nonatomic, copy) NSString * placeholder;
+@property (nonatomic, copy) IBInspectable NSString * placeholder;
 
 /**
  * Read-only access to the placeholder label.
@@ -71,20 +72,20 @@
  * Font to be applied to the floating label. Defaults to `[UIFont boldSystemFontOfSize:12.0f]`. 
  * Provided for the convenience of using as an appearance proxy.
  */
-@property (nonatomic, strong) UIFont * floatingLabelFont UI_APPEARANCE_SELECTOR;
+@property (nonatomic, strong) IBInspectable UIFont * floatingLabelFont UI_APPEARANCE_SELECTOR;
 
 /**
  * Text color to be applied to the floating label while the text view is not a first responder.
  * Defaults to `[UIColor grayColor]`. 
  * Provided for the convenience of using as an appearance proxy.
  */
-@property (nonatomic, strong) UIColor * floatingLabelTextColor UI_APPEARANCE_SELECTOR;
+@property (nonatomic, strong) IBInspectable UIColor * floatingLabelTextColor UI_APPEARANCE_SELECTOR;
 
 /**
  * Text color to be applied to the floating label while the text view is a first responder.
  * Tint color is used by default if an `floatingLabelActiveTextColor` is not provided.
  */
-@property (nonatomic, strong) UIColor * floatingLabelActiveTextColor UI_APPEARANCE_SELECTOR;
+@property (nonatomic, strong) IBInspectable UIColor * floatingLabelActiveTextColor UI_APPEARANCE_SELECTOR;
 
 /**
  * Indicates whether the floating label should lock to the top of the text view, or scroll away with text when the text 
@@ -93,13 +94,13 @@
  * Note that this works best when floating labels have a non-clear background color.
  * Non-zero values indicate truthiness. (BOOL cannot be used with UI_APPEARANCE_SELECTOR on iOS 7).
  */
-@property (nonatomic, assign) NSInteger floatingLabelShouldLockToTop UI_APPEARANCE_SELECTOR;
+@property (nonatomic, assign) IBInspectable NSInteger floatingLabelShouldLockToTop UI_APPEARANCE_SELECTOR;
 
 /**
  * Text color to be applied to the placeholder.
  * Defaults to `[[UIColor lightGrayColor] colorWithAlphaComponent:0.65f]`.
  */
-@property (nonatomic, strong) UIColor * placeholderTextColor UI_APPEARANCE_SELECTOR;
+@property (nonatomic, strong) IBInspectable UIColor * placeholderTextColor UI_APPEARANCE_SELECTOR;
 
 /**
  * Indicates whether the floating label's appearance should be animated regardless of first responder status.
