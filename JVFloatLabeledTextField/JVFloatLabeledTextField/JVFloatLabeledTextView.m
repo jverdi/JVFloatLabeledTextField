@@ -276,7 +276,7 @@
         }
     }
     
-    _floatingLabel.frame = CGRectMake(floatingLabelOriginX, _floatingLabel.frame.origin.y,
+    _floatingLabel.frame = CGRectMake(floatingLabelOriginX + _floatingLabelXPadding, _floatingLabel.frame.origin.y,
                                       _floatingLabel.frame.size.width, _floatingLabel.frame.size.height);
     
     _placeholderLabel.frame = CGRectMake(placeholderLabelOriginX, _placeholderLabel.frame.origin.y,

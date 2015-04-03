@@ -63,4 +63,11 @@
     XCTAssertEqual(self.testField.floatingLabelHideAnimationDuration, 0.3f);
 }
 
+- (void)testHorizontalOffset
+{
+    self.testField.floatingLabelXPadding = -100;
+    [self.testField layoutSubviews];
+    XCTAssertEqual(self.testField.floatingLabel.frame.origin.x, -100);
+}
+
 @end

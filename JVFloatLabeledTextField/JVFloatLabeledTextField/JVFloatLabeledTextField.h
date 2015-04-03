@@ -55,6 +55,12 @@ IB_DESIGNABLE
 @property (nonatomic) CGFloat floatingLabelYPadding UI_APPEARANCE_SELECTOR;
 
 /**
+ * Padding to be applied to the x coordinate of the floating label upon presentation.
+ * Defaults to zero
+ */
+@property (nonatomic) IBInspectable CGFloat floatingLabelXPadding UI_APPEARANCE_SELECTOR;
+
+/**
  * Padding to be applied to the y coordinate of the placeholder.
  * Defaults to zero.
  */
