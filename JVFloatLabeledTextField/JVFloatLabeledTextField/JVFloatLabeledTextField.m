@@ -170,8 +170,9 @@
 - (CGSize)intrinsicContentSize
 {
     CGSize textFieldIntrinsicContentSize = [super intrinsicContentSize];
+    [_floatingLabel sizeToFit];
     return CGSizeMake(textFieldIntrinsicContentSize.width,
-                      textFieldIntrinsicContentSize.height + _floatingLabelYPadding + _floatingLabel.font.lineHeight);
+                      textFieldIntrinsicContentSize.height + _floatingLabelYPadding + _floatingLabel.bounds.size.height);
 }
 
 - (void)setPlaceholder:(NSString *)placeholder
@@ -196,9 +197,7 @@
 {
     CGRect rect = [super textRectForBounds:bounds];
     if ([self.text length] || self.keepBaseline) {
-        CGFloat topInset = ceilf(_floatingLabel.font.lineHeight + _placeholderYPadding);
-        topInset = MIN(topInset, [self maxTopInset]);
-        rect = UIEdgeInsetsInsetRect(rect, UIEdgeInsetsMake(topInset, 0.0f, 0.0f, 0.0f));
+        rect = [self insetRectForBounds:rect];
     }
     return CGRectIntegral(rect);
 }
@@ -207,11 +206,15 @@
 {
     CGRect rect = [super editingRectForBounds:bounds];
     if ([self.text length] || self.keepBaseline) {
-        CGFloat topInset = ceilf(_floatingLabel.font.lineHeight + _placeholderYPadding);
-        topInset = MIN(topInset, [self maxTopInset]);
-        rect = UIEdgeInsetsInsetRect(rect, UIEdgeInsetsMake(topInset, 0.0f, 0.0f, 0.0f));
+        rect = [self insetRectForBounds:rect];
     }
     return CGRectIntegral(rect);
+}
+
+- (CGRect)insetRectForBounds:(CGRect)rect {
+    CGFloat topInset = ceilf(_floatingLabel.bounds.size.height + _placeholderYPadding);
+    topInset = MIN(topInset, [self maxTopInset]);
+    return CGRectMake(rect.origin.x, rect.origin.y + topInset / 2.0f, rect.size.width, rect.size.height);
 }
 
 - (CGRect)clearButtonRectForBounds:(CGRect)bounds
