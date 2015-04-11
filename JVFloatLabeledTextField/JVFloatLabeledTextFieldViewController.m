@@ -56,8 +56,6 @@ const static CGFloat kJVFieldFloatingLabelFontSize = 11.0f;
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
 
-    CGFloat topOffset = 0;
-
     self.edgesForExtendedLayout = UIRectEdgeNone;
     
 #if __IPHONE_OS_VERSION_MAX_ALLOWED >= 70000
