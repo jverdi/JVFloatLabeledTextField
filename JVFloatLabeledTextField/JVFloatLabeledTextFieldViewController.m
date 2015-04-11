@@ -57,92 +57,80 @@ const static CGFloat kJVFieldFloatingLabelFontSize = 11.0f;
 	// Do any additional setup after loading the view.
 
     CGFloat topOffset = 0;
+
+    self.edgesForExtendedLayout = UIRectEdgeNone;
     
 #if __IPHONE_OS_VERSION_MAX_ALLOWED >= 70000
     [self.view setTintColor:[UIColor blueColor]];
-    
-    topOffset = ([[UIApplication sharedApplication] statusBarFrame].size.height
-                 + self.navigationController.navigationBar.frame.size.height);
 #endif
     
     UIColor *floatingLabelColor = [UIColor brownColor];
     
-    JVFloatLabeledTextField *titleField = [[JVFloatLabeledTextField alloc] initWithFrame:
-                                           CGRectMake(kJVFieldHMargin,
-                                                      topOffset,
-                                                      self.view.frame.size.width - 2 * kJVFieldHMargin,
-                                                      kJVFieldHeight)];
+    JVFloatLabeledTextField *titleField = [[JVFloatLabeledTextField alloc] initWithFrame:CGRectZero];
     titleField.attributedPlaceholder =
     [[NSAttributedString alloc] initWithString:NSLocalizedString(@"Title", @"")
                                     attributes:@{NSForegroundColorAttributeName: [UIColor darkGrayColor]}];
     titleField.font = [UIFont systemFontOfSize:kJVFieldFontSize];
-    titleField.floatingLabel.font = [UIFont boldSystemFontOfSize:kJVFieldFloatingLabelFontSize];
+    titleField.floatingLabelFont = [UIFont boldSystemFontOfSize:kJVFieldFloatingLabelFontSize];
     titleField.floatingLabelTextColor = floatingLabelColor;
     titleField.clearButtonMode = UITextFieldViewModeWhileEditing;
-//    UIView *leftView = [[UIView alloc] initWithFrame:CGRectMake(0.0f, 0.0f, 30.0f, 30.0f)];
-//    titleField.leftView = leftView;
-//    titleField.leftViewMode = UITextFieldViewModeAlways;
     [self.view addSubview:titleField];
-    
+    titleField.translatesAutoresizingMaskIntoConstraints = NO;
+    titleField.keepBaseline = 1;
+
     UIView *div1 = [UIView new];
-    div1.frame = CGRectMake(kJVFieldHMargin, titleField.frame.origin.y + titleField.frame.size.height,
-                            self.view.frame.size.width - 2 * kJVFieldHMargin, 1.0f);
     div1.backgroundColor = [[UIColor lightGrayColor] colorWithAlphaComponent:0.3f];
     [self.view addSubview:div1];
-    
-    JVFloatLabeledTextField *priceField = [[JVFloatLabeledTextField alloc] initWithFrame:
-                                           CGRectMake(kJVFieldHMargin,
-                                                      div1.frame.origin.y + div1.frame.size.height,
-                                                      80.0f,
-                                                      kJVFieldHeight)];
-    priceField.attributedPlaceholder =
-    [[NSAttributedString alloc] initWithString:NSLocalizedString(@"Price", @"")
-                                    attributes:@{NSForegroundColorAttributeName: [UIColor darkGrayColor]}];
+    div1.translatesAutoresizingMaskIntoConstraints = NO;
+
+    JVFloatLabeledTextField *priceField = [[JVFloatLabeledTextField alloc] initWithFrame:CGRectZero];
+    priceField.attributedPlaceholder = [[NSAttributedString alloc] initWithString:NSLocalizedString(@"Price", @"")
+                                                                       attributes:@{NSForegroundColorAttributeName: [UIColor darkGrayColor]}];
     priceField.font = [UIFont systemFontOfSize:kJVFieldFontSize];
-    priceField.floatingLabel.font = [UIFont boldSystemFontOfSize:kJVFieldFloatingLabelFontSize];
+    priceField.floatingLabelFont = [UIFont boldSystemFontOfSize:kJVFieldFloatingLabelFontSize];
     priceField.floatingLabelTextColor = floatingLabelColor;
     [self.view addSubview:priceField];
-    
+    priceField.translatesAutoresizingMaskIntoConstraints = NO;
+
     UIView *div2 = [UIView new];
-    div2.frame = CGRectMake(kJVFieldHMargin + priceField.frame.size.width,
-                            titleField.frame.origin.y + titleField.frame.size.height,
-                            1.0f, kJVFieldHeight);
     div2.backgroundColor = [[UIColor lightGrayColor] colorWithAlphaComponent:0.3f];
     [self.view addSubview:div2];
+    div2.translatesAutoresizingMaskIntoConstraints = NO;
     
-    JVFloatLabeledTextField *locationField =
-    [[JVFloatLabeledTextField alloc] initWithFrame:
-     CGRectMake(kJVFieldHMargin + kJVFieldHMargin + priceField.frame.size.width + 1.0f,
-                div1.frame.origin.y + div1.frame.size.height,
-                self.view.frame.size.width - 3*kJVFieldHMargin - priceField.frame.size.width - 1.0f,
-                kJVFieldHeight)];
+    JVFloatLabeledTextField *locationField = [[JVFloatLabeledTextField alloc] initWithFrame:CGRectZero];
     
-    locationField.attributedPlaceholder =
-    [[NSAttributedString alloc] initWithString:NSLocalizedString(@"Specific Location (optional)", @"")
-                                    attributes:@{NSForegroundColorAttributeName: [UIColor darkGrayColor]}];
+    locationField.attributedPlaceholder = [[NSAttributedString alloc] initWithString:NSLocalizedString(@"Specific Location (optional)", @"")
+                                                                          attributes:@{NSForegroundColorAttributeName: [UIColor darkGrayColor]}];
     locationField.font = [UIFont systemFontOfSize:kJVFieldFontSize];
-    locationField.floatingLabel.font = [UIFont boldSystemFontOfSize:kJVFieldFloatingLabelFontSize];
+    locationField.floatingLabelFont = [UIFont boldSystemFontOfSize:kJVFieldFloatingLabelFontSize];
     locationField.floatingLabelTextColor = floatingLabelColor;
     [self.view addSubview:locationField];
-    
+    locationField.translatesAutoresizingMaskIntoConstraints = NO;
+
     UIView *div3 = [UIView new];
-    div3.frame = CGRectMake(kJVFieldHMargin, priceField.frame.origin.y + priceField.frame.size.height,
-                            self.view.frame.size.width - 2*kJVFieldHMargin, 1.0f);
     div3.backgroundColor = [[UIColor lightGrayColor] colorWithAlphaComponent:0.3f];
     [self.view addSubview:div3];
-    
-    JVFloatLabeledTextView *descriptionField =
-    [[JVFloatLabeledTextView alloc] initWithFrame:CGRectMake(kJVFieldHMargin,
-                                                             div3.frame.origin.y + div3.frame.size.height,
-                                                             self.view.frame.size.width - 2*kJVFieldHMargin,
-                                                             kJVFieldHeight*3)];
+    div3.translatesAutoresizingMaskIntoConstraints = NO;
+
+    JVFloatLabeledTextView *descriptionField = [[JVFloatLabeledTextView alloc] initWithFrame:CGRectZero];
     descriptionField.placeholder = NSLocalizedString(@"Description", @"");
     descriptionField.placeholderTextColor = [UIColor darkGrayColor];
     descriptionField.font = [UIFont systemFontOfSize:kJVFieldFontSize];
-    descriptionField.floatingLabel.font = [UIFont boldSystemFontOfSize:kJVFieldFloatingLabelFontSize];
+    descriptionField.floatingLabelFont = [UIFont boldSystemFontOfSize:kJVFieldFloatingLabelFontSize];
     descriptionField.floatingLabelTextColor = floatingLabelColor;
     [self.view addSubview:descriptionField];
-    
+    descriptionField.translatesAutoresizingMaskIntoConstraints = NO;
+
+    [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-(xMargin)-[titleField]-(xMargin)-|" options:0 metrics:@{@"xMargin": @(kJVFieldHMargin)} views:NSDictionaryOfVariableBindings(titleField)]];
+    [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|[div1]|" options:0 metrics:nil views:NSDictionaryOfVariableBindings(div1)]];
+    [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-(xMargin)-[priceField]-(xMargin)-[div2(1)]-(xMargin)-[locationField]-(xMargin)-|" options:NSLayoutFormatAlignAllCenterY metrics:@{@"xMargin": @(kJVFieldHMargin)} views:NSDictionaryOfVariableBindings(priceField, div2, locationField)]];
+    [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|[div3]|" options:0 metrics:nil views:NSDictionaryOfVariableBindings(div3)]];
+    [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-(xMargin)-[descriptionField]-(xMargin)-|" options:0 metrics:@{@"xMargin": @(kJVFieldHMargin)} views:NSDictionaryOfVariableBindings(descriptionField)]];
+
+    [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|[titleField(>=minHeight)][div1(1)][priceField(>=minHeight)][div3(1)][descriptionField]|" options:0 metrics:@{@"minHeight": @(kJVFieldHeight)} views:NSDictionaryOfVariableBindings(titleField, div1, priceField, div3, descriptionField)]];
+    [self.view addConstraint:[NSLayoutConstraint constraintWithItem:priceField attribute:NSLayoutAttributeHeight relatedBy:NSLayoutRelationEqual toItem:div2 attribute:NSLayoutAttributeHeight multiplier:1.0 constant:0.0]];
+    [self.view addConstraint:[NSLayoutConstraint constraintWithItem:priceField attribute:NSLayoutAttributeHeight relatedBy:NSLayoutRelationEqual toItem:locationField attribute:NSLayoutAttributeHeight multiplier:1.0 constant:0.0]];
+
     [titleField becomeFirstResponder];
     
 }
