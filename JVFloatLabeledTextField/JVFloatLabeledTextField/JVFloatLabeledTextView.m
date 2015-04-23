@@ -28,8 +28,8 @@
 #import "JVFloatLabeledTextView.h"
 #import "NSString+TextDirectionality.h"
 
-#define kFloatingLabelShowAnimationDuration 0.3f
-#define kFloatingLabelHideAnimationDuration 0.3f
+static CGFloat const kFloatingLabelShowAnimationDuration = 0.3f;
+static CGFloat const kFloatingLabelHideAnimationDuration = 0.3f;
 
 @interface JVFloatLabeledTextView ()
 
@@ -65,7 +65,7 @@
 - (void)commonInit
 {
     self.startingTextContainerInsetTop = self.textContainerInset.top;
-    self.floatingLabelShouldLockToTop = 1;
+    self.floatingLabelShouldLockToTop = YES;
     self.textContainer.lineFragmentPadding = 0;
     
     _placeholderLabel = [[UILabel alloc] initWithFrame:self.frame];
@@ -88,7 +88,7 @@
     _floatingLabel.font = _floatingLabelFont;
     _floatingLabelTextColor = [UIColor grayColor];
     _floatingLabel.textColor = _floatingLabelTextColor;
-    _animateEvenIfNotFirstResponder = 0;
+    _animateEvenIfNotFirstResponder = NO;
     _floatingLabelShowAnimationDuration = kFloatingLabelShowAnimationDuration;
     _floatingLabelHideAnimationDuration = kFloatingLabelHideAnimationDuration;
 

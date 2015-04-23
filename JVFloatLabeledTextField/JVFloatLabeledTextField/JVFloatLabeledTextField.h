@@ -52,72 +52,69 @@ IB_DESIGNABLE
  * Padding to be applied to the y coordinate of the floating label upon presentation.
  * Defaults to zero.
  */
-@property (nonatomic) CGFloat floatingLabelYPadding UI_APPEARANCE_SELECTOR;
+@property (nonatomic) CGFloat floatingLabelYPadding;
 
 /**
  * Padding to be applied to the x coordinate of the floating label upon presentation.
  * Defaults to zero
  */
-@property (nonatomic) IBInspectable CGFloat floatingLabelXPadding UI_APPEARANCE_SELECTOR;
+@property (nonatomic) IBInspectable CGFloat floatingLabelXPadding;
 
 /**
  * Padding to be applied to the y coordinate of the placeholder.
  * Defaults to zero.
  */
-@property (nonatomic) CGFloat placeholderYPadding UI_APPEARANCE_SELECTOR;
+@property (nonatomic) CGFloat placeholderYPadding;
 
 /**
  * Font to be applied to the floating label. 
  * Defaults to `[UIFont boldSystemFontOfSize:12.0f]`.
  * Provided for the convenience of using as an appearance proxy.
  */
-@property (nonatomic, strong) IBInspectable UIFont * floatingLabelFont UI_APPEARANCE_SELECTOR;
+@property (nonatomic, strong) IBInspectable UIFont * floatingLabelFont;
 
 /**
  * Text color to be applied to the floating label. 
  * Defaults to `[UIColor grayColor]`.
  * Provided for the convenience of using as an appearance proxy.
  */
-@property (nonatomic, strong) IBInspectable UIColor * floatingLabelTextColor UI_APPEARANCE_SELECTOR;
+@property (nonatomic, strong) IBInspectable UIColor * floatingLabelTextColor;
 
 /**
  * Text color to be applied to the floating label while the field is a first responder.
  * Tint color is used by default if an `floatingLabelActiveTextColor` is not provided.
  */
-@property (nonatomic, strong) IBInspectable UIColor * floatingLabelActiveTextColor UI_APPEARANCE_SELECTOR;
+@property (nonatomic, strong) IBInspectable UIColor * floatingLabelActiveTextColor;
 
 /**
  * Indicates whether the floating label's appearance should be animated regardless of first responder status.
  * By default, animation only occurs if the text field is a first responder.
- * Non-zero values indicate truthiness. (BOOL cannot be used with UI_APPEARANCE_SELECTOR on iOS 7).
  */
-@property (nonatomic, assign) IBInspectable NSInteger animateEvenIfNotFirstResponder UI_APPEARANCE_SELECTOR;
+@property (nonatomic, assign) IBInspectable BOOL animateEvenIfNotFirstResponder;
 
 /**
  * Duration of the animation when showing the floating label. 
  * Defaults to 0.3 seconds.
  */
-@property (nonatomic, assign) NSTimeInterval floatingLabelShowAnimationDuration UI_APPEARANCE_SELECTOR;
+@property (nonatomic, assign) NSTimeInterval floatingLabelShowAnimationDuration;
 
 /**
  * Duration of the animation when hiding the floating label. 
  * Defaults to 0.3 seconds.
  */
-@property (nonatomic, assign) NSTimeInterval floatingLabelHideAnimationDuration UI_APPEARANCE_SELECTOR;
+@property (nonatomic, assign) NSTimeInterval floatingLabelHideAnimationDuration;
 
 /**
  * Indicates whether the clearButton position is adjusted to align with the text
  * Defaults to 1.
- * Non-zero values indicate truthiness. (BOOL cannot be used with UI_APPEARANCE_SELECTOR on iOS 7).
  */
-@property (nonatomic, assign) NSInteger adjustsClearButtonRect UI_APPEARANCE_SELECTOR;
+@property (nonatomic, assign) BOOL adjustsClearButtonRect;
 
 /**
  * Indicates whether or not to drop the baseline when entering text. Setting to YES (not the default) means the standard greyed-out placeholder will be aligned with the entered text
- * Defaults to 0 (standard placeholder will be above whatever text is entered)
- * Non-zero values indicates truthiness. (BOOL cannot be used with UI_APPEARANCE_SELECTOR on iOS 7).
+ * Defaults to NO (standard placeholder will be above whatever text is entered)
  */
-@property (nonatomic, assign) IBInspectable NSInteger keepBaseline UI_APPEARANCE_SELECTOR;
+@property (nonatomic, assign) IBInspectable BOOL keepBaseline;
 
 /**
  *  Sets the placeholder and the floating title

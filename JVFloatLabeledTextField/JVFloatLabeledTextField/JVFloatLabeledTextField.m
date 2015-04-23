@@ -28,8 +28,8 @@
 #import "JVFloatLabeledTextField.h"
 #import "NSString+TextDirectionality.h"
 
-#define kFloatingLabelShowAnimationDuration 0.3f
-#define kFloatingLabelHideAnimationDuration 0.3f
+static CGFloat const kFloatingLabelShowAnimationDuration = 0.3f;
+static CGFloat const kFloatingLabelHideAnimationDuration = 0.3f;
 
 @implementation JVFloatLabeledTextField
 
@@ -62,12 +62,12 @@
     _floatingLabel.font = _floatingLabelFont;
     _floatingLabelTextColor = [UIColor grayColor];
     _floatingLabel.textColor = _floatingLabelTextColor;
-    _animateEvenIfNotFirstResponder = 0;
+    _animateEvenIfNotFirstResponder = NO;
     _floatingLabelShowAnimationDuration = kFloatingLabelShowAnimationDuration;
     _floatingLabelHideAnimationDuration = kFloatingLabelHideAnimationDuration;
     [self setFloatingLabelText:self.placeholder];
 
-    _adjustsClearButtonRect = 1;
+    _adjustsClearButtonRect = YES;
 }
 
 #pragma mark -
