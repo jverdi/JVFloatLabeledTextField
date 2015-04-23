@@ -61,7 +61,7 @@ IB_DESIGNABLE
 /**
  * Padding to be applied to the y coordinate of the floating label upon presentation.
  */
-@property (nonatomic) CGFloat floatingLabelYPadding;
+@property (nonatomic) IBInspectable CGFloat floatingLabelYPadding;
 
 /**
  * Padding to be applied to the x coordinate of the floating label upon presentation.
@@ -71,13 +71,13 @@ IB_DESIGNABLE
 /**
  * Padding to be applied to the y coordinate of the placeholder.
  */
-@property (nonatomic) CGFloat placeholderYPadding;
+@property (nonatomic) IBInspectable CGFloat placeholderYPadding;
 
 /**
  * Font to be applied to the floating label. Defaults to `[UIFont boldSystemFontOfSize:12.0f]`. 
  * Provided for the convenience of using as an appearance proxy.
  */
-@property (nonatomic, strong) IBInspectable UIFont * floatingLabelFont;
+@property (nonatomic, strong) UIFont * floatingLabelFont;
 
 /**
  * Text color to be applied to the floating label while the text view is not a first responder.
@@ -110,7 +110,7 @@ IB_DESIGNABLE
  * Indicates whether the floating label's appearance should be animated regardless of first responder status.
  * By default, animation only occurs if the text field is a first responder.
  */
-@property (nonatomic, assign) BOOL animateEvenIfNotFirstResponder;
+@property (nonatomic, assign) IBInspectable BOOL animateEvenIfNotFirstResponder;
 
 /**
  * Duration of the animation when showing the floating label. 

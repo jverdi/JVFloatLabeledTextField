@@ -52,7 +52,7 @@ IB_DESIGNABLE
  * Padding to be applied to the y coordinate of the floating label upon presentation.
  * Defaults to zero.
  */
-@property (nonatomic) CGFloat floatingLabelYPadding;
+@property (nonatomic) IBInspectable CGFloat floatingLabelYPadding;
 
 /**
  * Padding to be applied to the x coordinate of the floating label upon presentation.
@@ -64,14 +64,14 @@ IB_DESIGNABLE
  * Padding to be applied to the y coordinate of the placeholder.
  * Defaults to zero.
  */
-@property (nonatomic) CGFloat placeholderYPadding;
+@property (nonatomic) IBInspectable CGFloat placeholderYPadding;
 
 /**
  * Font to be applied to the floating label. 
  * Defaults to `[UIFont boldSystemFontOfSize:12.0f]`.
  * Provided for the convenience of using as an appearance proxy.
  */
-@property (nonatomic, strong) IBInspectable UIFont * floatingLabelFont;
+@property (nonatomic, strong) UIFont * floatingLabelFont;
 
 /**
  * Text color to be applied to the floating label. 
@@ -108,7 +108,7 @@ IB_DESIGNABLE
  * Indicates whether the clearButton position is adjusted to align with the text
  * Defaults to 1.
  */
-@property (nonatomic, assign) BOOL adjustsClearButtonRect;
+@property (nonatomic, assign) IBInspectable BOOL adjustsClearButtonRect;
 
 /**
  * Indicates whether or not to drop the baseline when entering text. Setting to YES (not the default) means the standard greyed-out placeholder will be aligned with the entered text
