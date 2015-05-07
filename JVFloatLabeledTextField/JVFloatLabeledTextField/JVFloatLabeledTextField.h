@@ -68,15 +68,16 @@ IB_DESIGNABLE
 
 /**
  * Font to be applied to the floating label. 
- * Defaults to `[UIFont boldSystemFontOfSize:12.0f]`.
- * Provided for the convenience of using as an appearance proxy.
+ * Defaults to the first applicable of the following:
+ * - the custom specified attributed placeholder font at 70% of its size
+ * - the custom specified textField font at 70% of its size
+ * - `[UIFont boldSystemFontOfSize:12.0f]`
  */
 @property (nonatomic, strong) UIFont * floatingLabelFont;
 
 /**
  * Text color to be applied to the floating label. 
  * Defaults to `[UIColor grayColor]`.
- * Provided for the convenience of using as an appearance proxy.
  */
 @property (nonatomic, strong) IBInspectable UIColor * floatingLabelTextColor;
 

@@ -32,6 +32,9 @@ static CGFloat const kFloatingLabelShowAnimationDuration = 0.3f;
 static CGFloat const kFloatingLabelHideAnimationDuration = 0.3f;
 
 @implementation JVFloatLabeledTextField
+{
+    BOOL _isFloatingLabelFontDefault;
+}
 
 - (instancetype)initWithFrame:(CGRect)frame
 {
@@ -68,9 +71,35 @@ static CGFloat const kFloatingLabelHideAnimationDuration = 0.3f;
     [self setFloatingLabelText:self.placeholder];
 
     _adjustsClearButtonRect = YES;
+    _isFloatingLabelFontDefault = YES;
 }
 
 #pragma mark -
+
+- (void)updateDefaultFloatingLabelFont
+{
+    UIFont *textFieldFont = nil;
+    
+    if (!textFieldFont && self.attributedPlaceholder && self.attributedPlaceholder.length > 0) {
+        textFieldFont = [self.attributedPlaceholder attribute:NSFontAttributeName atIndex:0 effectiveRange:NULL];
+    }
+    if (!textFieldFont && self.attributedText && self.attributedText.length > 0) {
+        textFieldFont = [self.attributedText attribute:NSFontAttributeName atIndex:0 effectiveRange:NULL];
+    }
+    if (!textFieldFont) {
+        textFieldFont = self.font;
+    }
+    
+    UIFont *derivedFont = [UIFont fontWithName:textFieldFont.fontName size:roundf(textFieldFont.pointSize * 0.7f)];
+    
+    if (_isFloatingLabelFontDefault) {
+        self.floatingLabelFont = derivedFont;
+    }
+    else {
+        // dont apply to the label, just store for future use where floatingLabelFont may be reset to nil
+        _floatingLabelFont = derivedFont;
+    }
+}
 
 - (UIColor *)labelActiveColor
 {
@@ -85,8 +114,11 @@ static CGFloat const kFloatingLabelHideAnimationDuration = 0.3f;
 
 - (void)setFloatingLabelFont:(UIFont *)floatingLabelFont
 {
-    _floatingLabelFont = floatingLabelFont;
-    _floatingLabel.font = (_floatingLabelFont ? _floatingLabelFont : [UIFont boldSystemFontOfSize:12.0f]);
+    if (floatingLabelFont != nil) {
+        _floatingLabelFont = floatingLabelFont;
+    }
+    _floatingLabel.font = _floatingLabelFont ? _floatingLabelFont : [UIFont boldSystemFontOfSize:12.0f];
+    _isFloatingLabelFontDefault = floatingLabelFont == nil;
     [self setFloatingLabelText:self.placeholder];
     [self invalidateIntrinsicContentSize];
 }
@@ -167,6 +199,18 @@ static CGFloat const kFloatingLabelHideAnimationDuration = 0.3f;
 
 #pragma mark - UITextField
 
+- (void)setFont:(UIFont *)font
+{
+    [super setFont:font];
+    [self updateDefaultFloatingLabelFont];
+}
+
+- (void)setAttributedText:(NSAttributedString *)attributedText
+{
+    [super setAttributedText:attributedText];
+    [self updateDefaultFloatingLabelFont];
+}
+
 - (CGSize)intrinsicContentSize
 {
     CGSize textFieldIntrinsicContentSize = [super intrinsicContentSize];
@@ -185,6 +229,7 @@ static CGFloat const kFloatingLabelHideAnimationDuration = 0.3f;
 {
     [super setAttributedPlaceholder:attributedPlaceholder];
     [self setFloatingLabelText:attributedPlaceholder.string];
+    [self updateDefaultFloatingLabelFont];
 }
 
 - (void)setPlaceholder:(NSString *)placeholder floatingTitle:(NSString *)floatingTitle
