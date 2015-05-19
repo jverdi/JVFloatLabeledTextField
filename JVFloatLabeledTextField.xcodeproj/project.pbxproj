@@ -14,7 +14,7 @@
 		639EABFD1B0B5F83001DD7B5 /* JVFloatLabeledTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FF4DB93180B865F008527BD /* JVFloatLabeledTextField.m */; };
 		639EABFE1B0B5F83001DD7B5 /* JVFloatLabeledTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F9AB496183B2EBF00694AB0 /* JVFloatLabeledTextView.m */; };
 		639EABFF1B0B5F83001DD7B5 /* NSString+TextDirectionality.m in Sources */ = {isa = PBXBuildFile; fileRef = 4306C37319531E7000CC0A4C /* NSString+TextDirectionality.m */; };
-		639EAC011B0B6013001DD7B5 /* Framework-Header.h in Headers */ = {isa = PBXBuildFile; fileRef = 639EABF41B0B5EC6001DD7B5 /* Framework-Header.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		639EAC011B0B6013001DD7B5 /* JVFloatLabeledText.h in Headers */ = {isa = PBXBuildFile; fileRef = 639EABF41B0B5EC6001DD7B5 /* JVFloatLabeledText.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7F394935199DE5E10069C867 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F394934199DE5E10069C867 /* XCTest.framework */; };
 		7F394936199DE5E10069C867 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F50335917FA7B0A0026FB7F /* Foundation.framework */; };
 		7F394937199DE5E10069C867 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F50335D17FA7B0A0026FB7F /* UIKit.framework */; };
@@ -59,9 +59,9 @@
 /* Begin PBXFileReference section */
 		4306C37219531E7000CC0A4C /* NSString+TextDirectionality.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+TextDirectionality.h"; sourceTree = "<group>"; };
 		4306C37319531E7000CC0A4C /* NSString+TextDirectionality.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+TextDirectionality.m"; sourceTree = "<group>"; };
-		639EABD51B0B5E6F001DD7B5 /* JVFloatLabeledTextField.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = JVFloatLabeledTextField.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		639EABF41B0B5EC6001DD7B5 /* Framework-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Framework-Header.h"; sourceTree = "<group>"; };
-		639EABF51B0B5EC6001DD7B5 /* Framework-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Framework-Info.plist"; sourceTree = "<group>"; };
+		639EABD51B0B5E6F001DD7B5 /* JVFloatLabeledText.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = JVFloatLabeledText.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		639EABF41B0B5EC6001DD7B5 /* JVFloatLabeledText.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JVFloatLabeledText.h; sourceTree = "<group>"; };
+		639EABF51B0B5EC6001DD7B5 /* JVFloatLabeledText-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "JVFloatLabeledText-Info.plist"; sourceTree = "<group>"; };
 		7F394933199DE5E10069C867 /* JVFloatLabeledTextFieldTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JVFloatLabeledTextFieldTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7F394934199DE5E10069C867 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		7F39493A199DE5E10069C867 /* JVFloatLabeledTextFieldTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "JVFloatLabeledTextFieldTests-Info.plist"; sourceTree = "<group>"; };
@@ -159,7 +159,7 @@
 			children = (
 				7F50335617FA7B0A0026FB7F /* JVFloatLabeledTextField.app */,
 				7F394933199DE5E10069C867 /* JVFloatLabeledTextFieldTests.xctest */,
-				639EABD51B0B5E6F001DD7B5 /* JVFloatLabeledTextField.framework */,
+				639EABD51B0B5E6F001DD7B5 /* JVFloatLabeledText.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -190,8 +190,8 @@
 		7F50336017FA7B0A0026FB7F /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				639EABF41B0B5EC6001DD7B5 /* Framework-Header.h */,
-				639EABF51B0B5EC6001DD7B5 /* Framework-Info.plist */,
+				639EABF41B0B5EC6001DD7B5 /* JVFloatLabeledText.h */,
+				639EABF51B0B5EC6001DD7B5 /* JVFloatLabeledText-Info.plist */,
 				7F90201F1809A2BF00B43AD5 /* images */,
 				7F50336117FA7B0A0026FB7F /* JVFloatLabeledTextField-Info.plist */,
 				7F50336717FA7B0A0026FB7F /* JVFloatLabeledTextField-Prefix.pch */,
@@ -230,7 +230,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				639EAC011B0B6013001DD7B5 /* Framework-Header.h in Headers */,
+				639EAC011B0B6013001DD7B5 /* JVFloatLabeledText.h in Headers */,
 				639EABFA1B0B5F79001DD7B5 /* JVFloatLabeledTextField.h in Headers */,
 				639EABFB1B0B5F79001DD7B5 /* JVFloatLabeledTextView.h in Headers */,
 				639EABFC1B0B5F79001DD7B5 /* NSString+TextDirectionality.h in Headers */,
@@ -240,9 +240,9 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		639EABD41B0B5E6F001DD7B5 /* JVFloatLabeledTextField-Framework */ = {
+		639EABD41B0B5E6F001DD7B5 /* JVFloatLabeledText */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 639EABEE1B0B5E6F001DD7B5 /* Build configuration list for PBXNativeTarget "JVFloatLabeledTextField-Framework" */;
+			buildConfigurationList = 639EABEE1B0B5E6F001DD7B5 /* Build configuration list for PBXNativeTarget "JVFloatLabeledText" */;
 			buildPhases = (
 				639EABD01B0B5E6F001DD7B5 /* Sources */,
 				639EABD11B0B5E6F001DD7B5 /* Frameworks */,
@@ -253,9 +253,9 @@
 			);
 			dependencies = (
 			);
-			name = "JVFloatLabeledTextField-Framework";
+			name = JVFloatLabeledText;
 			productName = Framework;
-			productReference = 639EABD51B0B5E6F001DD7B5 /* JVFloatLabeledTextField.framework */;
+			productReference = 639EABD51B0B5E6F001DD7B5 /* JVFloatLabeledText.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		7F394932199DE5E10069C867 /* JVFloatLabeledTextFieldTests */ = {
@@ -327,7 +327,7 @@
 			targets = (
 				7F50335517FA7B0A0026FB7F /* JVFloatLabeledTextField */,
 				7F394932199DE5E10069C867 /* JVFloatLabeledTextFieldTests */,
-				639EABD41B0B5E6F001DD7B5 /* JVFloatLabeledTextField-Framework */,
+				639EABD41B0B5E6F001DD7B5 /* JVFloatLabeledText */,
 			);
 		};
 /* End PBXProject section */
@@ -432,12 +432,12 @@
 					"$(inherited)",
 				);
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
-				INFOPLIST_FILE = "JVFloatLabeledTextField/Framework-Info.plist";
+				INFOPLIST_FILE = "JVFloatLabeledTextField/JVFloatLabeledText-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MTL_ENABLE_DEBUG_INFO = YES;
-				PRODUCT_NAME = JVFloatLabeledTextField;
+				PRODUCT_NAME = JVFloatLabeledText;
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -460,12 +460,12 @@
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
-				INFOPLIST_FILE = "JVFloatLabeledTextField/Framework-Info.plist";
+				INFOPLIST_FILE = "JVFloatLabeledTextField/JVFloatLabeledText-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_NAME = JVFloatLabeledTextField;
+				PRODUCT_NAME = JVFloatLabeledText;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
@@ -618,7 +618,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		639EABEE1B0B5E6F001DD7B5 /* Build configuration list for PBXNativeTarget "JVFloatLabeledTextField-Framework" */ = {
+		639EABEE1B0B5E6F001DD7B5 /* Build configuration list for PBXNativeTarget "JVFloatLabeledText" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				639EABEF1B0B5E6F001DD7B5 /* Debug */,

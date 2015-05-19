@@ -15,8 +15,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "639EABD41B0B5E6F001DD7B5"
-               BuildableName = "JVFloatLabeledTextField.framework"
-               BlueprintName = "JVFloatLabeledTextField-Framework"
+               BuildableName = "JVFloatLabeledText.framework"
+               BlueprintName = "JVFloatLabeledText"
                ReferencedContainer = "container:JVFloatLabeledTextField.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -43,8 +43,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "639EABD41B0B5E6F001DD7B5"
-            BuildableName = "JVFloatLabeledTextField.framework"
-            BlueprintName = "JVFloatLabeledTextField-Framework"
+            BuildableName = "JVFloatLabeledText.framework"
+            BlueprintName = "JVFloatLabeledText"
             ReferencedContainer = "container:JVFloatLabeledTextField.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -61,8 +61,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "639EABD41B0B5E6F001DD7B5"
-            BuildableName = "JVFloatLabeledTextField.framework"
-            BlueprintName = "JVFloatLabeledTextField-Framework"
+            BuildableName = "JVFloatLabeledText.framework"
+            BlueprintName = "JVFloatLabeledText"
             ReferencedContainer = "container:JVFloatLabeledTextField.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
