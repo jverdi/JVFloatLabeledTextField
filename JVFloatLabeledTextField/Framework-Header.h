@@ -14,5 +14,5 @@ FOUNDATION_EXPORT double JVFloatLabeledTextFieldVersionNumber;
 //! Project version string for JVFloatLabeledTextField.
 FOUNDATION_EXPORT const unsigned char JVFloatLabeledTextFieldVersionString[];
 
-#import "JVFloatLabeledTextField.h"
-#import "JVFloatLabeledTextView.h"
+#import <JVFloatLabeledTextField/JVFloatLabeledTextField.h>
+#import <JVFloatLabeledTextField/JVFloatLabeledTextView.h>
