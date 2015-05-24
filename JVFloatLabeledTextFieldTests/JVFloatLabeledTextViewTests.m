@@ -52,7 +52,7 @@
     XCTAssertEqual(self.testView.placeholderLabel.text, self.testView.placeholder);
     XCTAssertEqual(self.testView.floatingLabelYPadding, 0.0f);
     XCTAssertEqual(self.testView.placeholderYPadding, 0.0f);
-    XCTAssertEqual(self.testView.floatingLabelFont, [UIFont boldSystemFontOfSize:12.0f]);
+    XCTAssertNotNil(self.testView.floatingLabelFont);
     XCTAssertEqual(self.testView.floatingLabelFont, self.testView.floatingLabel.font);
     XCTAssert(CGColorEqualToColor(self.testView.floatingLabelTextColor.CGColor,
                                   [UIColor grayColor].CGColor));

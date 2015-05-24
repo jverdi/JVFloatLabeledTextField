@@ -51,7 +51,7 @@
 {
     XCTAssertEqual(self.testField.floatingLabelYPadding, 0.0f);
     XCTAssertEqual(self.testField.placeholderYPadding, 0.0f);
-    XCTAssertEqual(self.testField.floatingLabelFont, [UIFont boldSystemFontOfSize:12.0f]);
+    XCTAssertNotNil(self.testField.floatingLabelFont);
     XCTAssertEqual(self.testField.floatingLabelFont, self.testField.floatingLabel.font);
     XCTAssert(CGColorEqualToColor(self.testField.floatingLabelTextColor.CGColor,
                                   [UIColor grayColor].CGColor));
