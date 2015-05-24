@@ -61,7 +61,7 @@ static CGFloat const kFloatingLabelHideAnimationDuration = 0.3f;
     [self addSubview:_floatingLabel];
 	
     // some basic default fonts/colors
-    _floatingLabelFont = [UIFont boldSystemFontOfSize:12.0f];
+    _floatingLabelFont = [self defaultFloatingLabelFont];
     _floatingLabel.font = _floatingLabelFont;
     _floatingLabelTextColor = [UIColor grayColor];
     _floatingLabel.textColor = _floatingLabelTextColor;
@@ -76,7 +76,7 @@ static CGFloat const kFloatingLabelHideAnimationDuration = 0.3f;
 
 #pragma mark -
 
-- (void)updateDefaultFloatingLabelFont
+- (UIFont *)defaultFloatingLabelFont
 {
     UIFont *textFieldFont = nil;
     
@@ -90,7 +90,12 @@ static CGFloat const kFloatingLabelHideAnimationDuration = 0.3f;
         textFieldFont = self.font;
     }
     
-    UIFont *derivedFont = [UIFont fontWithName:textFieldFont.fontName size:roundf(textFieldFont.pointSize * 0.7f)];
+    return [UIFont fontWithName:textFieldFont.fontName size:roundf(textFieldFont.pointSize * 0.7f)];
+}
+
+- (void)updateDefaultFloatingLabelFont
+{
+    UIFont *derivedFont = [self defaultFloatingLabelFont];
     
     if (_isFloatingLabelFontDefault) {
         self.floatingLabelFont = derivedFont;
@@ -117,7 +122,7 @@ static CGFloat const kFloatingLabelHideAnimationDuration = 0.3f;
     if (floatingLabelFont != nil) {
         _floatingLabelFont = floatingLabelFont;
     }
-    _floatingLabel.font = _floatingLabelFont ? _floatingLabelFont : [UIFont boldSystemFontOfSize:12.0f];
+    _floatingLabel.font = _floatingLabelFont ? _floatingLabelFont : [self defaultFloatingLabelFont];
     _isFloatingLabelFontDefault = floatingLabelFont == nil;
     [self setFloatingLabelText:self.placeholder];
     [self invalidateIntrinsicContentSize];

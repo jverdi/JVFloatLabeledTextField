@@ -71,7 +71,6 @@ IB_DESIGNABLE
  * Defaults to the first applicable of the following:
  * - the custom specified attributed placeholder font at 70% of its size
  * - the custom specified textField font at 70% of its size
- * - `[UIFont boldSystemFontOfSize:12.0f]`
  */
 @property (nonatomic, strong) UIFont * floatingLabelFont;
 
