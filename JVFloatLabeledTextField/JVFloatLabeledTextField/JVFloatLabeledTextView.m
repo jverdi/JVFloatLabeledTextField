@@ -168,10 +168,6 @@ static CGFloat const kFloatingLabelHideAnimationDuration = 0.3f;
     
     [self setLabelOriginForTextAlignment];
     
-    if (self.floatingLabelFont) {
-        _floatingLabel.font = self.floatingLabelFont;
-    }
-    
     BOOL firstResponder = self.isFirstResponder;
     _floatingLabel.textColor = (firstResponder && self.text && self.text.length > 0 ?
                                 self.labelActiveColor : self.floatingLabelTextColor);
