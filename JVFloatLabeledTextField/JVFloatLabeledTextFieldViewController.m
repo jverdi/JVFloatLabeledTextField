@@ -74,7 +74,7 @@ const static CGFloat kJVFieldFloatingLabelFontSize = 11.0f;
     titleField.clearButtonMode = UITextFieldViewModeWhileEditing;
     [self.view addSubview:titleField];
     titleField.translatesAutoresizingMaskIntoConstraints = NO;
-    titleField.keepBaseline = 1;
+    titleField.keepBaseline = YES;
 
     UIView *div1 = [UIView new];
     div1.backgroundColor = [[UIColor lightGrayColor] colorWithAlphaComponent:0.3f];
