@@ -14,23 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "7F50335517FA7B0A0026FB7F"
-               BuildableName = "JVFloatLabeledTextField.app"
-               BlueprintName = "JVFloatLabeledTextField"
-               ReferencedContainer = "container:JVFloatLabeledTextField.xcodeproj">
-            </BuildableReference>
-         </BuildActionEntry>
-         <BuildActionEntry
-            buildForTesting = "YES"
-            buildForRunning = "YES"
-            buildForProfiling = "NO"
-            buildForArchiving = "NO"
-            buildForAnalyzing = "YES">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "7F394932199DE5E10069C867"
-               BuildableName = "JVFloatLabeledTextFieldTests.xctest"
-               BlueprintName = "JVFloatLabeledTextFieldTests"
+               BlueprintIdentifier = "639EABD41B0B5E6F001DD7B5"
+               BuildableName = "JVFloatLabeledText.framework"
+               BlueprintName = "JVFloatLabeledText"
                ReferencedContainer = "container:JVFloatLabeledTextField.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -42,26 +28,7 @@
       shouldUseLaunchSchemeArgsEnv = "YES"
       buildConfiguration = "Debug">
       <Testables>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "7F394932199DE5E10069C867"
-               BuildableName = "JVFloatLabeledTextFieldTests.xctest"
-               BlueprintName = "JVFloatLabeledTextFieldTests"
-               ReferencedContainer = "container:JVFloatLabeledTextField.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
       </Testables>
-      <MacroExpansion>
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "7F50335517FA7B0A0026FB7F"
-            BuildableName = "JVFloatLabeledTextField.app"
-            BlueprintName = "JVFloatLabeledTextField"
-            ReferencedContainer = "container:JVFloatLabeledTextField.xcodeproj">
-         </BuildableReference>
-      </MacroExpansion>
    </TestAction>
    <LaunchAction
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
@@ -72,16 +39,15 @@
       ignoresPersistentStateOnLaunch = "NO"
       debugDocumentVersioning = "YES"
       allowLocationSimulation = "YES">
-      <BuildableProductRunnable
-         runnableDebuggingMode = "0">
+      <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "7F50335517FA7B0A0026FB7F"
-            BuildableName = "JVFloatLabeledTextField.app"
-            BlueprintName = "JVFloatLabeledTextField"
+            BlueprintIdentifier = "639EABD41B0B5E6F001DD7B5"
+            BuildableName = "JVFloatLabeledText.framework"
+            BlueprintName = "JVFloatLabeledText"
             ReferencedContainer = "container:JVFloatLabeledTextField.xcodeproj">
          </BuildableReference>
-      </BuildableProductRunnable>
+      </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </LaunchAction>
@@ -91,16 +57,15 @@
       useCustomWorkingDirectory = "NO"
       buildConfiguration = "Release"
       debugDocumentVersioning = "YES">
-      <BuildableProductRunnable
-         runnableDebuggingMode = "0">
+      <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "7F50335517FA7B0A0026FB7F"
-            BuildableName = "JVFloatLabeledTextField.app"
-            BlueprintName = "JVFloatLabeledTextField"
+            BlueprintIdentifier = "639EABD41B0B5E6F001DD7B5"
+            BuildableName = "JVFloatLabeledText.framework"
+            BlueprintName = "JVFloatLabeledText"
             ReferencedContainer = "container:JVFloatLabeledTextField.xcodeproj">
          </BuildableReference>
-      </BuildableProductRunnable>
+      </MacroExpansion>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">
