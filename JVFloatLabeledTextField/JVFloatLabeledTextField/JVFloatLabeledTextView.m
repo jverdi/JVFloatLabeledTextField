@@ -69,6 +69,8 @@ static CGFloat const kFloatingLabelHideAnimationDuration = 0.3f;
     self.textContainer.lineFragmentPadding = 0;
     
     _placeholderLabel = [[UILabel alloc] initWithFrame:self.frame];
+    // by default self.font is nil - so make UITextView use UILabel's default
+    self.font = _placeholderLabel.font;
     _placeholderLabel.font = self.font;
     _placeholderLabel.text = self.placeholder;
     _placeholderLabel.numberOfLines = 0;
@@ -84,7 +86,7 @@ static CGFloat const kFloatingLabelHideAnimationDuration = 0.3f;
     [self addSubview:_floatingLabel];
 	
     // some basic default fonts/colors
-    _floatingLabelFont = [UIFont boldSystemFontOfSize:12.0f];
+    _floatingLabelFont = [self defaultFloatingLabelFont];
     _floatingLabel.font = _floatingLabelFont;
     _floatingLabelTextColor = [UIColor grayColor];
     _floatingLabel.textColor = _floatingLabelTextColor;
@@ -120,6 +122,20 @@ static CGFloat const kFloatingLabelHideAnimationDuration = 0.3f;
 }
 
 #pragma mark -
+
+- (UIFont *)defaultFloatingLabelFont
+{
+    UIFont *textViewFont = nil;
+    
+    if (!textViewFont && self.placeholderLabel.attributedText && self.placeholderLabel.attributedText.length > 0) {
+        textViewFont = [self.placeholderLabel.attributedText attribute:NSFontAttributeName atIndex:0 effectiveRange:NULL];
+    }
+    if (!textViewFont) {
+        textViewFont = self.placeholderLabel.font;
+    }
+    
+    return [UIFont fontWithName:textViewFont.fontName size:roundf(textViewFont.pointSize * 0.7f)];
+}
 
 - (void)setPlaceholder:(NSString *)placeholder
 {
@@ -294,7 +310,7 @@ static CGFloat const kFloatingLabelHideAnimationDuration = 0.3f;
 - (void)setFloatingLabelFont:(UIFont *)floatingLabelFont
 {
     _floatingLabelFont = floatingLabelFont;
-    _floatingLabel.font = (_floatingLabelFont ? _floatingLabelFont : [UIFont boldSystemFontOfSize:12.0f]);
+    _floatingLabel.font = _floatingLabelFont ? _floatingLabelFont : [self defaultFloatingLabelFont];
     self.placeholder = self.placeholder; // Force the label to lay itself out with the new font.
 }
 
