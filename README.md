@@ -19,6 +19,48 @@ Credits for the concept to Matt D. Smith ([@mds](http://www.twitter.com/mds)), a
 
 The component is officially supported for iOS 7 and greater.
 
+
+Getting started via Cocoapods
+=============================
+```
+sudo gem install cocoapods
+```
+
+Create a ```Podfile``` in your project directory:
+```
+pod init
+```
+
+Add the following to your ```Podfile``` project's target:
+```
+pod 'JVFloatLabeledTextField'
+```
+
+Then run cocoapods with ```pod install```.
+
+Finally, include ```JVFloatLabeledTextField.h``` and ```JVFloatLabeledTextView.h``` in your project.
+
+
+Getting started via Carthage
+============================
+```
+brew update
+brew install carthage
+```
+
+Create a ```Cartfile``` in your project directory that contains:
+```
+github "jverdi/JVFloatLabeledTextField"
+```
+
+Then run carthage with ```carthage update``` and add ```JVFloatLabeledText.framework``` to your project from the ```Carthage/Build/iOS``` directory.
+
+Finally, include ```JVFloatLabeledText.h``` in your project:
+```
+#import <JVFloatLabeledText/JVFloatLabeledText.h>
+```
+
+
 Additional References
 =======================
 [How the Float Label Pattern Started](http://mattdsmith.com/float-label-pattern/) - Matt D. Smith  
