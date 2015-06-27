@@ -297,10 +297,6 @@ static CGFloat const kFloatingLabelHideAnimationDuration = 0.3f;
     
     [self setLabelOriginForTextAlignment];
     
-    if (self.floatingLabelFont) {
-        _floatingLabel.font = self.floatingLabelFont;
-    }
-    
     CGSize floatingLabelSize = [_floatingLabel sizeThatFits:_floatingLabel.superview.bounds.size];
     
     _floatingLabel.frame = CGRectMake(_floatingLabel.frame.origin.x,
