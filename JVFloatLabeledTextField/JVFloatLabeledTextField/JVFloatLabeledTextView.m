@@ -69,8 +69,10 @@ static CGFloat const kFloatingLabelHideAnimationDuration = 0.3f;
     self.textContainer.lineFragmentPadding = 0;
     
     _placeholderLabel = [[UILabel alloc] initWithFrame:self.frame];
-    // by default self.font is nil - so make UITextView use UILabel's default
-    self.font = _placeholderLabel.font;
+    if (!self.font) {
+        // by default self.font may be nil - so make UITextView use UILabel's default
+        self.font = _placeholderLabel.font;
+    }
     _placeholderLabel.font = self.font;
     _placeholderLabel.text = self.placeholder;
     _placeholderLabel.numberOfLines = 0;
