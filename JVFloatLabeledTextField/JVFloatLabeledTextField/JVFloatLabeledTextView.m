@@ -30,10 +30,13 @@
 
 static CGFloat const kFloatingLabelShowAnimationDuration = 0.3f;
 static CGFloat const kFloatingLabelHideAnimationDuration = 0.3f;
+static CGFloat const kLineViewPadding = 3.0f;
+static CGFloat const kLineViewHeight = 0.5f;
 
 @interface JVFloatLabeledTextView ()
 
 @property (nonatomic) CGFloat startingTextContainerInsetTop;
+@property (nonatomic, strong) UIView* bottomBorderView;
 
 @end
 
@@ -125,6 +128,20 @@ static CGFloat const kFloatingLabelHideAnimationDuration = 0.3f;
 
 #pragma mark -
 
+- (void)setIsBottomBorderEnabled:(BOOL)isBottomBorderEnabled {
+    _isBottomBorderEnabled = isBottomBorderEnabled;
+    if (isBottomBorderEnabled) {
+        if (!_bottomBorderView) {
+            // add bottom border
+            _bottomBorderView = [[UIView alloc] init];
+            _bottomBorderView.backgroundColor = [UIColor grayColor];
+            [self addSubview:_bottomBorderView];
+        }
+    } else {
+        [_bottomBorderView removeFromSuperview];
+    }
+}
+
 - (UIFont *)defaultFloatingLabelFont
 {
     UIFont *textViewFont = nil;
@@ -195,6 +212,18 @@ static CGFloat const kFloatingLabelHideAnimationDuration = 0.3f;
     else {
         [self showFloatingLabel:firstResponder];
     }
+    
+    if (self.isBottomBorderEnabled) {
+        
+        if (self.contentSize.height < self.frame.size.height) {
+            _bottomBorderView.frame = CGRectMake(_floatingLabel.frame.origin.x,
+                                                 [self textRect].size.height - kLineViewPadding,
+                                                 CGRectGetWidth(self.frame),
+                                                 kLineViewHeight);
+        } else {
+            _bottomBorderView.frame = CGRectMake(0, CGRectGetHeight(self.frame) - kLineViewPadding + _floatingLabel.frame.origin.y, CGRectGetWidth(self.frame), kLineViewHeight);
+        }
+    }
 }
 
 - (UIColor *)labelActiveColor
@@ -260,11 +289,19 @@ static CGFloat const kFloatingLabelHideAnimationDuration = 0.3f;
 
 - (void)adjustTextContainerInsetTop
 {
-    self.textContainerInset = UIEdgeInsetsMake(self.startingTextContainerInsetTop
-                                               + _floatingLabel.font.lineHeight + _placeholderYPadding,
-                                               self.textContainerInset.left,
-                                               self.textContainerInset.bottom,
-                                               self.textContainerInset.right);
+    
+    if (self.isBottomBorderEnabled) {
+        self.textContainerInset = UIEdgeInsetsMake(self.font.lineHeight + kLineViewPadding,
+                                                   self.textContainerInset.left,
+                                                   0,
+                                                   self.textContainerInset.right);
+    } else {
+        self.textContainerInset = UIEdgeInsetsMake(self.startingTextContainerInsetTop
+                                                   + _floatingLabel.font.lineHeight + _placeholderYPadding,
+                                                   self.textContainerInset.left,
+                                                   self.textContainerInset.bottom,
+                                                   self.textContainerInset.right);
+    }
 }
 
 - (void)setLabelOriginForTextAlignment

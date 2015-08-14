@@ -125,6 +125,12 @@ IB_DESIGNABLE
 @property (nonatomic, assign) NSTimeInterval floatingLabelHideAnimationDuration UI_APPEARANCE_SELECTOR;
 
 /**
+ * Indicates whether the bottom border is displayed.
+ * Defaults value is NO.
+ */
+@property (nonatomic) BOOL isBottomBorderEnabled;
+
+/**
  *  Sets the placeholder and the floating title
  *
  *  @param placeholder The string that to be shown in the text view when no other text is present.
