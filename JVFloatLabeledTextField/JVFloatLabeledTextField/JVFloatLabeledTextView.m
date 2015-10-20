@@ -173,7 +173,7 @@ static CGFloat const kFloatingLabelHideAnimationDuration = 0.3f;
     
     _floatingLabel.frame = CGRectMake(_floatingLabel.frame.origin.x,
                                       _floatingLabel.frame.origin.y,
-                                      floatingLabelSize.width,
+                                      self.frame.size.width,
                                       floatingLabelSize.height);
     
     CGSize placeholderLabelSize = [_placeholderLabel sizeThatFits:_placeholderLabel.superview.bounds.size];
