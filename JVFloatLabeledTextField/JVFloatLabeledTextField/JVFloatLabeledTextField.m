@@ -270,7 +270,9 @@ static CGFloat const kFloatingLabelHideAnimationDuration = 0.3f;
 - (CGRect)clearButtonRectForBounds:(CGRect)bounds
 {
     CGRect rect = [super clearButtonRectForBounds:bounds];
-    if (0 != self.adjustsClearButtonRect) {
+    if (0 != self.adjustsClearButtonRect
+    	&& _floatingLabel.text.length // for when there is no floating title label text
+	) {
         if ([self.text length] || self.keepBaseline) {
             CGFloat topInset = ceilf(_floatingLabel.font.lineHeight + _placeholderYPadding);
             topInset = MIN(topInset, [self maxTopInset]);
