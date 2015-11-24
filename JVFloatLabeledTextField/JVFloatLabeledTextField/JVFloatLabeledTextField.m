@@ -261,7 +261,8 @@ static CGFloat const kFloatingLabelHideAnimationDuration = 0.3f;
     return CGRectIntegral(rect);
 }
 
-- (CGRect)insetRectForBounds:(CGRect)rect {
+- (CGRect)insetRectForBounds:(CGRect)rect
+{
     CGFloat topInset = ceilf(_floatingLabel.bounds.size.height + _placeholderYPadding);
     topInset = MIN(topInset, [self maxTopInset]);
     return CGRectMake(rect.origin.x, rect.origin.y + topInset / 2.0f, rect.size.width, rect.size.height);
