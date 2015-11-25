@@ -30,6 +30,14 @@
 
 static CGFloat const kFloatingLabelShowAnimationDuration = 0.3f;
 static CGFloat const kFloatingLabelHideAnimationDuration = 0.3f;
+static CGFloat const kLineViewHeight = 0.5f;
+
+@interface JVFloatLabeledTextField()
+
+@property (nonatomic, strong) CALayer* bottomBorderLayer;
+
+@end
+
 
 @implementation JVFloatLabeledTextField
 {
@@ -75,6 +83,20 @@ static CGFloat const kFloatingLabelHideAnimationDuration = 0.3f;
 }
 
 #pragma mark -
+
+- (void)setIsBottomBorderEnabled:(BOOL)isBottomBorderEnabled {
+    _isBottomBorderEnabled = isBottomBorderEnabled;
+    if (isBottomBorderEnabled) {
+        if (!_bottomBorderLayer) {
+            // add bottom border
+            _bottomBorderLayer = [[CALayer alloc] init];
+            _bottomBorderLayer.backgroundColor = [UIColor grayColor].CGColor;
+            [self.layer addSublayer:_bottomBorderLayer];
+        }
+    } else {
+        [_bottomBorderLayer removeFromSuperlayer];
+    }
+}
 
 - (UIFont *)defaultFloatingLabelFont
 {
@@ -299,7 +321,7 @@ static CGFloat const kFloatingLabelHideAnimationDuration = 0.3f;
     [super layoutSubviews];
     
     [self setLabelOriginForTextAlignment];
-    
+        
     CGSize floatingLabelSize = [_floatingLabel sizeThatFits:_floatingLabel.superview.bounds.size];
     
     _floatingLabel.frame = CGRectMake(_floatingLabel.frame.origin.x,
@@ -316,6 +338,8 @@ static CGFloat const kFloatingLabelHideAnimationDuration = 0.3f;
     else {
         [self showFloatingLabel:firstResponder];
     }
+    
+    _bottomBorderLayer.frame = CGRectMake(0, CGRectGetHeight(self.frame) - 1, CGRectGetWidth(self.frame), kLineViewHeight);
 }
 
 @end

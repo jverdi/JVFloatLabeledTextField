@@ -117,14 +117,38 @@ const static CGFloat kJVFieldFloatingLabelFontSize = 11.0f;
     descriptionField.floatingLabelTextColor = floatingLabelColor;
     [self.view addSubview:descriptionField];
     descriptionField.translatesAutoresizingMaskIntoConstraints = NO;
+    
+    JVFloatLabeledTextField *bottomLinedField = [[JVFloatLabeledTextField alloc] initWithFrame:CGRectZero];
+    bottomLinedField.isBottomBorderEnabled = YES;
+    bottomLinedField.font = [UIFont systemFontOfSize:kJVFieldFontSize];
+    bottomLinedField.attributedPlaceholder = [[NSAttributedString alloc] initWithString:NSLocalizedString(@"Lined Title", @"")
+                                                                             attributes:@{NSForegroundColorAttributeName: [UIColor darkGrayColor]}];
+    bottomLinedField.floatingLabelFont = [UIFont boldSystemFontOfSize:kJVFieldFloatingLabelFontSize];
+    bottomLinedField.floatingLabelTextColor = floatingLabelColor;
+    [self.view addSubview:bottomLinedField];
+    bottomLinedField.translatesAutoresizingMaskIntoConstraints = NO;
+    
+    JVFloatLabeledTextView *bottomLinedDescriptionField = [[JVFloatLabeledTextView alloc] initWithFrame:CGRectZero];
+    bottomLinedDescriptionField.isBottomBorderEnabled = YES;
+    bottomLinedDescriptionField.font = [UIFont systemFontOfSize:kJVFieldFontSize];
+    bottomLinedDescriptionField.placeholder = NSLocalizedString(@"Lined Description", @"");
+    bottomLinedDescriptionField.placeholderTextColor = [UIColor darkGrayColor];
+    bottomLinedDescriptionField.floatingLabelFont = [UIFont boldSystemFontOfSize:kJVFieldFloatingLabelFontSize];
+    bottomLinedDescriptionField.floatingLabelTextColor = floatingLabelColor;
+    [self.view addSubview:bottomLinedDescriptionField];
+    bottomLinedDescriptionField.translatesAutoresizingMaskIntoConstraints = NO;
+
 
     [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-(xMargin)-[titleField]-(xMargin)-|" options:0 metrics:@{@"xMargin": @(kJVFieldHMargin)} views:NSDictionaryOfVariableBindings(titleField)]];
     [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|[div1]|" options:0 metrics:nil views:NSDictionaryOfVariableBindings(div1)]];
     [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-(xMargin)-[priceField]-(xMargin)-[div2(1)]-(xMargin)-[locationField]-(xMargin)-|" options:NSLayoutFormatAlignAllCenterY metrics:@{@"xMargin": @(kJVFieldHMargin)} views:NSDictionaryOfVariableBindings(priceField, div2, locationField)]];
     [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|[div3]|" options:0 metrics:nil views:NSDictionaryOfVariableBindings(div3)]];
     [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-(xMargin)-[descriptionField]-(xMargin)-|" options:0 metrics:@{@"xMargin": @(kJVFieldHMargin)} views:NSDictionaryOfVariableBindings(descriptionField)]];
+    [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-(xMargin)-[bottomLinedDescriptionField]-(xMargin)-|" options:0 metrics:@{@"xMargin": @(kJVFieldHMargin)} views:NSDictionaryOfVariableBindings(bottomLinedDescriptionField)]];
+    
+    [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-(xMargin)-[bottomLinedField]-(xMargin)-|" options:0 metrics:@{@"xMargin": @(kJVFieldHMargin)} views:NSDictionaryOfVariableBindings(bottomLinedField)]];
 
-    [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|[titleField(>=minHeight)][div1(1)][priceField(>=minHeight)][div3(1)][descriptionField]|" options:0 metrics:@{@"minHeight": @(kJVFieldHeight)} views:NSDictionaryOfVariableBindings(titleField, div1, priceField, div3, descriptionField)]];
+    [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|[titleField(minHeight)][div1(1)][priceField(minHeight)][div3(1)][bottomLinedField(minHeight)][bottomLinedDescriptionField(100)][descriptionField]|" options:0 metrics:@{@"minHeight": @(kJVFieldHeight)} views:NSDictionaryOfVariableBindings(titleField, div1, priceField, div3, bottomLinedField, bottomLinedDescriptionField, descriptionField)]];
     [self.view addConstraint:[NSLayoutConstraint constraintWithItem:priceField attribute:NSLayoutAttributeHeight relatedBy:NSLayoutRelationEqual toItem:div2 attribute:NSLayoutAttributeHeight multiplier:1.0 constant:0.0]];
     [self.view addConstraint:[NSLayoutConstraint constraintWithItem:priceField attribute:NSLayoutAttributeHeight relatedBy:NSLayoutRelationEqual toItem:locationField attribute:NSLayoutAttributeHeight multiplier:1.0 constant:0.0]];
 

@@ -117,6 +117,12 @@ IB_DESIGNABLE
 @property (nonatomic, assign) IBInspectable BOOL keepBaseline;
 
 /**
+ * Indicates whether the bottom border is displayed.
+ * Defaults value is NO.
+ */
+@property (nonatomic) BOOL isBottomBorderEnabled;
+
+/**
  *  Sets the placeholder and the floating title
  *
  *  @param placeholder The string that to be shown in the text field when no other text is present.
