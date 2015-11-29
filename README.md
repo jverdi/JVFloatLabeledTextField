@@ -20,7 +20,7 @@ Credits for the concept to Matt D. Smith ([@mds](https://twitter.com/mds)), and 
 The component is officially supported for iOS 7 and greater.
 
 
-Getting started via Cocoapods
+Getting started via CocoaPods
 =============================
 ```
 sudo gem install cocoapods
@@ -36,7 +36,7 @@ Add the following to your ```Podfile``` project's target:
 pod 'JVFloatLabeledTextField'
 ```
 
-Then run cocoapods with ```pod install```.
+Then run CocoaPods with ```pod install```.
 
 Finally, include ```JVFloatLabeledTextField.h``` and ```JVFloatLabeledTextView.h``` in your project.
 
