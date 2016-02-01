@@ -283,6 +283,17 @@ static CGFloat const kFloatingLabelHideAnimationDuration = 0.3f;
     return CGRectIntegral(rect);
 }
 
+- (CGRect)leftViewRectForBounds:(CGRect)bounds
+{
+    CGRect rect = [super leftViewRectForBounds:bounds];
+    
+    CGFloat topInset = ceilf(_floatingLabel.font.lineHeight + _placeholderYPadding);
+    topInset = MIN(topInset, [self maxTopInset]);
+    rect = CGRectOffset(rect, 0, topInset / 2.0f);
+    
+    return rect;
+}
+
 - (CGRect)rightViewRectForBounds:(CGRect)bounds {
     
     CGRect rect = [super rightViewRectForBounds:bounds];
