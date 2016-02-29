@@ -88,6 +88,7 @@ Ports and Alternate Implementations
 [ObjC](https://github.com/iwasrobbed/RPFloatingPlaceholders) - Rob Phillips  
 [4D](http://forums.4d.fr/Post/EN/15995553/0/0/) - Maurice Inzirillo  
 [Appcelerator Titanium](https://github.com/TheSmiths-Widgets/ts.floatlabelfield) - The Smiths  
+[B4i](https://www.b4x.com/android/forum/threads/floatlabelededittext-iui8.64096/#post-405516) - Erel Uziel  
   
   
 Added a port? Let me know - [@jverdi](https://twitter.com/jverdi)
