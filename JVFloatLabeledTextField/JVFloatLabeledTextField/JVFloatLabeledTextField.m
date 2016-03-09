@@ -294,7 +294,8 @@ static CGFloat const kFloatingLabelHideAnimationDuration = 0.3f;
     return rect;
 }
 
-- (CGRect)rightViewRectForBounds:(CGRect)bounds {
+- (CGRect)rightViewRectForBounds:(CGRect)bounds
+{
     
     CGRect rect = [super rightViewRectForBounds:bounds];
     
@@ -316,6 +317,12 @@ static CGFloat const kFloatingLabelHideAnimationDuration = 0.3f;
     [self setNeedsLayout];
 }
 
+- (void)setAlwaysShowFloatingLabel:(BOOL)alwaysShowFloatingLabel
+{
+    _alwaysShowFloatingLabel = alwaysShowFloatingLabel;
+    [self setNeedsLayout];
+}
+
 - (void)layoutSubviews
 {
     [super layoutSubviews];
@@ -332,7 +339,7 @@ static CGFloat const kFloatingLabelHideAnimationDuration = 0.3f;
     BOOL firstResponder = self.isFirstResponder;
     _floatingLabel.textColor = (firstResponder && self.text && self.text.length > 0 ?
                                 self.labelActiveColor : self.floatingLabelTextColor);
-    if (!self.text || 0 == [self.text length]) {
+    if ((!self.text || 0 == [self.text length]) && !self.alwaysShowFloatingLabel) {
         [self hideFloatingLabel:firstResponder];
     }
     else {

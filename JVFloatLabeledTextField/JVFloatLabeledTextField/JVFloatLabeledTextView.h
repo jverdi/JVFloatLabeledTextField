@@ -125,6 +125,12 @@ IB_DESIGNABLE
 @property (nonatomic, assign) NSTimeInterval floatingLabelHideAnimationDuration UI_APPEARANCE_SELECTOR;
 
 /**
+ * Force floating label to be always visible
+ * Defaults to NO
+ */
+@property (nonatomic, assign) BOOL alwaysShowFloatingLabel;
+
+/**
  *  Sets the placeholder and the floating title
  *
  *  @param placeholder The string that to be shown in the text view when no other text is present.

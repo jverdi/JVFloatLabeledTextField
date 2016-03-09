@@ -189,7 +189,7 @@ static CGFloat const kFloatingLabelHideAnimationDuration = 0.3f;
     BOOL firstResponder = self.isFirstResponder;
     _floatingLabel.textColor = (firstResponder && self.text && self.text.length > 0 ?
                                 self.labelActiveColor : self.floatingLabelTextColor);
-    if (!self.text || 0 == [self.text length]) {
+    if ((!self.text || 0 == [self.text length]) && !self.alwaysShowFloatingLabel) {
         [self hideFloatingLabel:firstResponder];
     }
     else {
@@ -206,6 +206,12 @@ static CGFloat const kFloatingLabelHideAnimationDuration = 0.3f;
         return [self performSelector:@selector(tintColor)];
     }
     return [UIColor blueColor];
+}
+
+- (void)setAlwaysShowFloatingLabel:(BOOL)alwaysShowFloatingLabel
+{
+    _alwaysShowFloatingLabel = alwaysShowFloatingLabel;
+    [self setNeedsLayout];
 }
 
 - (void)showFloatingLabel:(BOOL)animated
