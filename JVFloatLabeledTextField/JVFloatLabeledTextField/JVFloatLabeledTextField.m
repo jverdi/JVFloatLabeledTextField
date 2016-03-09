@@ -294,7 +294,8 @@ static CGFloat const kFloatingLabelHideAnimationDuration = 0.3f;
     return rect;
 }
 
-- (CGRect)rightViewRectForBounds:(CGRect)bounds {
+- (CGRect)rightViewRectForBounds:(CGRect)bounds
+{
     
     CGRect rect = [super rightViewRectForBounds:bounds];
     
@@ -315,10 +316,13 @@ static CGFloat const kFloatingLabelHideAnimationDuration = 0.3f;
     [super setTextAlignment:textAlignment];
     [self setNeedsLayout];
 }
-- (void)setAlwaysShowFloatingLabel:(BOOL)alwaysShowFloatingLabel {
+
+- (void)setAlwaysShowFloatingLabel:(BOOL)alwaysShowFloatingLabel
+{
     _alwaysShowFloatingLabel = alwaysShowFloatingLabel;
     [self setNeedsLayout];
 }
+
 - (void)layoutSubviews
 {
     [super layoutSubviews];
