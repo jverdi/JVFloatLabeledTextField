@@ -25,8 +25,15 @@
 //  IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
 //  CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
+#define TEST_XIB_CONFIGURATION 0
+
 #import "JVAppDelegate.h"
+
+#if TEST_XIB_CONFIGURATION
+#import "JVFloatLabeledTextFieldXIBViewController.h"
+#else
 #import "JVFloatLabeledTextFieldViewController.h"
+#endif
 
 @implementation JVAppDelegate
 
@@ -36,7 +43,12 @@
     // Override point for customization after application launch.
     self.window.backgroundColor = [UIColor whiteColor];
     
+#if TEST_XIB_CONFIGURATION
+    JVFloatLabeledTextFieldXIBViewController *viewController = [JVFloatLabeledTextFieldXIBViewController new];
+#else
     JVFloatLabeledTextFieldViewController *viewController = [JVFloatLabeledTextFieldViewController new];
+#endif
+    
     UINavigationController *navigationController =
     [[UINavigationController alloc] initWithRootViewController:viewController];
 

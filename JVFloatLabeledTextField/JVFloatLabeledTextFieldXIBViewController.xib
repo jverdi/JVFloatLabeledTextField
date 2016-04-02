@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="JVFloatLabeledTextFieldXIBViewController">
+            <connections>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Title" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Cts-Ac-d0U" customClass="JVFloatLabeledTextField">
+                    <rect key="frame" x="8" y="64" width="584" height="60"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="ZQt-zy-Fwq"/>
+                        <constraint firstAttribute="height" constant="60" id="y5V-8j-Nhu"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="Georgia" family="Georgia" pointSize="18"/>
+                    <textInputTraits key="textInputTraits"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="keepBaseline" value="YES"/>
+                    </userDefinedRuntimeAttributes>
+                    <variation key="default">
+                        <mask key="constraints">
+                            <exclude reference="ZQt-zy-Fwq"/>
+                        </mask>
+                    </variation>
+                </textField>
+                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="mX4-OF-eNw" customClass="JVFloatLabeledTextView">
+                    <rect key="frame" x="8" y="124" width="584" height="476"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <fontDescription key="fontDescription" name="Georgia" family="Georgia" pointSize="18"/>
+                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Description"/>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="floatingLabelShouldLockToTop" value="YES"/>
+                    </userDefinedRuntimeAttributes>
+                </textView>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="Cts-Ac-d0U" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="64" id="7cY-qP-3od"/>
+                <constraint firstAttribute="trailing" secondItem="Cts-Ac-d0U" secondAttribute="trailing" constant="8" id="FEk-Br-fvF"/>
+                <constraint firstItem="mX4-OF-eNw" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="8" id="IlT-2D-qw3"/>
+                <constraint firstItem="Cts-Ac-d0U" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="8" id="JP6-rk-Ac8"/>
+                <constraint firstAttribute="trailing" secondItem="mX4-OF-eNw" secondAttribute="trailing" id="TSF-JZ-Vw7"/>
+                <constraint firstAttribute="trailing" secondItem="mX4-OF-eNw" secondAttribute="trailing" constant="8" id="V0c-N7-Ybf"/>
+                <constraint firstAttribute="bottom" secondItem="mX4-OF-eNw" secondAttribute="bottom" id="VAH-FM-LkJ"/>
+                <constraint firstItem="mX4-OF-eNw" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="h5j-OE-fvf"/>
+                <constraint firstItem="mX4-OF-eNw" firstAttribute="top" secondItem="Cts-Ac-d0U" secondAttribute="bottom" id="iql-Yq-aQZ"/>
+            </constraints>
+            <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+            <variation key="default">
+                <mask key="constraints">
+                    <exclude reference="TSF-JZ-Vw7"/>
+                    <exclude reference="h5j-OE-fvf"/>
+                </mask>
+            </variation>
+        </view>
+    </objects>
+</document>

@@ -30,6 +30,8 @@
 		7F9020241809A39B00B43AD5 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 7F9020211809A39B00B43AD5 /* Default.png */; };
 		7F9020251809A39B00B43AD5 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7F9020221809A39B00B43AD5 /* Default@2x.png */; };
 		7F9AB497183B2EBF00694AB0 /* JVFloatLabeledTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F9AB496183B2EBF00694AB0 /* JVFloatLabeledTextView.m */; };
+		7FE3F0E41CB0598B00202683 /* JVFloatLabeledTextFieldXIBViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FE3F0E21CB0598B00202683 /* JVFloatLabeledTextFieldXIBViewController.m */; };
+		7FE3F0E51CB0598B00202683 /* JVFloatLabeledTextFieldXIBViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7FE3F0E31CB0598B00202683 /* JVFloatLabeledTextFieldXIBViewController.xib */; };
 		7FF4DB94180B865F008527BD /* JVFloatLabeledTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FF4DB93180B865F008527BD /* JVFloatLabeledTextField.m */; };
 /* End PBXBuildFile section */
 
@@ -87,6 +89,9 @@
 		7F9020221809A39B00B43AD5 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default@2x.png"; path = "images/Default@2x.png"; sourceTree = "<group>"; };
 		7F9AB495183B2EBF00694AB0 /* JVFloatLabeledTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JVFloatLabeledTextView.h; sourceTree = "<group>"; };
 		7F9AB496183B2EBF00694AB0 /* JVFloatLabeledTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JVFloatLabeledTextView.m; sourceTree = "<group>"; };
+		7FE3F0E11CB0598B00202683 /* JVFloatLabeledTextFieldXIBViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JVFloatLabeledTextFieldXIBViewController.h; sourceTree = "<group>"; };
+		7FE3F0E21CB0598B00202683 /* JVFloatLabeledTextFieldXIBViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JVFloatLabeledTextFieldXIBViewController.m; sourceTree = "<group>"; };
+		7FE3F0E31CB0598B00202683 /* JVFloatLabeledTextFieldXIBViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JVFloatLabeledTextFieldXIBViewController.xib; sourceTree = "<group>"; };
 		7FF4DB92180B865F008527BD /* JVFloatLabeledTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JVFloatLabeledTextField.h; sourceTree = "<group>"; };
 		7FF4DB93180B865F008527BD /* JVFloatLabeledTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JVFloatLabeledTextField.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -179,9 +184,12 @@
 			children = (
 				7F50336817FA7B0A0026FB7F /* JVAppDelegate.h */,
 				7F50336917FA7B0A0026FB7F /* JVAppDelegate.m */,
+				7FF4DB91180B865F008527BD /* JVFloatLabeledTextField */,
 				7F50338C17FA7B8C0026FB7F /* JVFloatLabeledTextFieldViewController.h */,
 				7F50338D17FA7B8C0026FB7F /* JVFloatLabeledTextFieldViewController.m */,
-				7FF4DB91180B865F008527BD /* JVFloatLabeledTextField */,
+				7FE3F0E11CB0598B00202683 /* JVFloatLabeledTextFieldXIBViewController.h */,
+				7FE3F0E21CB0598B00202683 /* JVFloatLabeledTextFieldXIBViewController.m */,
+				7FE3F0E31CB0598B00202683 /* JVFloatLabeledTextFieldXIBViewController.xib */,
 				7F50336017FA7B0A0026FB7F /* Supporting Files */,
 			);
 			path = JVFloatLabeledTextField;
@@ -353,6 +361,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7F9020251809A39B00B43AD5 /* Default@2x.png in Resources */,
+				7FE3F0E51CB0598B00202683 /* JVFloatLabeledTextFieldXIBViewController.xib in Resources */,
 				7F9020231809A39B00B43AD5 /* Default-568h@2x.png in Resources */,
 				7F9020241809A39B00B43AD5 /* Default.png in Resources */,
 			);
@@ -389,6 +398,7 @@
 				4306C37419531E7000CC0A4C /* NSString+TextDirectionality.m in Sources */,
 				7F50336A17FA7B0A0026FB7F /* JVAppDelegate.m in Sources */,
 				7F50336617FA7B0A0026FB7F /* main.m in Sources */,
+				7FE3F0E41CB0598B00202683 /* JVFloatLabeledTextFieldXIBViewController.m in Sources */,
 				7F9AB497183B2EBF00694AB0 /* JVFloatLabeledTextView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
