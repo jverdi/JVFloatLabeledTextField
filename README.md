@@ -83,8 +83,8 @@ Ports and Alternate Implementations
 [Swift](https://github.com/dirkfabisch/B68FloatingLabelTextField) - Dirk Fabisch  
 [Swift](https://github.com/FahimF/FloatLabelFields) - Fahim Farook  
 [Swift](https://github.com/kNeerajPro/CGFLoatingUIKit) - Neeraj Kumar  
-[Swift](https://github.com/varshylmobile/VMFloatLabel) - Jimmy Jose 
-[Swift](https://github.com/Skyscanner/SkyFloatingLabelTextField) - Skyscanner (Daniel Langh, Gergely Orosz, Raimon Lapuente)
+[Swift](https://github.com/varshylmobile/VMFloatLabel) - Jimmy Jose  
+[Swift](https://github.com/Skyscanner/SkyFloatingLabelTextField) - Skyscanner (Daniel Langh, Gergely Orosz, Raimon Lapuente)  
 [ObjC](https://github.com/ArtSabintsev/UIFloatLabelTextField) - Arthur Ariel Sabintsev  
 [ObjC](https://github.com/iwasrobbed/RPFloatingPlaceholders) - Rob Phillips  
 [4D](http://forums.4d.fr/Post/EN/15995553/0/0/) - Maurice Inzirillo  
