@@ -71,10 +71,6 @@ static CGFloat const kFloatingLabelHideAnimationDuration = 0.3f;
     _floatingLabelHideAnimationDuration = kFloatingLabelHideAnimationDuration;
     [self setFloatingLabelText:self.placeholder];
 
-    bottomBorder = [[UIView alloc] initWithFrame:CGRectMake(0, CGRectGetHeight(self.bounds) - 1, CGRectGetWidth(self.bounds), 1)];
-    bottomBorder.backgroundColor = self.bottomBorderColor;
-    [self addSubview:bottomBorder];
-
     _adjustsClearButtonRect = YES;
     _isFloatingLabelFontDefault = YES;
 }
@@ -345,6 +341,12 @@ static CGFloat const kFloatingLabelHideAnimationDuration = 0.3f;
     [super layoutSubviews];
     
     [self setLabelOriginForTextAlignment];
+
+
+    bottomBorder = [[UIView alloc] initWithFrame:CGRectMake(0, CGRectGetHeight(self.bounds) - 1, CGRectGetWidth(self.bounds), 1)];
+    bottomBorder.backgroundColor = self.bottomBorderColor;
+    [self addSubview:bottomBorder];
+
     
     CGSize floatingLabelSize = [_floatingLabel sizeThatFits:_floatingLabel.superview.bounds.size];
     
