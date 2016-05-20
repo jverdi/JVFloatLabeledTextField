@@ -130,4 +130,12 @@ IB_DESIGNABLE
  */
 - (void)setPlaceholder:(NSString *)placeholder floatingTitle:(NSString *)floatingTitle;
 
+/**
+ * Sets the image for clear button
+ *
+ * @param image The image for the clear button
+ * @param state Button state for the button image
+ */
+- (void)setClearButtonImage:(UIImage *)image forState:(UIControlState)state;
+
 @end
