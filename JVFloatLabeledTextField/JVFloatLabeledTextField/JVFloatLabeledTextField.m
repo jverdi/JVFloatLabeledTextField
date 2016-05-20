@@ -28,6 +28,12 @@
 #import "JVFloatLabeledTextField.h"
 #import "NSString+TextDirectionality.h"
 
+@interface JVFloatLabeledTextField ()
+
+@property (nonatomic, strong) UIButton * clearTextFieldButton;
+
+@end
+
 static CGFloat const kFloatingLabelShowAnimationDuration = 0.3f;
 static CGFloat const kFloatingLabelHideAnimationDuration = 0.3f;
 
@@ -241,6 +247,35 @@ static CGFloat const kFloatingLabelHideAnimationDuration = 0.3f;
 {
     [super setPlaceholder:placeholder];
     [self setFloatingLabelText:floatingTitle];
+}
+
+- (void)setClearButtonImage:(UIImage *)image forState:(UIControlState)state
+{
+    [self.clearTextFieldButton setImage:image forState:state];
+}
+
+- (void)clearTextField
+{
+    self.text = nil;
+}
+
+- (UIButton *)clearTextFieldButton
+{
+    if(!_clearTextFieldButton) {
+        // Create selector for Apple’s built-in UITextField button —clearButton
+        SEL clearButtonSelector = NSSelectorFromString(@"clearButton");
+        // Reference clearButton getter
+        IMP clearButtonImplementation = [self methodForSelector:clearButtonSelector];
+        // Create function pointer that returns UIButton from implementation of method that contains clearButtonSelector
+        UIButton * (* clearButtonFunctionPointer)(id, SEL) = (void *)clearButtonImplementation;
+        // Set clearTextFieldButton reference to “clearButton” from clearButtonSelector
+        _clearTextFieldButton = clearButtonFunctionPointer(self, clearButtonSelector);
+        // Remove all clearTextFieldButton target-actions (e.g., Apple’s standard clearButton actions)
+        [_clearTextFieldButton removeTarget:nil action:NULL forControlEvents:UIControlEventAllEvents];
+        // Add new target-action for clearTextFieldButton
+        [_clearTextFieldButton addTarget:self action:@selector(clearTextField) forControlEvents:UIControlEventTouchUpInside];
+    }
+    return _clearTextFieldButton;
 }
 
 - (CGRect)textRectForBounds:(CGRect)bounds
