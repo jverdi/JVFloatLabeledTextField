@@ -226,11 +226,11 @@ static CGFloat const kFloatingLabelHideAnimationDuration = 0.3f;
 
 - (void)setCorrectPlaceholder:(NSString *)placeholder
 {
-    if (self.placeholderColor) {
+    if (self.placeholderColor && placeholder) {
         NSAttributedString *attributedPlaceholder = [[NSAttributedString alloc] initWithString:placeholder
                                                                                     attributes:@{NSForegroundColorAttributeName: self.placeholderColor}];
         [super setAttributedPlaceholder:attributedPlaceholder];
-    } else{
+    } else {
         [super setPlaceholder:placeholder];
     }
 }
