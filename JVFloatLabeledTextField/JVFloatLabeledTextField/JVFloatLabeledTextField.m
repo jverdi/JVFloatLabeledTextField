@@ -224,9 +224,20 @@ static CGFloat const kFloatingLabelHideAnimationDuration = 0.3f;
                       textFieldIntrinsicContentSize.height + _floatingLabelYPadding + _floatingLabel.bounds.size.height);
 }
 
+- (void)setCorrectPlaceholder:(NSString *)placeholder
+{
+    if (self.placeholderColor) {
+        NSAttributedString *attributedPlaceholder = [[NSAttributedString alloc] initWithString:placeholder
+                                                                                    attributes:@{NSForegroundColorAttributeName: self.placeholderColor}];
+        [super setAttributedPlaceholder:attributedPlaceholder];
+    } else{
+        [super setPlaceholder:placeholder];
+    }
+}
+
 - (void)setPlaceholder:(NSString *)placeholder
 {
-    [super setPlaceholder:placeholder];
+    [self setCorrectPlaceholder:placeholder];
     [self setFloatingLabelText:placeholder];
 }
 
@@ -239,7 +250,13 @@ static CGFloat const kFloatingLabelHideAnimationDuration = 0.3f;
 
 - (void)setPlaceholder:(NSString *)placeholder floatingTitle:(NSString *)floatingTitle
 {
-    [super setPlaceholder:placeholder];
+    [self setCorrectPlaceholder:placeholder];
+    [self setFloatingLabelText:floatingTitle];
+}
+
+- (void)setAttributedPlaceholder:(NSAttributedString *)attributedPlaceholder floatingTitle:(NSString *)floatingTitle
+{
+    [super setAttributedPlaceholder:attributedPlaceholder];
     [self setFloatingLabelText:floatingTitle];
 }
 
