@@ -260,6 +260,11 @@ static CGFloat const kFloatingLabelHideAnimationDuration = 0.3f;
     [self setFloatingLabelText:floatingTitle];
 }
 
+- (void)setPlaceholderColor:(UIColor *)color {
+    _placeholderColor = color;
+    [self setCorrectPlaceholder:self.placeholder];
+}
+
 - (CGRect)textRectForBounds:(CGRect)bounds
 {
     CGRect rect = [super textRectForBounds:bounds];
