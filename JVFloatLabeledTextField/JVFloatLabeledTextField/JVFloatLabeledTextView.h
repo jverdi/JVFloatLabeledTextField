@@ -131,6 +131,12 @@ IB_DESIGNABLE
 @property (nonatomic, assign) BOOL alwaysShowFloatingLabel;
 
 /**
+ * Top value for textContainerInset
+ * Change this value if you need more padding between text input and floating label
+ */
+@property (nonatomic) CGFloat startingTextContainerInsetTop;
+
+/**
  *  Sets the placeholder and the floating title
  *
  *  @param placeholder The string that to be shown in the text view when no other text is present.
