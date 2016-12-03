@@ -33,7 +33,6 @@ static CGFloat const kFloatingLabelHideAnimationDuration = 0.3f;
 
 @interface JVFloatLabeledTextView ()
 
-@property (nonatomic) CGFloat startingTextContainerInsetTop;
 
 @end
 
