@@ -61,6 +61,12 @@ IB_DESIGNABLE
 @property (nonatomic) IBInspectable CGFloat floatingLabelXPadding;
 
 /**
+ * Ratio by which to modify the font size of the floating label.
+ * Defaults to 70
+ */
+@property (nonatomic) IBInspectable CGFloat floatingLabelReductionRatio;
+
+/**
  * Padding to be applied to the y coordinate of the placeholder.
  * Defaults to zero.
  */

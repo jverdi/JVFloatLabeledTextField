@@ -61,6 +61,7 @@ static CGFloat const kFloatingLabelHideAnimationDuration = 0.3f;
     [self addSubview:_floatingLabel];
 	
     // some basic default fonts/colors
+    _floatingLabelReductionRatio = 70;
     _floatingLabelFont = [self defaultFloatingLabelFont];
     _floatingLabel.font = _floatingLabelFont;
     _floatingLabelTextColor = [UIColor grayColor];
@@ -90,7 +91,7 @@ static CGFloat const kFloatingLabelHideAnimationDuration = 0.3f;
         textFieldFont = self.font;
     }
     
-    return [UIFont fontWithName:textFieldFont.fontName size:roundf(textFieldFont.pointSize * 0.7f)];
+    return [UIFont fontWithName:textFieldFont.fontName size:roundf(textFieldFont.pointSize * (_floatingLabelReductionRatio/100))];
 }
 
 - (void)updateDefaultFloatingLabelFont
@@ -208,6 +209,12 @@ static CGFloat const kFloatingLabelHideAnimationDuration = 0.3f;
 {
     [super setFont:font];
     [self updateDefaultFloatingLabelFont];
+}
+
+- (void)setFloatingLabelReductionRatio:(CGFloat)floatingLabelReductionRatio {
+  _floatingLabelReductionRatio = floatingLabelReductionRatio;
+  _floatingLabelFont = [self defaultFloatingLabelFont];
+  _floatingLabel.font = _floatingLabelFont;
 }
 
 - (void)setAttributedText:(NSAttributedString *)attributedText
