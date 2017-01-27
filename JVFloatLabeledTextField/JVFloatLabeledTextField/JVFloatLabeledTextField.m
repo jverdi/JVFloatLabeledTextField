@@ -125,7 +125,6 @@ static CGFloat const kFloatingLabelHideAnimationDuration = 0.3f;
     }
     _floatingLabel.font = _floatingLabelFont ? _floatingLabelFont : [self defaultFloatingLabelFont];
     _isFloatingLabelFontDefault = floatingLabelFont == nil;
-    [self setFloatingLabelText:self.placeholder];
     [self invalidateIntrinsicContentSize];
 }
 
@@ -211,7 +210,8 @@ static CGFloat const kFloatingLabelHideAnimationDuration = 0.3f;
     [self updateDefaultFloatingLabelFont];
 }
 
-- (void)setFloatingLabelReductionRatio:(CGFloat)floatingLabelReductionRatio {
+- (void)setFloatingLabelReductionRatio:(CGFloat)floatingLabelReductionRatio
+{
   _floatingLabelReductionRatio = floatingLabelReductionRatio;
   _floatingLabelFont = [self defaultFloatingLabelFont];
   _floatingLabel.font = _floatingLabelFont;
