@@ -5,7 +5,7 @@ JVFloatLabeledTextField
 [![Pod Platform](https://img.shields.io/cocoapods/p/JVFloatLabeledTextField.svg)](http://cocoadocs.org/docsets/JVFloatLabeledTextField/)
 [![Pod License](https://img.shields.io/cocoapods/l/JVFloatLabeledTextField.svg)](http://jaredverdi.mit-license.org)
 
-`JVFloatLabeledTextField` is the first implementation a UX pattern that has come to be known the **"Float Label Pattern"**. 
+`JVFloatLabeledTextField` is the first implementation of a UX pattern that has come to be known the **"Float Label Pattern"**. 
 
 Due to space constraints on mobile devices, it is common to rely solely on placeholders as a means to label fields.
 This presents a UX problem, in that, once the user begins to fill out a form, no labels are present.
