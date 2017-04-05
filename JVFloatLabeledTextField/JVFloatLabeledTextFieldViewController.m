@@ -82,9 +82,9 @@ const static CGFloat kJVFieldFloatingLabelFontSize = 11.0f;
     div1.translatesAutoresizingMaskIntoConstraints = NO;
 
     JVFloatLabeledTextField *priceField = [[JVFloatLabeledTextField alloc] initWithFrame:CGRectZero];
-    priceField.font = [UIFont systemFontOfSize:kJVFieldFontSize];
-    priceField.attributedPlaceholder = [[NSAttributedString alloc] initWithString:NSLocalizedString(@"Price", @"")
-                                                                       attributes:@{NSForegroundColorAttributeName: [UIColor darkGrayColor]}];
+    priceField.font = [UIFont boldSystemFontOfSize:kJVFieldFontSize];
+    priceField.placeholderFont = [UIFont italicSystemFontOfSize:kJVFieldFontSize];
+    [priceField setPlaceholder:NSLocalizedString(@"Price", @"") floatingTitle:[NSLocalizedString(@"Price", @"") uppercaseString]];
     priceField.floatingLabelFont = [UIFont boldSystemFontOfSize:kJVFieldFloatingLabelFontSize];
     priceField.floatingLabelTextColor = floatingLabelColor;
     [self.view addSubview:priceField];
