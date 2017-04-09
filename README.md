@@ -1,9 +1,11 @@
 JVFloatLabeledTextField
 =======================
 [![Build Status](https://travis-ci.org/jverdi/JVFloatLabeledTextField.svg?branch=master)](https://travis-ci.org/jverdi/JVFloatLabeledTextField)
+[![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](#carthage)
 [![Pod Version](https://img.shields.io/cocoapods/v/JVFloatLabeledTextField.svg)](http://cocoadocs.org/docsets/JVFloatLabeledTextField/)
 [![Pod Platform](https://img.shields.io/cocoapods/p/JVFloatLabeledTextField.svg)](http://cocoadocs.org/docsets/JVFloatLabeledTextField/)
 [![Pod License](https://img.shields.io/cocoapods/l/JVFloatLabeledTextField.svg)](http://jaredverdi.mit-license.org)
+[![CocoaPods](https://img.shields.io/cocoapods/dt/JVFloatLabeledTextField.svg)](https://github.com/jverdi/JVFloatLabeledTextField)
 
 `JVFloatLabeledTextField` is the first implementation of a UX pattern that has come to be known the **"Float Label Pattern"**. 
 
