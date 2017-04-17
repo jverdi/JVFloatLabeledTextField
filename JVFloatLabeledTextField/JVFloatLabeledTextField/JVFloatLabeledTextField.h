@@ -93,6 +93,17 @@ IB_DESIGNABLE
 @property (nonatomic, strong) IBInspectable UIColor * floatingLabelActiveTextColor;
 
 /**
+ * Color to be applied to the clear button of the text field
+ * Tint color is used by default if an `floatingLabelClearButtonColor` is not provided.
+ */
+@property (nonatomic, strong) IBInspectable UIColor * floatingLabelClearButtonColor;
+
+/**
+ * Clear button image used privately
+ */
+@property (nonatomic, strong) UIImage* tintedClearImage;
+
+/**
  * Indicates whether the floating label's appearance should be animated regardless of first responder status.
  * By default, animation only occurs if the text field is a first responder.
  */

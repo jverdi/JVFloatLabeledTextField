@@ -77,6 +77,43 @@ static CGFloat const kFloatingLabelHideAnimationDuration = 0.3f;
 
 #pragma mark -
 
+
+-(void)tintClearImage {
+    for (int i = 0; i < self.subviews.count; i++) {
+        if ([self.subviews[i] isKindOfClass:[UIButton class]] == YES) {
+            UIButton* btn = self.subviews[i];
+            if ([btn imageForState:UIControlStateHighlighted] != nil) {
+                UIImage* imgState = [btn imageForState:UIControlStateHighlighted];
+                if (_tintedClearImage == nil) {
+                    _tintedClearImage = [self tintImage:imgState color:[self clearButtonColor]];
+                }
+                [btn setImage:_tintedClearImage forState:UIControlStateNormal];
+                [btn setImage:_tintedClearImage forState:UIControlStateHighlighted];
+            }
+        }
+    }
+}
+
+-(UIImage*) tintImage:(UIImage*)image color:(UIColor*)color {
+    CGSize size = [image size];
+    UIGraphicsBeginImageContextWithOptions(size, false, [image scale]);
+    CGContextRef ref = UIGraphicsGetCurrentContext();
+    [image drawAtPoint:CGPointZero blendMode:kCGBlendModeNormal alpha:1.0f];
+    CGContextSetFillColorWithColor(ref, color.CGColor);
+    CGContextSetBlendMode(ref, kCGBlendModeSourceIn);
+    CGContextSetAlpha(ref, 1.0f);
+    
+    CGRect rect = CGRectMake(
+                             CGPointZero.x,
+                             CGPointZero.y,
+                             image.size.width,
+                             image.size.height);
+    CGContextFillRect(UIGraphicsGetCurrentContext(), rect);
+    UIImage* tintedImage = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    return tintedImage;
+}
+
 - (UIFont *)defaultFloatingLabelFont
 {
     UIFont *textFieldFont = nil;
@@ -111,6 +148,17 @@ static CGFloat const kFloatingLabelHideAnimationDuration = 0.3f;
 {
     if (_floatingLabelActiveTextColor) {
         return _floatingLabelActiveTextColor;
+    }
+    else if ([self respondsToSelector:@selector(tintColor)]) {
+        return [self performSelector:@selector(tintColor)];
+    }
+    return [UIColor blueColor];
+}
+
+- (UIColor *)clearButtonColor
+{
+    if (_floatingLabelClearButtonColor) {
+        return _floatingLabelClearButtonColor;
     }
     else if ([self respondsToSelector:@selector(tintColor)]) {
         return [self performSelector:@selector(tintColor)];
@@ -375,6 +423,8 @@ static CGFloat const kFloatingLabelHideAnimationDuration = 0.3f;
     else {
         [self showFloatingLabel:firstResponder];
     }
+    
+    [self tintClearImage];
 }
 
 @end
