@@ -34,6 +34,7 @@ static CGFloat const kFloatingLabelHideAnimationDuration = 0.3f;
 @implementation JVFloatLabeledTextField
 {
     BOOL _isFloatingLabelFontDefault;
+    UIView *bottomBorder;
 }
 
 - (instancetype)initWithFrame:(CGRect)frame
@@ -70,6 +71,10 @@ static CGFloat const kFloatingLabelHideAnimationDuration = 0.3f;
     _floatingLabelShowAnimationDuration = kFloatingLabelShowAnimationDuration;
     _floatingLabelHideAnimationDuration = kFloatingLabelHideAnimationDuration;
     [self setFloatingLabelText:self.placeholder];
+
+    bottomBorder = [[UIView alloc] initWithFrame:CGRectMake(0, CGRectGetHeight(self.bounds) - 1, CGRectGetWidth(self.bounds), 1)];
+    bottomBorder.backgroundColor = self.bottomBorderColor;
+    [self addSubview:bottomBorder];
 
     _adjustsClearButtonRect = YES;
     _isFloatingLabelFontDefault = YES;
@@ -148,6 +153,18 @@ static CGFloat const kFloatingLabelHideAnimationDuration = 0.3f;
     else {
         showBlock();
     }
+}
+
+- (void)setBottomBorderColor:(UIColor *)bottomBorderColor
+{
+    bottomBorder.backgroundColor = bottomBorderColor;
+}
+
+- (void)setPlaceholderColor:(UIColor *)placeholderColor
+{
+    self.attributedPlaceholder = [[NSAttributedString alloc]
+                                  initWithString:self.placeholder
+                                  attributes:@{NSForegroundColorAttributeName: placeholderColor}];
 }
 
 - (void)hideFloatingLabel:(BOOL)animated
@@ -358,7 +375,9 @@ static CGFloat const kFloatingLabelHideAnimationDuration = 0.3f;
     [super layoutSubviews];
     
     [self setLabelOriginForTextAlignment];
-    
+
+    bottomBorder.frame = CGRectMake(0, CGRectGetHeight(self.bounds) - 1, CGRectGetWidth(self.bounds), 1);
+
     CGSize floatingLabelSize = [_floatingLabel sizeThatFits:_floatingLabel.superview.bounds.size];
     
     _floatingLabel.frame = CGRectMake(_floatingLabel.frame.origin.x,
