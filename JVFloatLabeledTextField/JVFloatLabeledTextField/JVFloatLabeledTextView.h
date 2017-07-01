@@ -74,6 +74,11 @@ IB_DESIGNABLE
 @property (nonatomic) IBInspectable CGFloat placeholderYPadding;
 
 /**
+ * Padding to be applied to the x coordinate of the placeholder.
+ */
+@property (nonatomic) IBInspectable CGFloat placeholderXPadding;
+
+/**
  * Font to be applied to the floating label. Defaults to `[UIFont boldSystemFontOfSize:12.0f]`. 
  * Provided for the convenience of using as an appearance proxy.
  */
