@@ -375,6 +375,13 @@ static CGFloat const kFloatingLabelHideAnimationDuration = 0.3f;
     _placeholderLabel.textColor = _placeholderTextColor;
 }
 
+-(void)setLocalizedPlaceholder:(NSString *)localizedPlaceholder
+{
+    if(!self.placeholder){
+        [self setPlaceholder:NSLocalizedString(localizedPlaceholder, @"")];
+    }
+}
+
 - (void)setBackgroundColor:(UIColor *)backgroundColor
 {
     [super setBackgroundColor:backgroundColor];

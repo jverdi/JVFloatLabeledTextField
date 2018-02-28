@@ -134,6 +134,11 @@ IB_DESIGNABLE
 @property (nonatomic, strong) IBInspectable UIColor * placeholderColor;
 
 /**
+ * localized placeholder use NSLocalizedString translation
+ */
+@property (nonatomic, strong) IBInspectable NSString * localizedPlaceholder;
+
+/**
  *  Sets the placeholder and the floating title
  *
  *  @param placeholder The string that to be shown in the text field when no other text is present.
