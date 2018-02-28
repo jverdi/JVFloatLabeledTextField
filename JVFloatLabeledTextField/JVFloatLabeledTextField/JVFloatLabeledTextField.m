@@ -248,6 +248,15 @@ static CGFloat const kFloatingLabelHideAnimationDuration = 0.3f;
     [self setFloatingLabelText:placeholder];
 }
 
+
+-(void)setLocalizedPlaceholder:(NSString *)localizedPlaceholder
+{
+    if(!self.placeholder){
+        [self setPlaceholder:NSLocalizedString(localizedPlaceholder, @"")];
+    }
+}
+
+
 - (void)setAttributedPlaceholder:(NSAttributedString *)attributedPlaceholder
 {
     [super setAttributedPlaceholder:attributedPlaceholder];

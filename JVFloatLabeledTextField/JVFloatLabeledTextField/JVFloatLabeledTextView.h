@@ -49,6 +49,11 @@ IB_DESIGNABLE
 @property (nonatomic, copy) IBInspectable NSString * placeholder;
 
 /**
+ * localized placeholder use NSLocalizedString translation
+ */
+@property (nonatomic, strong) IBInspectable NSString * localizedPlaceholder;
+
+/**
  * Read-only access to the placeholder label.
  */
 @property (nonatomic, strong, readonly) UILabel * placeholderLabel;
