@@ -236,15 +236,15 @@ static CGFloat const kFloatingLabelHideAnimationDuration = 0.3f;
 - (void)showFloatingLabel:(BOOL)animated
 {
     void (^showBlock)(void) = ^{
-        _floatingLabel.alpha = 1.0f;
-        CGFloat top = _floatingLabelYPadding;
+        self->_floatingLabel.alpha = 1.0f;
+        CGFloat top = self->_floatingLabelYPadding;
         if (0 != self.floatingLabelShouldLockToTop) {
             top += self.contentOffset.y;
         }
-        _floatingLabel.frame = CGRectMake(_floatingLabel.frame.origin.x,
+        self->_floatingLabel.frame = CGRectMake(self->_floatingLabel.frame.origin.x,
                                           top,
-                                          _floatingLabel.frame.size.width,
-                                          _floatingLabel.frame.size.height);
+                                          self->_floatingLabel.frame.size.width,
+                                          self->_floatingLabel.frame.size.height);
     };
     
     if ((animated || 0 != _animateEvenIfNotFirstResponder)
@@ -263,11 +263,11 @@ static CGFloat const kFloatingLabelHideAnimationDuration = 0.3f;
 - (void)hideFloatingLabel:(BOOL)animated
 {
     void (^hideBlock)(void) = ^{
-        _floatingLabel.alpha = 0.0f;
-        _floatingLabel.frame = CGRectMake(_floatingLabel.frame.origin.x,
-                                          _floatingLabel.font.lineHeight + _placeholderYPadding,
-                                          _floatingLabel.frame.size.width,
-                                          _floatingLabel.frame.size.height);
+        self->_floatingLabel.alpha = 0.0f;
+        self->_floatingLabel.frame = CGRectMake(self->_floatingLabel.frame.origin.x,
+                                          self->_floatingLabel.font.lineHeight + self->_placeholderYPadding,
+                                          self->_floatingLabel.frame.size.width,
+                                          self->_floatingLabel.frame.size.height);
         
     };
     
