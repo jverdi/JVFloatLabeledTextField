@@ -59,6 +59,11 @@ IB_DESIGNABLE
 @property (nonatomic, strong, readonly) UILabel * floatingLabel;
 
 /**
+ * Read-only access to the floating background view.
+ */
+@property (nonatomic, strong, readonly) UIView * floatingLabelBackgroundView;
+
+/**
  * Padding to be applied to the y coordinate of the floating label upon presentation.
  */
 @property (nonatomic) IBInspectable CGFloat floatingLabelYPadding;
