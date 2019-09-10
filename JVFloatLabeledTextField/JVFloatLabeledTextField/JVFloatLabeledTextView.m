@@ -144,6 +144,10 @@ static CGFloat const kFloatingLabelHideAnimationDuration = 0.3f;
         textViewFont = self.placeholderLabel.font;
     }
     
+    if (@available(iOS 13, *)) {
+        return [UIFont fontWithDescriptor:textViewFont.fontDescriptor size:roundf(textViewFont.pointSize * 0.7f)];
+    }
+
     return [UIFont fontWithName:textViewFont.fontName size:roundf(textViewFont.pointSize * 0.7f)];
 }
 

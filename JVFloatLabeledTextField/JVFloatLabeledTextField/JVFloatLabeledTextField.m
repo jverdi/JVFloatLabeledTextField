@@ -91,6 +91,10 @@ static CGFloat const kFloatingLabelHideAnimationDuration = 0.3f;
         textFieldFont = self.font;
     }
     
+    if (@available(iOS 13, *)) {
+        return [UIFont fontWithDescriptor:textFieldFont.fontDescriptor size:roundf(textFieldFont.pointSize * (_floatingLabelReductionRatio/100))];
+    }
+    
     return [UIFont fontWithName:textFieldFont.fontName size:roundf(textFieldFont.pointSize * (_floatingLabelReductionRatio/100))];
 }
 
