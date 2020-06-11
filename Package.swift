@@ -25,7 +25,8 @@ let package = Package(
             name: "JVFloatLabeledTextField",
             dependencies: [],
             path: "JVFloatLabeledTextField",
-            sources: ["JVFloatLabeledTextField"]
+            sources: ["JVFloatLabeledTextField"],
+            publicHeadersPath: "JVFloatLabeledTextField"
         )
     ]
 )
