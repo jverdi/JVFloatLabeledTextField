@@ -62,6 +62,22 @@ Finally, include ```JVFloatLabeledText.h``` in your project:
 #import <JVFloatLabeledText/JVFloatLabeledText.h>
 ```
 
+Getting started via SPM (Xcode 11+)
+============================
+
+Click `File` -> `Swift Packages` -> `Add Package Dependency`, enter [JVFloatLabeledText repo's URL](https://github.com/jverdi/JVFloatLabeledTextField).
+
+After select the package, you can choose the dependency type (tagged version, branch or commit). Then Xcode will setup all the stuff for you.
+
+If you're a framework author and use JVFloatLabeledTextField as a dependency, update your `Package.swift` file:
+
+```swift
+let package = Package(
+    dependencies: [
+        .package(url: "https://github.com/jverdi/JVFloatLabeledTextField", from: "1.2.2")
+    ],
+)
+```
 
 Additional References
 =======================
