@@ -26,9 +26,6 @@ let package = Package(
             dependencies: [],
             path: "JVFloatLabeledTextField",
             sources: ["JVFloatLabeledTextField"]
-        ),
-        .testTarget(
-            name: "JVFloatLabeledTextFieldTests",
-            dependencies: ["JVFloatLabeledTextField"]),
+        )
     ]
 )
