@@ -36,7 +36,7 @@
  * `JVFloatLabeledTextField` aims to improve the user experience by having placeholders transition into 
  * "floating labels" that hover above the text field after it is populated with text.
  *
- * JVFloatLabeledTextField supports iOS 6+.
+ * JVFloatLabeledTextField supports iOS 9+.
  *
  * Credits for the concept to Matt D. Smith (@mds), and his original design:  http://mattdsmith.com/float-label-pattern/
  */

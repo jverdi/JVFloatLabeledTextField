@@ -36,7 +36,7 @@
  * `JVFloatLabeledTextView` aims to improve the user experience by having placeholders transition into "floating labels"
  * that hover above the text view after it is populated with text.
  *
- * JVFloatLabeledTextView supports iOS 7+.
+ * JVFloatLabeledTextView supports iOS 9+.
  *
  * Credits for the concept to Matt D. Smith (@mds), and his original design:  http://mattdsmith.com/float-label-pattern/
  */
