@@ -19,7 +19,7 @@ Credits for the concept to Matt D. Smith ([@mds](https://twitter.com/mds)), and 
 ![Matt D. Smith's Design](http://dribbble.s3.amazonaws.com/users/6410/screenshots/1254439/form-animation-_gif_.gif)
 
 
-The component is officially supported for iOS 7 and greater.
+The component is officially supported for iOS 9 and greater.
 
 
 Getting started via CocoaPods
