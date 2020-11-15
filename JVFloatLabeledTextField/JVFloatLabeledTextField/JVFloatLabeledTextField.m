@@ -148,6 +148,8 @@ static CGFloat const kFloatingLabelHideAnimationDuration = 0.3f;
     else {
         showBlock();
     }
+
+    self.accessibilityLabel = self.floatingLabel.text;
 }
 
 - (void)hideFloatingLabel:(BOOL)animated
@@ -171,6 +173,8 @@ static CGFloat const kFloatingLabelHideAnimationDuration = 0.3f;
     else {
         hideBlock();
     }
+
+    self.accessibilityLabel = nil;
 }
 
 - (void)setLabelOriginForTextAlignment
