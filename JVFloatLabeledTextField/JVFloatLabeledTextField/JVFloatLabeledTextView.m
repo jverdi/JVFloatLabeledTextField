@@ -340,7 +340,7 @@ static CGFloat const kFloatingLabelHideAnimationDuration = 0.3f;
         rect.origin.y += self.textContainerInset.top;
     }
     
-    return CGRectIntegral(rect);
+    return rect;
 }
 
 - (void)setFloatingLabelFont:(UIFont *)floatingLabelFont

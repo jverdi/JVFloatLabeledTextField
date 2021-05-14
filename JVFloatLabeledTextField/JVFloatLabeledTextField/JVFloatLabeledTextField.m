@@ -283,7 +283,7 @@ static CGFloat const kFloatingLabelHideAnimationDuration = 0.3f;
     if ([self.text length] || self.keepBaseline) {
         rect = [self insetRectForBounds:rect];
     }
-    return CGRectIntegral(rect);
+    return rect;
 }
 
 - (CGRect)editingRectForBounds:(CGRect)bounds
@@ -292,7 +292,7 @@ static CGFloat const kFloatingLabelHideAnimationDuration = 0.3f;
     if ([self.text length] || self.keepBaseline) {
         rect = [self insetRectForBounds:rect];
     }
-    return CGRectIntegral(rect);
+    return rect;
 }
 
 - (CGRect)insetRectForBounds:(CGRect)rect
@@ -314,7 +314,7 @@ static CGFloat const kFloatingLabelHideAnimationDuration = 0.3f;
             rect = CGRectMake(rect.origin.x, rect.origin.y + topInset / 2.0f, rect.size.width, rect.size.height);
         }
     }
-    return CGRectIntegral(rect);
+    return rect;
 }
 
 - (CGRect)leftViewRectForBounds:(CGRect)bounds
