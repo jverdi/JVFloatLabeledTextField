@@ -89,4 +89,15 @@
     XCTAssert(CGRectEqualToRect(clearRectInitial, clearRectFinal));
 }
 
+-(void)testIntrinsicContentHeight
+{
+    self.testField.text = @"foo";
+    CGFloat firstHeight = self.testField.intrinsicContentSize.height;
+    
+    self.testField.text = @"bar";
+    CGFloat secondHeight = self.testField.intrinsicContentSize.height;
+    
+    XCTAssertEqual(firstHeight, secondHeight);
+}
+
 @end
