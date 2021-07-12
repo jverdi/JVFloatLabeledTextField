@@ -22,7 +22,7 @@ let package = Package(
             dependencies: [],
             path: "JVFloatLabeledTextField",
             sources: ["JVFloatLabeledTextField"],
-            publicHeadersPath: "JVFloatLabeledTextField"
+            publicHeadersPath: "SPMHeaders"
         )
     ]
 )
